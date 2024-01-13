@@ -45,12 +45,13 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hav3v"]
-radius = 53.0
-height = 109.0
+radius = 59.1
+height = 150.4
 
-[node name="Mob" type="RigidBody2D"]
+[node name="Mob" type="RigidBody2D" groups=["mobs"]]
 scale = Vector2(0.75, 0.75)
 collision_mask = 0
+gravity_scale = 0.0
 script = ExtResource("1_n7rsm")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
@@ -60,6 +61,7 @@ frame_progress = 0.402527
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 rotation = 1.5708
+scale = Vector2(0.75, 0.75)
 shape = SubResource("CapsuleShape2D_hav3v")
 
 [node name="VisibleOnScreenNotifier2D2" type="VisibleOnScreenNotifier2D" parent="."]

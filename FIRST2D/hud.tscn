@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt640d5r0ssc"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_8voeo"]
+[ext_resource type="FontFile" uid="uid://cjda5el5hpo2t" path="res://fonts/Xolonium-Regular.ttf" id="1_16n8h"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_8voeo")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 301.0
+offset_top = 1.0
+offset_right = 346.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("1_16n8h")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="Message" type="Label" parent="."]
+offset_left = 155.0
+offset_top = 256.0
+offset_right = 510.0
+offset_bottom = 415.0
+theme_override_fonts/font = ExtResource("1_16n8h")
+theme_override_font_sizes/font_size = 64
+text = "SCHIVA I
+CAZZETTI"
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 202.0
+offset_top = 636.0
+offset_right = 441.0
+offset_bottom = 760.0
+theme_override_fonts/font = ExtResource("1_16n8h")
+theme_override_font_sizes/font_size = 64
+text = "MIIIIII"
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
