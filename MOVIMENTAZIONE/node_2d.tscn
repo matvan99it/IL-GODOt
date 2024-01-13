@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbjc3y50a2e73"]
+
+[ext_resource type="PackedScene" uid="uid://bhi0qfym5vq4d" path="res://sprite_2d.tscn" id="1_ucs8f"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" parent="." instance=ExtResource("1_ucs8f")]
+
+[node name="Timer" type="Timer" parent="Sprite2D"]
+autostart = true
+
+[node name="Button" type="Button" parent="."]
+offset_right = 160.0
+offset_bottom = 63.0
+text = "el buton"
+
+[connection signal="health_changed" from="Sprite2D" to="Sprite2D" method="_on_health_changed"]
+[connection signal="health_depleted" from="Sprite2D" to="Sprite2D" method="_on_health_depleted"]
+[connection signal="ready" from="Sprite2D/Timer" to="Sprite2D" method="_on_timer_ready"]
+[connection signal="timeout" from="Sprite2D/Timer" to="Sprite2D" method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="Sprite2D" method="_on_button_pressed"]
