@@ -17,12 +17,12 @@ func show_messages(text):
 	$MessageTimer.start()
 	
 func show_game_over():
-	show_messages("game_over")
+	show_messages("FAI SCHIFO")
 	
 	#Sleep
 	await $MessageTimer.timeout
 	
-	$Message.text("SCHIVA I CAZZETTI")
+	$Message.text = "SCHIVA I CAZZETTI"
 	$Message.show()
 	
 	await get_tree().create_timer(1.0).timeout
