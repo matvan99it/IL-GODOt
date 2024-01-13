@@ -8,10 +8,6 @@ signal hit
 func _ready():
 	screen_size = get_viewport_rect().size
 	hide()
-	start()
-	# pass # Replace with function body.
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta): # delta => frame length
@@ -24,7 +20,6 @@ func _process(delta): # delta => frame length
 		velocity.y -= 1
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
-	
 	
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
@@ -44,13 +39,17 @@ func _process(delta): # delta => frame length
 	position = position.clamp(Vector2.ZERO, screen_size)	
 
 
-func _on_body_entered(body):
-	hide()
-	hit.emit()
-	$CollisionShape2D.set_deferred("disabled", true)
 
 
 func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
+
+
+
+func _on_body_entered(body):
+	hide()
+	hit.emit()
+	$CollisionShape2D.set_deferred("disabled", true)
+
