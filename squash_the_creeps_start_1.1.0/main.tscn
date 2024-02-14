@@ -1,8 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjpxja2o614wg"]
+[gd_scene load_steps=7 format=3 uid="uid://cjpxja2o614wg"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_8pwi5"]
-[ext_resource type="PackedScene" uid="uid://bn1i6rqc55tq" path="res://player.tscn" id="1_f1xx8"]
-[ext_resource type="PackedScene" uid="uid://dhdq5yguiyw7c" path="res://mob.tscn" id="3_enl42"]
+[ext_resource type="PackedScene" uid="uid://blvs7up4y1ooo" path="res://art/player.glb" id="3_pq87h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_afsa6"]
 size = Vector3(60, 1, 60)
@@ -24,10 +22,11 @@ _data = {
 point_count = 5
 
 [node name="main" type="Node"]
-script = ExtResource("1_8pwi5")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_afsa6")
@@ -38,8 +37,6 @@ mesh = SubResource("BoxMesh_jfflq")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.250532, -0.968108, -7.60405e-10, 0.615414, 0.15926, 0.771946, -0.747328, -0.193397, 0.635688, 0, 19.3107, 0)
 shadow_enabled = true
-
-[node name="Player" parent="." instance=ExtResource("1_f1xx8")]
 
 [node name="CameraPivot" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
@@ -73,10 +70,10 @@ curve = SubResource("Curve3D_d5wp5")
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
 transform = Transform3D(-0.00799986, 0, -0.999968, 0, 1, 0, 0.999968, 0, -0.00799986, -12.2462, 0, -15.1874)
 
-[node name="mob" parent="." instance=ExtResource("3_enl42")]
-
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="Player" parent="." instance=ExtResource("3_pq87h")]
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
