@@ -20,6 +20,12 @@ config/icon="res://icon.png"
 window/size/viewport_width=720
 window/size/viewport_height=540
 
+[importer_defaults]
+
+animation_library={
+"animation/fps": 60.0
+}
+
 [input]
 
 move_left={
