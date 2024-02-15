@@ -67,10 +67,9 @@ func _physics_process(delta):
 				
 				break # Prevent furter duplicate calls
 	
-	$Pivot.rotation.x = PI / 6 * velocity.y / jump_impulse
-	
-	
 	move_and_slide()
+	
+	$Pivot.rotation.x = PI / 6 * velocity.y / jump_impulse
 
 func die():
 	hit.emit()

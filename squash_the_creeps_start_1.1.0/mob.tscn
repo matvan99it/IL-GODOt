@@ -1,10 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhdq5yguiyw7c"]
+[gd_scene load_steps=6 format=3 uid="uid://dhdq5yguiyw7c"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_31fns"]
 [ext_resource type="PackedScene" uid="uid://cuxb3k0erynue" path="res://art/mob.glb" id="1_hbdoq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bpnf4"]
 size = Vector3(1.82275, 0.814453, 1.96259)
+
+[sub_resource type="Animation" id="Animation_st3bd"]
+resource_name = "float"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/mob:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.7, 1.2),
+"transitions": PackedFloat32Array(0.420448, 0.435275, 2.07053),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.65, 0), Vector3(0, 0.35, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/mob:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 1.2),
+"transitions": PackedFloat32Array(0.420448, 0.435275, 2.07053),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.139626, 0, 0), Vector3(-0.15708, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qt5aq"]
+_data = {
+"float": SubResource("Animation_st3bd")
+}
 
 [node name="mob" type="CharacterBody3D" groups=["mob"]]
 collision_layer = 2
@@ -14,6 +47,7 @@ script = ExtResource("1_31fns")
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="mob" parent="Pivot" instance=ExtResource("1_hbdoq")]
+transform = Transform3D(1, 0, 0, 0, 0.993001, 0.118102, 0, -0.118102, 0.993001, 0, 0.434769, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00756836, 0.222656, -0.00119019)
@@ -24,5 +58,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.229633)
 aabb = AABB(-1.12517, -1, -1.64638, 2.25034, 2, 3.29277)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qt5aq")
+}
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
