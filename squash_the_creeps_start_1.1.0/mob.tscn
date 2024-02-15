@@ -23,4 +23,6 @@ shape = SubResource("BoxShape3D_bpnf4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.229633)
 aabb = AABB(-1.12517, -1, -1.64638, 2.25034, 2, 3.29277)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
