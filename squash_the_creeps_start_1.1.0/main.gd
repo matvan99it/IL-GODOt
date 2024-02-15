@@ -18,6 +18,9 @@ func _on_mob_timer_timeout():
 
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
+	
+	# Connesso lo scorelabel al signal squashed per aggiornare il punteggio
+	mob.squashed.connect($GUI/ScoreLabel._on_mob_squashed.bind())
 
 
 func _on_player_hit():
