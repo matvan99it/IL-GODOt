@@ -22,6 +22,13 @@ func _on_mob_timer_timeout():
 	# Connesso lo scorelabel al signal squashed per aggiornare il punteggio
 	mob.squashed.connect($GUI/ScoreLabel._on_mob_squashed.bind())
 
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_accept") and $GUI/Retry.visible:
+		get_tree().reload_current_scene()
 
 func _on_player_hit():
-	$MobTimer.stop() # Replace with function body.
+	$MobTimer.stop()
+	$GUI/Retry.show()
+
+func _ready():
+	$GUI/Retry.hide()
