@@ -83,3 +83,4 @@ autostart = true
 [node name="Player" parent="." instance=ExtResource("1_q3wfq")]
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
