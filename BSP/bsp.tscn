@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnls6b85u3rto"]
+
+[ext_resource type="Script" path="res://bsp.gd" id="1_wmqid"]
+
+[node name="bsp" type="Node2D"]
+script = ExtResource("1_wmqid")
