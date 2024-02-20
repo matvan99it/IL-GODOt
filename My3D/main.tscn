@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce0non4w541pe"]
+[gd_scene load_steps=6 format=3 uid="uid://ce0non4w541pe"]
+
+[ext_resource type="PackedScene" uid="uid://bswl3y6551aih" path="res://fish.tscn" id="1_tu1t8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4icb2"]
 size = Vector3(60, 2, 2)
@@ -47,4 +49,10 @@ mesh = SubResource("BoxMesh_i7xhh")
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-transform = Transform3D(-0.0946296, 0, -0.995513, 0, 1, 0, 0.995513, 0, -0.0946296, -30, 1.1, 0)
+transform = Transform3D(0.0097339, -0.0655327, -0.997803, -0.00623521, 0.997827, -0.0655951, 0.999933, 0.00686001, 0.00930414, -30, 1.1, 0)
+
+[node name="Fish" parent="." instance=ExtResource("1_tu1t8")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -27, 2, 3)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.451944, 0.184619, -0.872733, 0.822638, 0.292103, 0.487794, 0.344984, -0.938398, -0.0198606, -22.2868, 11.4778, 0)
