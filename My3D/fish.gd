@@ -27,8 +27,7 @@ func _physics_process(delta):
 	# side_to_side is a uniform float
 	direction.x += cos(time) * random_speed #side_to_side;
 	direction.y += cos(time) * random_speed
-	direction.z += cos(time) * random_speed
-	
+	direction.x += cos(time) * random_speed
 	move_and_slide()
 	
 	print(direction.x)
