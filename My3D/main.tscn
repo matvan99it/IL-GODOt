@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ce0non4w541pe"]
+[gd_scene load_steps=3 format=3 uid="uid://ce0non4w541pe"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_p2lh3"]
+[ext_resource type="PackedScene" uid="uid://bi6ltmbyd3bxv" path="res://mesh.tscn" id="2_u2eir"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_p2lh3")
@@ -13,3 +14,5 @@ transform = Transform3D(0.00629599, 0.351825, -0.936045, -0.0096947, 0.936041, 0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.451944, 0.184619, -0.872733, 0.822638, 0.292103, 0.487794, 0.344984, -0.938398, -0.0198606, -22.2868, 11.4778, 0)
+
+[node name="Mesh" parent="." instance=ExtResource("2_u2eir")]
