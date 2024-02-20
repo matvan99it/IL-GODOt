@@ -1,63 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce0non4w541pe"]
+[gd_scene load_steps=2 format=3 uid="uid://ce0non4w541pe"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_p2lh3"]
-[ext_resource type="PackedScene" uid="uid://bswl3y6551aih" path="res://fish.tscn" id="1_tu1t8"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4icb2"]
-size = Vector3(60, 2, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_mve5f"]
-size = Vector3(60, 2, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xs37d"]
-size = Vector3(0.1, 50, 60)
-
-[sub_resource type="BoxMesh" id="BoxMesh_i7xhh"]
-size = Vector3(0.1, 50, 60)
 
 [node name="Node" type="Node"]
 script = ExtResource("1_p2lh3")
-
-[node name="Ground" type="StaticBody3D" parent="."]
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-shape = SubResource("BoxShape3D_4icb2")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-mesh = SubResource("BoxMesh_mve5f")
-
-[node name="wall_left" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0)
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_left"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -1)
-shape = SubResource("BoxShape3D_xs37d")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="wall_left"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -1)
-mesh = SubResource("BoxMesh_i7xhh")
-
-[node name="wall_right" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0)
-visible = false
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="wall_right"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
-shape = SubResource("BoxShape3D_xs37d")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="wall_right"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
-mesh = SubResource("BoxMesh_i7xhh")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 transform = Transform3D(0.997675, 0.0681546, 0, -0.0681546, 0.997675, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(0.00629599, 0.351825, -0.936045, -0.0096947, 0.936041, 0.351758, 0.999933, 0.00686001, 0.00930414, -12.0419, 2.32678, 0)
-
-[node name="Fish" parent="." instance=ExtResource("1_tu1t8")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.451944, 0.184619, -0.872733, 0.822638, 0.292103, 0.487794, 0.344984, -0.938398, -0.0198606, -22.2868, 11.4778, 0)
