@@ -1,21 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi6ltmbyd3bxv"]
+[gd_scene load_steps=8 format=3 uid="uid://bi6ltmbyd3bxv"]
 
 [ext_resource type="Shader" path="res://mesh.gdshader" id="1_mifmr"]
 [ext_resource type="Script" path="res://mesh.gd" id="2_82hr5"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pdjce"]
+
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wt158"]
+as_normal_map = true
+noise = SubResource("FastNoiseLite_pdjce")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_m5473"]
+as_normal_map = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ttde"]
 render_priority = 0
 shader = ExtResource("1_mifmr")
 shader_parameter/height_scale = 0.5
 shader_parameter/noise = SubResource("NoiseTexture2D_wt158")
+shader_parameter/normalmap = SubResource("NoiseTexture2D_m5473")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_w0in1"]
 material = SubResource("ShaderMaterial_2ttde")
 subdivide_width = 32
 subdivide_depth = 32
 
-[node name="Mesh" type="MeshInstance3D"]
+[node name="Node" type="Node"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_w0in1")
 script = ExtResource("2_82hr5")
