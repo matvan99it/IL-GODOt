@@ -11,7 +11,7 @@ varying vec2 tex_position;
 float wave(vec2 position) {
 	position += texture(noise, position / 10.0).x * 1.0 - 1.0;
 	vec2 wv = 1.0 - abs(sin(position));
-	return pow(1.0 - pow(wv.x * wv.y, 0.65), 4.0);
+	return pow(1.0 - pow(wv.x * wv.y, 0.65), 1.0);
 }
 
 float height(vec2 position, float time) {

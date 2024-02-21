@@ -1,0 +1,20 @@
+[gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://c41v0fnek2ogs"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_dxxt1"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_d4iqr"]
+input_name = "time"
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+
+
+"
+graph_offset = Vector2(-858.747, 61.0126)
+nodes/fragment/4/node = SubResource("VisualShaderNodeInput_dxxt1")
+nodes/fragment/4/position = Vector2(-1000, 260)
+nodes/fragment/5/node = SubResource("VisualShaderNodeInput_d4iqr")
+nodes/fragment/5/position = Vector2(-980, 440)

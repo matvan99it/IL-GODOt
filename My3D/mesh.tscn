@@ -29,5 +29,6 @@ subdivide_depth = 32
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("PlaneMesh_w0in1")
 script = ExtResource("2_82hr5")

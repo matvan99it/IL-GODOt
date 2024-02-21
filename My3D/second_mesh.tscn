@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct51hgdnxige8"]
+
+[ext_resource type="Shader" uid="uid://c41v0fnek2ogs" path="res://second_mesh.tres" id="1_ixboi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sn8qd"]
+render_priority = 0
+shader = ExtResource("1_ixboi")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r082c"]
+
+[node name="SecondMesh" type="Node"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_sn8qd")
+mesh = SubResource("PlaneMesh_r082c")
