@@ -37,6 +37,7 @@ void vertex() {
 	VERTEX.x += cos(time + body) * mask * wave;
 	//twist motion with mask
 	VERTEX.xy = mix(VERTEX.xy, twist_matrix * VERTEX.xy, mask);
+	
 }
 
 void fragment() {

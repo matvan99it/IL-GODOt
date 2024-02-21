@@ -1,11 +1,10 @@
-extends Node
+extends 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$wall_left.hide()
-	$wall_right.hide()
-	$Ground.hide()
+	for i in range($School.multimesh.instance_count):
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

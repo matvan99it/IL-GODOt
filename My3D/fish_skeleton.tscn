@@ -1,7 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://lxqi0v2muri5"]
+[gd_scene load_steps=6 format=3 uid="uid://lxqi0v2muri5"]
 
 [ext_resource type="Shader" path="res://fish_skeleton.gdshader" id="1_5seux"]
 [ext_resource type="ArrayMesh" uid="uid://c2bsv2rm806kf" path="res://art/fish.obj" id="1_fjsbh"]
+[ext_resource type="Script" path="res://fish_skeleton.gd" id="1_w60ch"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_ny0ow"]
+transform_format = 1
+instance_count = 10
+mesh = ExtResource("1_fjsbh")
+buffer = PackedFloat32Array(-0.00229782, -0.992703, -0.128595, -2.69046, -0.00029766, -0.128595, 0.992706, -0.358277, -1.001, 0.00231702, 0, 1.15736, 0.779849, -0.583664, 0.230591, -2.63512, -0.428055, -0.763683, -0.485343, -0.281039, 0.458917, 0.279509, -0.844554, -1.15319, 0, 1.001, 0, -2.4874, -0.0454009, 0, -0.99997, -0.542556, -0.99997, 0, 0.0454009, 2.12349, -0.735013, -0.63736, 0.235646, -2.59762, 0.599286, -0.771633, -0.217806, -0.521671, 0.320332, -0.018852, 0.948174, 1.00623, 0, -1.001, 0, -2.7081, -1.00099, 0, 0.00450658, -0.178405, -0.00450658, 0, -1.00099, 0.455352, 0.00760359, -0.99029, -0.145838, -2.68119, 0.00111973, -0.145833, 0.990319, -0.416994, -1.00097, -0.0076856, 0, 0.461797, -0.0677757, -0.323142, 0.94498, -2.66805, 0.193979, 0.924856, 0.330173, 0.274246, -0.979684, 0.205478, 0, -0.815673, -0.457083, -0.164334, 0.875255, -2.62647, 0.887293, 0, 0.46337, -0.0901093, -0.0760713, 0.987419, 0.145667, 3.19153, 0.117359, 0.978382, 0.176059, -2.49275, 0.779892, -0.200548, 0.594601, -0.319304, 0.616439, 0.0674578, -0.785782, 2.6771, -0.0247866, 0.99008, 0.145356, -2.48818, -0.00363784, 0.14531, -0.99039, 0.446004, -1.00069, -0.0250522, 0, 0.45662)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sgx10"]
 render_priority = 0
@@ -14,6 +21,12 @@ shader_parameter/twist = 0.5
 shader_parameter/mask_black = 0.1
 shader_parameter/mask_white = 0.1
 
-[node name="MeshInstance3D" type="MeshInstance3D"]
+[node name="Spatial" type="Node3D"]
+script = ExtResource("1_w60ch")
+
+[node name="School" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("MultiMesh_ny0ow")
+
+[node name="Fish" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_fjsbh")
 surface_material_override/0 = SubResource("ShaderMaterial_sgx10")

@@ -21,6 +21,7 @@ shader_parameter/normalmap = SubResource("NoiseTexture2D_m5473")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_w0in1"]
 material = SubResource("ShaderMaterial_2ttde")
+size = Vector2(1, 1)
 subdivide_width = 32
 subdivide_depth = 32
 
