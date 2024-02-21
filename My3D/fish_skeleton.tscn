@@ -9,6 +9,10 @@ shader = ExtResource("1_5seux")
 shader_parameter/time_scale = 0.1
 shader_parameter/side_to_side = 0.5
 shader_parameter/pivot = 0.1
+shader_parameter/wave = 0.5
+shader_parameter/twist = 0.5
+shader_parameter/mask_black = 0.1
+shader_parameter/mask_white = 0.1
 
 [node name="MeshInstance3D" type="MeshInstance3D"]
 mesh = ExtResource("1_fjsbh")
