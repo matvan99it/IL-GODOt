@@ -1,4 +1,6 @@
-[gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://c41v0fnek2ogs"]
+[gd_resource type="VisualShader" load_steps=6 format=3 uid="uid://c41v0fnek2ogs"]
+
+[ext_resource type="Texture2D" uid="uid://dbgqctnrrb5u8" path="res://icon.svg" id="1_8ahl1"]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_dxxt1"]
 input_name = "uv"
@@ -6,15 +8,109 @@ input_name = "uv"
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_d4iqr"]
 input_name = "time"
 
+[sub_resource type="VisualShaderNodeExpression" id="VisualShaderNodeExpression_0tbc6"]
+size = Vector2(800, 620)
+expression = "vec2 pos2d = uv.xy;
+
+float pi = 3.14;
+float distance_to_center = distance(pos2d, vec2(0.5, 0.5));
+float rotation_index = 6.0 * distance_to_center * pi * sin(time/20.0);
+
+pos2d -= vec(0.5, 0.5);
+
+mat2 rotation_matrix = mat2(vec2(sin(rotation_index), -cos(rotation_index)),
+							vec2(cos(rotation_index), sin(rotation_index))
+							);
+
+pos2d = pos2d * rotation_matrix;
+
+pos2d += vec2(0.5, 0.5);
+
+position.xy = pos2d"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_4irk6"]
+output_port_for_preview = 0
+texture = ExtResource("1_8ahl1")
+
 [resource]
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
+uniform sampler2D tex_frg_7;
 
 
+
+void fragment() {
+// Input:4
+	vec2 n_out4p0 = UV;
+
+
+// Input:5
+	float n_out5p0 = TIME;
+
+
+	vec2 n_out6p0;
+// Expression:6
+	n_out6p0 = vec2(0.0, 0.0);
+	{
+		vec2 pos2d = n_out4p0.xy;
+		
+		float pi = 3.14;
+		float distance_to_center = distance(pos2d, vec2(0.5, 0.5));
+		float rotation_index = 6.0 * distance_to_center * pi * sin(n_out5p0/20.0);
+		
+		pos2d -= vec(0.5, 0.5);
+		
+		mat2 rotation_matrix = mat2(vec2(sin(rotation_index), -cos(rotation_index)),
+									vec2(cos(rotation_index), sin(rotation_index))
+									);
+		
+		pos2d = pos2d * rotation_matrix;
+		
+		pos2d += vec2(0.5, 0.5);
+		
+		n_out6p0.xy = pos2d
+	}
+
+
+// Texture2D:7
+	vec4 n_out7p0 = texture(tex_frg_7, n_out6p0);
+
+
+// Output:0
+	ALBEDO = vec3(n_out7p0.xyz);
+
+
+}
 "
-graph_offset = Vector2(-858.747, 61.0126)
+graph_offset = Vector2(-809.616, -48.6249)
+nodes/fragment/0/position = Vector2(560, 260)
 nodes/fragment/4/node = SubResource("VisualShaderNodeInput_dxxt1")
 nodes/fragment/4/position = Vector2(-1000, 260)
 nodes/fragment/5/node = SubResource("VisualShaderNodeInput_d4iqr")
-nodes/fragment/5/position = Vector2(-980, 440)
+nodes/fragment/5/position = Vector2(-1000, 420)
+nodes/fragment/6/node = SubResource("VisualShaderNodeExpression_0tbc6")
+nodes/fragment/6/position = Vector2(-620, 220)
+nodes/fragment/6/size = Vector2(800, 620)
+nodes/fragment/6/input_ports = "0,3,uv;1,0,time;"
+nodes/fragment/6/output_ports = "0,3,position;"
+nodes/fragment/6/expression = "vec2 pos2d = uv.xy;
+
+float pi = 3.14;
+float distance_to_center = distance(pos2d, vec2(0.5, 0.5));
+float rotation_index = 6.0 * distance_to_center * pi * sin(time/20.0);
+
+pos2d -= vec(0.5, 0.5);
+
+mat2 rotation_matrix = mat2(vec2(sin(rotation_index), -cos(rotation_index)),
+							vec2(cos(rotation_index), sin(rotation_index))
+							);
+
+pos2d = pos2d * rotation_matrix;
+
+pos2d += vec2(0.5, 0.5);
+
+position.xy = pos2d"
+nodes/fragment/7/node = SubResource("VisualShaderNodeTexture_4irk6")
+nodes/fragment/7/position = Vector2(280, 140)
+nodes/fragment/connections = PackedInt32Array(4, 0, 6, 0, 5, 0, 6, 1, 6, 0, 7, 0, 7, 0, 0, 0)
