@@ -1,15 +1,18 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 2.0
+const JUMP_VELOCITY = 0.0 #4.5
+const y_ANGLE = 45
+
 
 @onready var pivot = $CameraPivot
 @onready var camera = $CameraPivot/PlayerCamera
+@onready var torch = $CameraPivot/Torch
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-var mouse_sensitivity: float= 0.001
+var mouse_sensitivity: float= 0.005
 var twist_input: float = 0.0
 var pitch_input: float = 0.0
 
@@ -43,11 +46,16 @@ func _physics_process(delta):
 	direction = pivot.basis * velocity * 1200.0 * delta
 	pivot.rotate_y(twist_input)
 	camera.rotate_x(pitch_input)
-	
+	torch.rotate_x(pitch_input)
 	camera.rotation.x = clamp(
 		camera.rotation.x, 
-		deg_to_rad(-30), 
-		deg_to_rad(30)
+		deg_to_rad(-y_ANGLE), 
+		deg_to_rad(y_ANGLE)
+	)
+	torch.rotation.x = clamp(
+		camera.rotation.x, 
+		deg_to_rad(-y_ANGLE), 
+		deg_to_rad(y_ANGLE)
 	)
 	twist_input = .0
 	pitch_input = .0

@@ -1,7 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcfdyqdwwhhpf"]
+[gd_scene load_steps=8 format=3 uid="uid://dcfdyqdwwhhpf"]
 
 [ext_resource type="PackedScene" uid="uid://db4512jl3ckyy" path="res://player.tscn" id="1_gm7tg"]
 [ext_resource type="MeshLibrary" uid="uid://drg2uj6gkwnoi" path="res://res/tileset.tres" id="2_woarh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ylt8g"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_upe17"]
+sky_material = SubResource("ProceduralSkyMaterial_ylt8g")
+
+[sub_resource type="Environment" id="Environment_g4wgu"]
+background_mode = 2
+sky = SubResource("Sky_upe17")
+ambient_light_color = Color(0.835294, 0.803922, 0.768627, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.02
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_energy = 0.02
+fog_density = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iradi"]
 size = Vector3(50, 1, 50)
@@ -12,12 +31,15 @@ size = Vector3(50, 1, 50)
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1.00257, 0, 0, 0, 1.00257, 0, 0, 0, 1.00257, 0, 0, 0)
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g4wgu")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0.25, 0.0580127, 0.966506, -0.433013, 0.899519, 0.0580128, 0, 17, 0)
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_gm7tg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(0.999991, 0.0037353, 0.00192095, -0.00374128, 0.999988, 0.00312259, -0.00190926, -0.00312975, 0.999993, 0, 0, 5.15965)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -31,7 +53,7 @@ mesh = SubResource("BoxMesh_2osm4")
 skeleton = NodePath("")
 
 [node name="GridMap" type="GridMap" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -1, 0)
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 0, -1, 0)
 mesh_library = ExtResource("2_woarh")
 cell_size = Vector3(1, 1, 1)
 cell_center_y = false

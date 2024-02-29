@@ -28,3 +28,12 @@ mesh = SubResource("CapsuleMesh_4joub")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.422816, 0)
 
 [node name="PlayerCamera" type="Camera3D" parent="CameraPivot"]
+
+[node name="Torch" type="SpotLight3D" parent="CameraPivot"]
+transform = Transform3D(1, -1.09512e-09, 1.78943e-18, 1.09512e-09, 1, -1.63401e-09, 0, 1.63401e-09, 1, 0, 0, 0)
+light_color = Color(1, 0.772549, 0, 1)
+light_energy = 2.676
+light_indirect_energy = 4.995
+light_volumetric_fog_energy = 1.225
+spot_range = 9.0
+spot_angle = 23.7088
