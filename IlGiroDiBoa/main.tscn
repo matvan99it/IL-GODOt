@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcfdyqdwwhhpf"]
+
+[ext_resource type="PackedScene" uid="uid://db4512jl3ckyy" path="res://player.tscn" id="1_gm7tg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iradi"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2osm4"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jqdi0"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0.25, 0.0580127, 0.966506, -0.433013, 0.899519, 0.0580128, 0, 17, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_gm7tg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10563, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_iradi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_2osm4")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_2osm4")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78747, 0, 0)
+mesh = SubResource("BoxMesh_jqdi0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78747, 0, -10.7772)
+mesh = SubResource("BoxMesh_jqdi0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.122153, 0, -13.9501)
+mesh = SubResource("BoxMesh_jqdi0")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1356, 0, -7.82027)
+mesh = SubResource("BoxMesh_jqdi0")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1356, 0, -0.602687)
+mesh = SubResource("BoxMesh_jqdi0")
