@@ -25,6 +25,7 @@ shape = SubResource("CapsuleShape3D_hmac5")
 mesh = SubResource("CapsuleMesh_4joub")
 
 [node name="CameraPivot" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.422816, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.664043, 0)
 
 [node name="PlayerCamera" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45142, 0)
