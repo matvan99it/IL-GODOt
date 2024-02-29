@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcfdyqdwwhhpf"]
 
 [ext_resource type="PackedScene" uid="uid://db4512jl3ckyy" path="res://player.tscn" id="1_gm7tg"]
+[ext_resource type="MeshLibrary" uid="uid://drg2uj6gkwnoi" path="res://res/tileset.tres" id="2_woarh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iradi"]
 size = Vector3(50, 1, 50)
@@ -8,9 +9,8 @@ size = Vector3(50, 1, 50)
 [sub_resource type="BoxMesh" id="BoxMesh_2osm4"]
 size = Vector3(50, 1, 50)
 
-[sub_resource type="BoxMesh" id="BoxMesh_jqdi0"]
-
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1.00257, 0, 0, 0, 1.00257, 0, 0, 0, 1.00257, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0.25, 0.0580127, 0.966506, -0.433013, 0.899519, 0.0580128, 0, 17, 0)
@@ -21,6 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_iradi")
@@ -29,26 +30,12 @@ shape = SubResource("BoxShape3D_iradi")
 mesh = SubResource("BoxMesh_2osm4")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_2osm4")
-skeleton = NodePath("")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78747, 0, 0)
-mesh = SubResource("BoxMesh_jqdi0")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78747, 0, -10.7772)
-mesh = SubResource("BoxMesh_jqdi0")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.122153, 0, -13.9501)
-mesh = SubResource("BoxMesh_jqdi0")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1356, 0, -7.82027)
-mesh = SubResource("BoxMesh_jqdi0")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1356, 0, -0.602687)
-mesh = SubResource("BoxMesh_jqdi0")
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -1, 0)
+mesh_library = ExtResource("2_woarh")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(0, 65535, 2, 0, 0, 2, 65535, 0, 2, 3, 65535, 1, 3, 0, 1441793, 2, 1, 1441793, 1, 2, 1441793, 65534, 2, 655361, 1, 65533, 1, 0, 65532, 1, 65535, 65532, 1048577, 65534, 65533, 1048577, 65533, 0, 655360, 65532, 0, 655360, 65531, 0, 655360, 65530, 0, 655360, 65529, 0, 655360, 65528, 0, 655360, 65527, 0, 655360, 65533, 65535, 0, 65532, 65535, 0, 65531, 65535, 0, 65530, 65535, 0, 65529, 65535, 0, 65528, 65535, 0, 65527, 65535, 0, 65534, 65534, 1048576, 65534, 1, 1048576, 65535, 1, 2, 65535, 65535, 2, 0, 3, 1441793, 0, 1, 2, 2, 65534, 1, 65535, 3, 655361, 65535, 2, 655363, 0, 2, 1441795, 1, 1, 1441795, 1, 65534, 3, 65535, 65533, 1048579, 0, 65533, 3, 1, 0, 2, 0, 65534, 2, 65535, 65534, 2, 1, 65535, 2, 2, 65535, 3, 2, 0, 1441795, 65534, 0, 655363, 65534, 65535, 1048579, 65526, 0, 655360, 65526, 65535, 0, 65525, 0, 655361, 65525, 65535, 1048577)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
