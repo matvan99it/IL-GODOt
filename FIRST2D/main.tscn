@@ -16,12 +16,13 @@ script = ExtResource("1_3k2f0")
 mob_scene = ExtResource("2_b2216")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.698039, 0.568627, 0.811765, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("3_ob0e0")]
 

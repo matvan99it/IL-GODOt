@@ -1,3 +1,8 @@
+MeshInstance2D
+StaticBody2D
+CollisionShape2D
+ColorRect
+Node
 MeshInstance3D
 Camera3D
 Marker3D
@@ -6,4 +11,3 @@ CollisionShape3D
 CharacterBody3D
 DirectionalLight3D
 StaticBody3D
-Node
