@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://44k0wfm0bore"]
+[gd_scene load_steps=13 format=3 uid="uid://44k0wfm0bore"]
 
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="1_5ds2c"]
 [ext_resource type="Script" path="res://main.gd" id="1_6j21x"]
@@ -82,11 +82,6 @@ _data = {
 "slide": SubResource("Animation_ca00s")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pnsx"]
-size = Vector2(2024, 20)
-
-[sub_resource type="QuadMesh" id="QuadMesh_2n31y"]
-
 [node name="Node" type="Node2D"]
 script = ExtResource("1_6j21x")
 
@@ -95,7 +90,7 @@ position = Vector2(6, -1)
 physics_material_override = SubResource("PhysicsMaterial_0fw2y")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D1" type="CollisionShape2D" parent="platform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
 position = Vector2(292, 455.5)
 shape = SubResource("RectangleShape2D_h7oyq")
 
@@ -109,7 +104,7 @@ position = Vector2(84, 195)
 physics_material_override = SubResource("PhysicsMaterial_0fw2y")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="wall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
 position = Vector2(292, 455.5)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_h7oyq")
@@ -120,75 +115,6 @@ rotation = 1.5708
 scale = Vector2(0.390333, 1)
 mesh = SubResource("QuadMesh_ppv4k")
 
-[node name="wall2" type="StaticBody2D" parent="."]
-position = Vector2(1584, -128)
-physics_material_override = SubResource("PhysicsMaterial_0fw2y")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="wall2"]
-position = Vector2(-431, 306)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="wall2"]
-position = Vector2(-268, 306)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
-[node name="MeshInstance2D3" type="MeshInstance2D" parent="wall2"]
-position = Vector2(-108, 306)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
-[node name="MeshInstance2D4" type="MeshInstance2D" parent="wall2"]
-position = Vector2(54, 306)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
-[node name="MeshInstance2D5" type="MeshInstance2D" parent="wall2"]
-position = Vector2(216, 306)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
-[node name="MeshInstance2D6" type="MeshInstance2D" parent="wall2"]
-position = Vector2(382, 306)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
-[node name="MeshInstance2D7" type="MeshInstance2D" parent="wall2"]
-position = Vector2(548, 305)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
-[node name="MeshInstance2D8" type="MeshInstance2D" parent="wall2"]
-position = Vector2(710, 305)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
-[node name="MeshInstance2D9" type="MeshInstance2D" parent="wall2"]
-position = Vector2(873, 305)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
-[node name="MeshInstance2D10" type="MeshInstance2D" parent="wall2"]
-position = Vector2(1040, 305)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
-[node name="MeshInstance2D11" type="MeshInstance2D" parent="wall2"]
-position = Vector2(1202, 305)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
-[node name="MeshInstance2D12" type="MeshInstance2D" parent="wall2"]
-position = Vector2(1375, 305)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
-[node name="MeshInstance2D13" type="MeshInstance2D" parent="wall2"]
-position = Vector2(1541, 305)
-scale = Vector2(0.103167, 1)
-mesh = SubResource("QuadMesh_ppv4k")
-
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(68, 289)
 script = ExtResource("1_c4hes")
@@ -197,7 +123,7 @@ script = ExtResource("1_c4hes")
 position = Vector2(2, 1)
 texture = ExtResource("1_5ds2c")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_o2lve")
 
@@ -207,7 +133,7 @@ shape = SubResource("RectangleShape2D_o2lve")
 position = Vector2(472, 269)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="slider"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slider"]
 position = Vector2(144, 11)
 shape = SubResource("RectangleShape2D_w5gyc")
 
@@ -233,16 +159,3 @@ mesh = SubResource("QuadMesh_dkhxp")
 libraries = {
 "": SubResource("AnimationLibrary_bvqpr")
 }
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(1072, 434)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1012, 11)
-shape = SubResource("RectangleShape2D_2pnsx")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
-position = Vector2(1011.75, 10.75)
-scale = Vector2(2024.5, 22.5)
-mesh = SubResource("QuadMesh_2n31y")
