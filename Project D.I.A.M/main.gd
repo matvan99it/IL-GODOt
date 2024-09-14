@@ -3,6 +3,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("slide")
-	$AnimationPlayer.play("elevetah")
+	$sliderAnimation.play("slide")
+	$circleAnimation.play("rotatoria_pazza")
 
