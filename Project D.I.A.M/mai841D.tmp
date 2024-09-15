@@ -1,8 +1,9 @@
-[gd_scene load_steps=42 format=3 uid="uid://44k0wfm0bore"]
+[gd_scene load_steps=46 format=3 uid="uid://44k0wfm0bore"]
 
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="1_5ds2c"]
 [ext_resource type="Script" path="res://main.gd" id="1_6j21x"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_c4hes"]
+[ext_resource type="Script" path="res://PathFollow2D.gd" id="4_rn1r0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0fw2y"]
 
@@ -356,6 +357,18 @@ size = Vector2(788, 39.5)
 
 [sub_resource type="QuadMesh" id="QuadMesh_2qq2g"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkaud"]
+size = Vector2(335, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_2pyns"]
+size = Vector2(335, 20)
+
+[sub_resource type="Curve2D" id="Curve2D_gmhep"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, -458, 1049, 1489, 0, 0, 0, 0, 1507, 1031, 0, -458, 0, 458.482, 1965, 1489, 0, 0, -458, 0, 1507, 1947, 0, 0, 0, 0, 1049, 1489, 0, 0, 0, 0, 1051, 1492)
+}
+point_count = 6
+
 [node name="Node" type="Node2D"]
 script = ExtResource("1_6j21x")
 
@@ -690,3 +703,25 @@ metadata/_edit_group_ = true
 position = Vector2(0, -1.90735e-05)
 scale = Vector2(788, 40)
 mesh = SubResource("QuadMesh_2qq2g")
+
+[node name="RotatingLeft" type="StaticBody2D" parent="."]
+position = Vector2(1049, 1489)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RotatingLeft"]
+shape = SubResource("RectangleShape2D_qkaud")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="RotatingLeft"]
+modulate = Color(1, 0, 1, 1)
+mesh = SubResource("QuadMesh_2pyns")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_gmhep")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(1049, 1489)
+rotation = -1.5708
+script = ExtResource("4_rn1r0")
+
+[node name="RemoteTransform2D1" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+remote_path = NodePath("../../../RotatingLeft")
+update_rotation = false
