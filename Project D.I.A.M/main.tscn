@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://44k0wfm0bore"]
+[gd_scene load_steps=41 format=3 uid="uid://44k0wfm0bore"]
 
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="1_5ds2c"]
 [ext_resource type="Script" path="res://main.gd" id="1_6j21x"]
@@ -21,7 +21,7 @@ size = Vector2(287, 20)
 [sub_resource type="QuadMesh" id="QuadMesh_dkhxp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pnsx"]
-size = Vector2(1724, 20)
+size = Vector2(1836.75, 20)
 
 [sub_resource type="QuadMesh" id="QuadMesh_2n31y"]
 
@@ -32,7 +32,20 @@ size = Vector2(343, 20)
 
 [sub_resource type="QuadMesh" id="QuadMesh_j6eef"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_1e5lx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gehn"]
+size = Vector2(343, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_jm6wi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ut0x2"]
+size = Vector2(344, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7hgoi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgoif"]
+size = Vector2(344, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_im7lt"]
 
 [sub_resource type="Animation" id="Animation_jnep1"]
 length = 0.001
@@ -63,7 +76,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("rotatoria_pazza/MeshInstance2D:rotation")
+tracks/2/path = NodePath("rotatoria_pazza/piatLeft/platLeft2:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -87,7 +100,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("rotatoria_pazza/CollisionShape2D:rotation")
+tracks/4/path = NodePath("rotatoria_pazza/piatLeft:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -104,7 +117,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("rotatoria_pazza/MeshInstance2D:rotation")
+tracks/0/path = NodePath("rotatoria_pazza/piatLeft/platLeft2:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -128,7 +141,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("rotatoria_pazza/CollisionShape2D:rotation")
+tracks/2/path = NodePath("rotatoria_pazza/piatLeft:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -191,7 +204,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("rotatoria_pazza/CollisionShape2D:rotation")
+tracks/1/path = NodePath("rotatoria_pazza/piatLeft:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -203,10 +216,34 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("rotatoria_pazza/MeshInstance2D:rotation")
+tracks/2/path = NodePath("rotatoria_pazza/platTop:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("rotatoria_pazza/platRight:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("rotatoria_pazza/platBotttom:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -231,8 +268,8 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("rotatoria_pazza/CollisionShape2D:rotation")
+tracks/1/enabled = false
+tracks/1/path = NodePath("rotatoria_pazza/piatLeft:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -243,15 +280,39 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("rotatoria_pazza/MeshInstance2D:rotation")
+tracks/2/enabled = false
+tracks/2/path = NodePath("rotatoria_pazza/platTop:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2, 4, 6, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -1.5708, -3.14159, -4.71239, -6.28319]
+"values": [0.0, -6.28319]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("rotatoria_pazza/platRight:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("rotatoria_pazza/platBotttom:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xxdby"]
@@ -269,6 +330,32 @@ size = Vector2(4454, 20)
 size = Vector2(20, 2344)
 
 [sub_resource type="QuadMesh" id="QuadMesh_hytxx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7jcj"]
+size = Vector2(2170, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_mxy71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2udil"]
+size = Vector2(1787.5, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_iakum"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u1l0"]
+size = Vector2(1517, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_uruxj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0p52"]
+size = Vector2(1076, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_54tj6"]
+
+[sub_resource type="Curve2D" id="Curve2D_wv02p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 1
 
 [node name="Node" type="Node2D"]
 script = ExtResource("1_6j21x")
@@ -415,7 +502,6 @@ mesh = SubResource("QuadMesh_dkhxp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1072, 434)
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1012, 11)
@@ -424,45 +510,6 @@ shape = SubResource("RectangleShape2D_2pnsx")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
 position = Vector2(1011.75, 10.75)
 scale = Vector2(2024.5, 22.5)
-mesh = SubResource("QuadMesh_2n31y")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(1823, 2085)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(1012, 11)
-shape = SubResource("RectangleShape2D_2pnsx")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2"]
-position = Vector2(1011.75, 10.75)
-scale = Vector2(2024.5, 22.5)
-mesh = SubResource("QuadMesh_2n31y")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(2306, 1797)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(1012, 11)
-shape = SubResource("RectangleShape2D_2pnsx")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3"]
-position = Vector2(1011.75, 10.75)
-scale = Vector2(2024.5, 22.5)
-mesh = SubResource("QuadMesh_2n31y")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
-position = Vector2(2711, 1486)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(862, 11)
-shape = SubResource("RectangleShape2D_2pnsx")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D4"]
-position = Vector2(862.25, 10.75)
-scale = Vector2(1725.5, 22.5)
 mesh = SubResource("QuadMesh_2n31y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -504,22 +551,45 @@ shift stading: rotate"
 [node name="rotatoria_pazza" type="AnimatableBody2D" parent="."]
 position = Vector2(1506, 1490)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="rotatoria_pazza"]
-position = Vector2(-458, 0)
+[node name="piatLeft" type="CollisionShape2D" parent="rotatoria_pazza"]
+position = Vector2(0, 4.22498)
 rotation = -6.28319
 shape = SubResource("RectangleShape2D_6sbu8")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="rotatoria_pazza"]
-modulate = Color(1, 0.129412, 1, 1)
-position = Vector2(-458, 2.71797e-05)
-scale = Vector2(344, 20.0001)
+[node name="platLeft2" type="MeshInstance2D" parent="rotatoria_pazza/piatLeft"]
+modulate = Color(0.615686, 0.156863, 0.54902, 1)
+scale = Vector2(334.394, 20)
 mesh = SubResource("QuadMesh_j6eef")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="rotatoria_pazza"]
-show_behind_parent = true
-position = Vector2(-4.81253, -51.5)
-scale = Vector2(881.625, 927)
-mesh = SubResource("QuadMesh_1e5lx")
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="rotatoria_pazza/piatLeft"]
+remote_path = NodePath("..")
+
+[node name="platTop" type="CollisionShape2D" parent="rotatoria_pazza"]
+position = Vector2(0, -458)
+shape = SubResource("RectangleShape2D_5gehn")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="rotatoria_pazza/platTop"]
+modulate = Color(0.25098, 0.721569, 0.498039, 1)
+scale = Vector2(335.469, 20)
+mesh = SubResource("QuadMesh_jm6wi")
+
+[node name="platRight" type="CollisionShape2D" parent="rotatoria_pazza"]
+position = Vector2(458, 0)
+shape = SubResource("RectangleShape2D_ut0x2")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="rotatoria_pazza/platRight"]
+modulate = Color(0.313726, 0.635294, 0.992157, 1)
+scale = Vector2(344, 20)
+mesh = SubResource("QuadMesh_7hgoi")
+
+[node name="platBotttom" type="CollisionShape2D" parent="rotatoria_pazza"]
+position = Vector2(0, 458)
+shape = SubResource("RectangleShape2D_rgoif")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="rotatoria_pazza/platBotttom"]
+modulate = Color(0.772549, 0.592157, 0.196078, 1)
+scale = Vector2(334, 20)
+mesh = SubResource("QuadMesh_im7lt")
 
 [node name="sliderAnimation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -563,8 +633,51 @@ mesh = SubResource("QuadMesh_hytxx")
 [node name="CollisionLeft" type="CollisionShape2D" parent="border"]
 position = Vector2(-10, 1172)
 shape = SubResource("RectangleShape2D_7gvkh")
+debug_color = Color(1, 1, 1, 0.419608)
 
 [node name="CollisionLeft2" type="MeshInstance2D" parent="border"]
 position = Vector2(4464, 1172)
 scale = Vector2(20, 2344)
 mesh = SubResource("QuadMesh_hytxx")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="plat1" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(3341, 2032)
+shape = SubResource("RectangleShape2D_w7jcj")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2/plat1"]
+position = Vector2(-0.000137329, 4.19617e-05)
+scale = Vector2(2170, 20.0001)
+mesh = SubResource("QuadMesh_mxy71")
+
+[node name="plat2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(3152.25, 1783)
+shape = SubResource("RectangleShape2D_2udil")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2/plat2"]
+position = Vector2(-0.249939, 0.5)
+scale = Vector2(1788, 21)
+mesh = SubResource("QuadMesh_iakum")
+
+[node name="plat3" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(2993, 1526)
+shape = SubResource("RectangleShape2D_0u1l0")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2/plat3"]
+position = Vector2(3.05176e-05, -3.73125e-05)
+scale = Vector2(1518, 20)
+mesh = SubResource("QuadMesh_uruxj")
+
+[node name="plat4" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(749, 2099)
+shape = SubResource("RectangleShape2D_k0p52")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2/plat4"]
+position = Vector2(4.94719e-06, 4.19617e-05)
+scale = Vector2(1076, 20.0001)
+mesh = SubResource("QuadMesh_54tj6")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(1506, 1494.22)
+curve = SubResource("Curve2D_wv02p")
