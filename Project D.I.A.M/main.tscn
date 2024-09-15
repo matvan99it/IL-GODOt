@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://44k0wfm0bore"]
+[gd_scene load_steps=44 format=3 uid="uid://44k0wfm0bore"]
 
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="1_5ds2c"]
 [ext_resource type="Script" path="res://main.gd" id="1_6j21x"]
@@ -28,7 +28,7 @@ size = Vector2(1836.75, 20)
 [sub_resource type="LabelSettings" id="LabelSettings_cgjej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6sbu8"]
-size = Vector2(343, 20)
+size = Vector2(326.5, 20)
 
 [sub_resource type="QuadMesh" id="QuadMesh_j6eef"]
 
@@ -46,6 +46,8 @@ size = Vector2(344, 20)
 size = Vector2(344, 20)
 
 [sub_resource type="QuadMesh" id="QuadMesh_im7lt"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_en0tq"]
 
 [sub_resource type="Animation" id="Animation_jnep1"]
 length = 0.001
@@ -268,7 +270,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("rotatoria_pazza/piatLeft:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -280,7 +282,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("rotatoria_pazza/platTop:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -292,7 +294,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("rotatoria_pazza/platRight:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -304,7 +306,7 @@ tracks/3/keys = {
 }
 tracks/4/type = "value"
 tracks/4/imported = false
-tracks/4/enabled = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("rotatoria_pazza/platBotttom:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
@@ -351,11 +353,16 @@ size = Vector2(1076, 20)
 
 [sub_resource type="QuadMesh" id="QuadMesh_54tj6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0t2h"]
+size = Vector2(788, 39.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_2qq2g"]
+
 [sub_resource type="Curve2D" id="Curve2D_wv02p"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0.324595, 457.128, -0.324595, -457.128, -458, 0, 0, 0, 0, 0, 3, -458, -0.00677919, -458.028, 0.00677919, 458.028, 458, 0, 0, 0, 0, 0, 0, 458, -1.54031, 458.191, 1.54031, -458.191, -458, 0)
 }
-point_count = 1
+point_count = 5
 
 [node name="Node" type="Node2D"]
 script = ExtResource("1_6j21x")
@@ -460,7 +467,7 @@ scale = Vector2(0.103167, 1)
 mesh = SubResource("QuadMesh_ppv4k")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(69, 365)
+position = Vector2(607, 1443)
 script = ExtResource("1_c4hes")
 metadata/_edit_group_ = true
 
@@ -552,17 +559,15 @@ shift stading: rotate"
 position = Vector2(1506, 1490)
 
 [node name="piatLeft" type="CollisionShape2D" parent="rotatoria_pazza"]
-position = Vector2(0, 4.22498)
+position = Vector2(-134.114, -319.603)
 rotation = -6.28319
 shape = SubResource("RectangleShape2D_6sbu8")
 
 [node name="platLeft2" type="MeshInstance2D" parent="rotatoria_pazza/piatLeft"]
 modulate = Color(0.615686, 0.156863, 0.54902, 1)
+position = Vector2(4.99997, 0)
 scale = Vector2(334.394, 20)
 mesh = SubResource("QuadMesh_j6eef")
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="rotatoria_pazza/piatLeft"]
-remote_path = NodePath("..")
 
 [node name="platTop" type="CollisionShape2D" parent="rotatoria_pazza"]
 position = Vector2(0, -458)
@@ -590,6 +595,12 @@ shape = SubResource("RectangleShape2D_rgoif")
 modulate = Color(0.772549, 0.592157, 0.196078, 1)
 scale = Vector2(334, 20)
 mesh = SubResource("QuadMesh_im7lt")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="rotatoria_pazza"]
+show_behind_parent = true
+position = Vector2(0.49995, 0.500008)
+scale = Vector2(900, 900)
+mesh = SubResource("QuadMesh_en0tq")
 
 [node name="sliderAnimation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -678,6 +689,27 @@ position = Vector2(4.94719e-06, 4.19617e-05)
 scale = Vector2(1076, 20.0001)
 mesh = SubResource("QuadMesh_54tj6")
 
+[node name="plat5" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(416, 1554)
+shape = SubResource("RectangleShape2D_d0t2h")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2/plat5"]
+position = Vector2(0, -1.90735e-05)
+scale = Vector2(788, 40)
+mesh = SubResource("QuadMesh_2qq2g")
+
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(1506, 1494.22)
 curve = SubResource("Curve2D_wv02p")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-458, -4.76837e-07)
+rotation = -1.56743
+progress = 2906.66
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+position = Vector2(324.91, 322.796)
+rotation = 0.782134
+remote_path = NodePath("../../../rotatoria_pazza/piatLeft")
+update_rotation = false
