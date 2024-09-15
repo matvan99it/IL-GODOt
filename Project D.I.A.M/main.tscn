@@ -1,8 +1,9 @@
-[gd_scene load_steps=43 format=3 uid="uid://44k0wfm0bore"]
+[gd_scene load_steps=32 format=3 uid="uid://44k0wfm0bore"]
 
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="1_5ds2c"]
 [ext_resource type="Script" path="res://main.gd" id="1_6j21x"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_c4hes"]
+[ext_resource type="PackedScene" uid="uid://mjp2e5c74612" path="res://rotatoria_pazza.tscn" id="4_efxse"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0fw2y"]
 
@@ -26,28 +27,6 @@ size = Vector2(1836.75, 20)
 [sub_resource type="QuadMesh" id="QuadMesh_2n31y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cgjej"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sbu8"]
-size = Vector2(335.098, 20)
-
-[sub_resource type="QuadMesh" id="QuadMesh_j6eef"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gehn"]
-size = Vector2(343, 20)
-
-[sub_resource type="QuadMesh" id="QuadMesh_jm6wi"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ut0x2"]
-size = Vector2(344, 20)
-
-[sub_resource type="QuadMesh" id="QuadMesh_7hgoi"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgoif"]
-size = Vector2(344, 20)
-
-[sub_resource type="QuadMesh" id="QuadMesh_im7lt"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_mjjms"]
 
 [sub_resource type="Animation" id="Animation_jnep1"]
 length = 0.001
@@ -75,83 +54,11 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(679, 495)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("rotatoria_pazza/piatLeft/platLeft2:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("rotatoria_pazza/piatLeft:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("rotatoria_pazza:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="Animation" id="Animation_kwo86"]
 resource_name = "rotatoria_pazza"
 length = 8.0
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("rotatoria_pazza/piatLeft/platLeft2:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4, 6, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -1.5708, -3.14159, -4.71239, -6.28319]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("rotatoria_pazza/piatLeft:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 4, 6, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -1.5708, -3.14159, -4.71239, -6.28319]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("rotatoria_pazza:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2, 4, 6, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 1.5708, 3.14159, 4.71239, 6.28319]
-}
 
 [sub_resource type="Animation" id="Animation_ca00s"]
 resource_name = "slide"
@@ -189,142 +96,8 @@ _data = {
 "slide": SubResource("Animation_ca00s")
 }
 
-[sub_resource type="Animation" id="Animation_op8jy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("rotatoria_pazza:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("rotatoria_pazza/piatLeft:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("rotatoria_pazza/platTop:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("rotatoria_pazza/platRight:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("rotatoria_pazza/platBotttom:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_ce08h"]
-resource_name = "rotatoria_pazza"
-length = 8.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("rotatoria_pazza:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("rotatoria_pazza/piatLeft:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -6.28319]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("rotatoria_pazza/platTop:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -6.28319]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("rotatoria_pazza/platRight:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -6.28319]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("rotatoria_pazza/platBotttom:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -6.28319]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxdby"]
-_data = {
-"RESET": SubResource("Animation_op8jy"),
-"rotatoria_pazza": SubResource("Animation_ce08h")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5dga"]
-size = Vector2(4454, 20)
+size = Vector2(6864.5, 20)
 
 [sub_resource type="QuadMesh" id="QuadMesh_fjjqm"]
 
@@ -461,7 +234,7 @@ scale = Vector2(0.103167, 1)
 mesh = SubResource("QuadMesh_ppv4k")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(800, 396)
+position = Vector2(4262, 1868)
 script = ExtResource("1_c4hes")
 metadata/_edit_group_ = true
 
@@ -472,8 +245,6 @@ texture = ExtResource("1_5ds2c")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Player"]
 position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_o2lve")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="slider" type="AnimatableBody2D" parent="."]
 position = Vector2(472, 269)
@@ -549,77 +320,24 @@ offset_bottom = 311.0
 text = "shift while moving: dash
 shift stading: rotate"
 
-[node name="rotatoria_pazza" type="AnimatableBody2D" parent="."]
-position = Vector2(1506, 1490)
-
-[node name="piatLeft" type="CollisionShape2D" parent="rotatoria_pazza"]
-position = Vector2(-458, 0)
-scale = Vector2(0.996725, 0.996725)
-shape = SubResource("RectangleShape2D_6sbu8")
-
-[node name="platLeft2" type="MeshInstance2D" parent="rotatoria_pazza/piatLeft"]
-modulate = Color(0.615686, 0.156863, 0.54902, 1)
-scale = Vector2(334.394, 20)
-mesh = SubResource("QuadMesh_j6eef")
-
-[node name="platTop" type="CollisionShape2D" parent="rotatoria_pazza"]
-position = Vector2(0, -458)
-scale = Vector2(0.996725, 0.996725)
-shape = SubResource("RectangleShape2D_5gehn")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="rotatoria_pazza/platTop"]
-modulate = Color(0.25098, 0.721569, 0.498039, 1)
-scale = Vector2(335.469, 20)
-mesh = SubResource("QuadMesh_jm6wi")
-
-[node name="platRight" type="CollisionShape2D" parent="rotatoria_pazza"]
-position = Vector2(458, 0)
-scale = Vector2(0.996725, 0.996725)
-shape = SubResource("RectangleShape2D_ut0x2")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="rotatoria_pazza/platRight"]
-modulate = Color(0.313726, 0.635294, 0.992157, 1)
-scale = Vector2(344, 20)
-mesh = SubResource("QuadMesh_7hgoi")
-
-[node name="platBotttom" type="CollisionShape2D" parent="rotatoria_pazza"]
-position = Vector2(0, 458)
-scale = Vector2(0.996725, 0.996725)
-shape = SubResource("RectangleShape2D_rgoif")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="rotatoria_pazza/platBotttom"]
-modulate = Color(0.772549, 0.592157, 0.196078, 1)
-scale = Vector2(334, 20)
-mesh = SubResource("QuadMesh_im7lt")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="rotatoria_pazza"]
-position = Vector2(9.00005, -10.5)
-scale = Vector2(408, 349)
-mesh = SubResource("QuadMesh_mjjms")
-
 [node name="sliderAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_bvqpr")
 }
 
-[node name="circleAnimation" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_xxdby")
-}
-
 [node name="border" type="StaticBody2D" parent="."]
 
 [node name="CollisionBottom" type="CollisionShape2D" parent="border"]
-position = Vector2(2227, 2334)
+position = Vector2(3030.5, 2334)
 shape = SubResource("RectangleShape2D_s5dga")
 
 [node name="CollisionBottom2" type="MeshInstance2D" parent="border"]
-position = Vector2(2227, 2334)
-scale = Vector2(4454, 20)
+position = Vector2(3030, 2334)
+scale = Vector2(6060, 20)
 mesh = SubResource("QuadMesh_fjjqm")
 
 [node name="CollisionTop" type="CollisionShape2D" parent="border"]
-position = Vector2(2227, 10)
+position = Vector2(2628.75, 10)
 shape = SubResource("RectangleShape2D_s5dga")
 
 [node name="CollisionTop2" type="MeshInstance2D" parent="border"]
@@ -628,7 +346,7 @@ scale = Vector2(4454, 20)
 mesh = SubResource("QuadMesh_fjjqm")
 
 [node name="CollisionRight" type="CollisionShape2D" parent="border"]
-position = Vector2(4464, 1172)
+position = Vector2(6071, 1172)
 shape = SubResource("RectangleShape2D_7gvkh")
 
 [node name="CollisionRight2" type="MeshInstance2D" parent="border"]
@@ -642,7 +360,7 @@ shape = SubResource("RectangleShape2D_7gvkh")
 debug_color = Color(1, 1, 1, 0.419608)
 
 [node name="CollisionLeft2" type="MeshInstance2D" parent="border"]
-position = Vector2(4464, 1172)
+position = Vector2(6071, 1172)
 scale = Vector2(20, 2344)
 mesh = SubResource("QuadMesh_hytxx")
 
@@ -693,3 +411,9 @@ metadata/_edit_group_ = true
 position = Vector2(0, -1.90735e-05)
 scale = Vector2(788, 40)
 mesh = SubResource("QuadMesh_2qq2g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5032, 1630)
+
+[node name="Rotatoria Pazza" parent="." instance=ExtResource("4_efxse")]
+position = Vector2(4773, 1391)
