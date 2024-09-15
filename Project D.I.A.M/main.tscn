@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://44k0wfm0bore"]
+[gd_scene load_steps=27 format=3 uid="uid://44k0wfm0bore"]
 
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="1_5ds2c"]
 [ext_resource type="Script" path="res://main.gd" id="1_6j21x"]
@@ -21,7 +21,7 @@ size = Vector2(287, 20)
 [sub_resource type="QuadMesh" id="QuadMesh_dkhxp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pnsx"]
-size = Vector2(2024, 20)
+size = Vector2(1724, 20)
 
 [sub_resource type="QuadMesh" id="QuadMesh_2n31y"]
 
@@ -260,6 +260,16 @@ _data = {
 "rotatoria_pazza": SubResource("Animation_ce08h")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5dga"]
+size = Vector2(4454, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_fjjqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gvkh"]
+size = Vector2(20, 2344)
+
+[sub_resource type="QuadMesh" id="QuadMesh_hytxx"]
+
 [node name="Node" type="Node2D"]
 script = ExtResource("1_6j21x")
 
@@ -416,6 +426,45 @@ position = Vector2(1011.75, 10.75)
 scale = Vector2(2024.5, 22.5)
 mesh = SubResource("QuadMesh_2n31y")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1823, 2085)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1012, 11)
+shape = SubResource("RectangleShape2D_2pnsx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2"]
+position = Vector2(1011.75, 10.75)
+scale = Vector2(2024.5, 22.5)
+mesh = SubResource("QuadMesh_2n31y")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(2306, 1797)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1012, 11)
+shape = SubResource("RectangleShape2D_2pnsx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3"]
+position = Vector2(1011.75, 10.75)
+scale = Vector2(2024.5, 22.5)
+mesh = SubResource("QuadMesh_2n31y")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(2711, 1486)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(862, 11)
+shape = SubResource("RectangleShape2D_2pnsx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D4"]
+position = Vector2(862.25, 10.75)
+scale = Vector2(1725.5, 22.5)
+mesh = SubResource("QuadMesh_2n31y")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
@@ -481,3 +530,41 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_xxdby")
 }
+
+[node name="border" type="StaticBody2D" parent="."]
+
+[node name="CollisionBottom" type="CollisionShape2D" parent="border"]
+position = Vector2(2227, 2334)
+shape = SubResource("RectangleShape2D_s5dga")
+
+[node name="CollisionBottom2" type="MeshInstance2D" parent="border"]
+position = Vector2(2227, 2334)
+scale = Vector2(4454, 20)
+mesh = SubResource("QuadMesh_fjjqm")
+
+[node name="CollisionTop" type="CollisionShape2D" parent="border"]
+position = Vector2(2227, 10)
+shape = SubResource("RectangleShape2D_s5dga")
+
+[node name="CollisionTop2" type="MeshInstance2D" parent="border"]
+position = Vector2(2227, 10)
+scale = Vector2(4454, 20)
+mesh = SubResource("QuadMesh_fjjqm")
+
+[node name="CollisionRight" type="CollisionShape2D" parent="border"]
+position = Vector2(4464, 1172)
+shape = SubResource("RectangleShape2D_7gvkh")
+
+[node name="CollisionRight2" type="MeshInstance2D" parent="border"]
+position = Vector2(-10, 1172)
+scale = Vector2(20, 2344)
+mesh = SubResource("QuadMesh_hytxx")
+
+[node name="CollisionLeft" type="CollisionShape2D" parent="border"]
+position = Vector2(-10, 1172)
+shape = SubResource("RectangleShape2D_7gvkh")
+
+[node name="CollisionLeft2" type="MeshInstance2D" parent="border"]
+position = Vector2(4464, 1172)
+scale = Vector2(20, 2344)
+mesh = SubResource("QuadMesh_hytxx")

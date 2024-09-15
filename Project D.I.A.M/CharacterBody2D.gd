@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -600.0
-const SLIDE_SPEED = 500.0
+const JUMP_VELOCITY = -800.0
+const SLIDE_SPEED = 800.0
 const GO_DOWN = 1000.0
 const DASH_DURATION = 0.5
 
