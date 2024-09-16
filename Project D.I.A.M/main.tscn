@@ -423,3 +423,9 @@ position = Vector2(5058, 1742)
 
 [node name="Rotatoria Pazza2" parent="." instance=ExtResource("4_efxse")]
 position = Vector2(1492, 1270)
+
+[node name="EnemySpawn" type="Marker2D" parent="."]
+position = Vector2(3011, 1285)
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 0.5

@@ -5,3 +5,7 @@ res://rotatoria_pazza.tscn
 res://Node.gd
 res://rotatoria_pazza.gd
 res://moving_platform.gd
+res://enemy_spawn.tscn
+res://enemy.tscn
+res://enemy.gd
+res://player.tscn

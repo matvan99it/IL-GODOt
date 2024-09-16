@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1726489523
+::res://::1726494622
 CharacterBody2D.gd::GDScript::-1::1726477377::0::1::::<>CharacterBody2D<>::
 character_body_3d.gd::GDScript::-1::1726132789::0::1::::<>CharacterBody3D<>::
 character_body_3d.tscn::PackedScene::8583129391795346255::1726132748::0::1::::<><>::res://character_body_3d.gd
@@ -7,14 +7,17 @@ CONTRIBUTING.md::TextFile::-1::1726477377::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1726488937::0::1::::<><>::
 icon.svg::CompressedTexture2D::3419071902565505899::1725784019::1725784019::1::::<><>::
 main.gd::GDScript::-1::1726486830::0::1::::<>Node2D<>::
-main.tscn::PackedScene::2095996398962374486::1726489044::0::1::::<><>::uid://boyhu5ujhe1rr::::res://icon.svg<>res://main.gd<>res://CharacterBody2D.gd<>uid://mjp2e5c74612::::res://rotatoria_pazza.tscn
-moving_platform.tscn::PackedScene::2169971786509921619::1726489044::0::1::::<><>::
-Node.gd::GDScript::-1::1726488990::0::1::::<>Node2D<>::
+main.tscn::PackedScene::2095996398962374486::1726493160::0::1::::<><>::uid://boyhu5ujhe1rr::::res://icon.svg<>res://main.gd<>res://CharacterBody2D.gd<>uid://mjp2e5c74612::::res://rotatoria_pazza.tscn
+moving_platform.tscn::PackedScene::2169971786509921619::1726493161::0::1::::<><>::res://moving_platform.gdshader<>res://moving_platform.gd
+Node.gd::GDScript::-1::1726491918::0::1::::<>Node2D<>::
 PathFollow2D.gd::GDScript::-1::1726477377::0::1::::<>PathFollow2D<>::
 README.md::TextFile::-1::1726477377::0::1::::<><>::
 READMECN.md::TextFile::-1::1726477377::0::1::::<><>::
-rotatoria_pazza.gd::GDScript::-1::1726482871::0::1::::<>Node2D<>::
-rotatoria_pazza.tscn::PackedScene::861804751342198963::1726489044::0::1::::<><>::uid://56fea0fe00w2::::res://moving_platform.tscn<>res://Node.gd
+moving_platform.gdshader::Shader::-1::1726494749::0::1::::<><>::
+moving_platform.gd::GDScript::-1::1726493159::0::1::::<>MeshInstance2D<>::
+enemy_spawn.tscn::PackedScene::4347713355075756929::1726494748::0::1::::<><>::
+rotatoria_pazza.gd::GDScript::-1::1726492979::0::1::::<>Node2D<>::
+rotatoria_pazza.tscn::PackedScene::861804751342198963::1726493899::0::1::::<><>::uid://56fea0fe00w2::::res://moving_platform.tscn<>res://Node.gd
 ::res://addons/::1726477382
 ::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/::1726477378
 README.md::TextFile::-1::1726477378::0::1::::<><>::
@@ -747,7 +750,7 @@ level_spritesheet.png::CompressedTexture2D::1540037686999425395::1726477382::172
 phantom_camera_2d_sprite.png::CompressedTexture2D::5528642102483020999::1726477383::1726477456::1::::<><>::
 player_sprite.svg::CompressedTexture2D::8028668484307274850::1726477383::1726477456::1::::<><>::
 sign_prompt.png::CompressedTexture2D::6938279164594692344::1726477383::1726477455::1::::<><>::
-::res://addons/phantom_camera/examples/textures/3D/::1726477456
+::res://addons/phantom_camera/examples/textures/3D/::1726489537
 checker_pattern_dark.png::CompressedTexture2D::6933212860794862990::1726477383::1726489535::1::::<><>::
 target.png::CompressedTexture2D::7181899870028104050::1726477383::1726489537::1::::<><>::
 ::res://addons/phantom_camera/examples/ui/::1726477383
@@ -805,7 +808,7 @@ phantom_camera_host.gd::GDScript::-1::1726477383::0::1::::PhantomCameraHost<>Nod
 ::res://addons/phantom_camera/scripts/resources/::1726477383
 camera_3d_resource.gd::GDScript::-1::1726477383::0::1::::Camera3DResource<>Resource<>res://addons/phantom_camera/icons/phantom_camera_camera_3d_resource.svg::
 tween_resource.gd::GDScript::-1::1726477383::0::1::::PhantomCameraTween<>Resource<>res://addons/phantom_camera/icons/phantom_camera_tween.svg::
-::res://addons/Todo_Manager/::1726489324
+::res://addons/Todo_Manager/::1726494622
 ColourPicker.gd::GDScript::-1::1726477378::0::1::::<>HBoxContainer<>::
 Current.gd::GDScript::-1::1726477378::0::1::::<>Panel<>::
 Dock.gd::GDScript::-1::1726477378::0::1::::<>Control<>::
@@ -831,4 +834,4 @@ TODO_Manager_Logo.png::CompressedTexture2D::7442009898404323008::1726477378::172
 ColourPicker.tscn::PackedScene::2957809393656723737::1726477378::0::1::::<><>::res://addons/Todo_Manager/ColourPicker.gd
 Dock.tscn::PackedScene::4584442902745049483::1726477378::0::1::::<><>::res://addons/Todo_Manager/Dock.gd<>res://addons/Todo_Manager/Project.gd<>res://addons/Todo_Manager/Current.gd
 Pattern.tscn::PackedScene::4056048923411208166::1726477378::0::1::::<><>::res://addons/Todo_Manager/Pattern.gd
-::res://eseguibile/::1726489522
+::res://eseguibile/::1726489538
