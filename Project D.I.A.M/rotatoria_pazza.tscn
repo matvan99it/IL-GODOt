@@ -45,6 +45,51 @@ script = ExtResource("1_86y2u")
 remote_path = NodePath("../../../PlatLeft")
 update_rotation = false
 
+[node name="Path2D2" type="Path2D" parent="."]
+position = Vector2(0, 600)
+rotation = -1.5708
+curve = SubResource("Curve2D_i3m5l")
+metadata/_edit_group_ = true
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(0, 300)
+rotation = -0.785398
+script = ExtResource("1_86y2u")
+
+[node name="remoteBottom" type="RemoteTransform2D" parent="Path2D2/PathFollow2D"]
+remote_path = NodePath("../../../PlatBottom")
+update_rotation = false
+
+[node name="Path2D3" type="Path2D" parent="."]
+position = Vector2(600, 0)
+rotation = 1.5708
+curve = SubResource("Curve2D_i3m5l")
+metadata/_edit_group_ = true
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+position = Vector2(0, 300)
+rotation = -0.785398
+script = ExtResource("1_86y2u")
+
+[node name="remoteTop" type="RemoteTransform2D" parent="Path2D3/PathFollow2D"]
+remote_path = NodePath("../../../PlatTop")
+update_rotation = false
+
+[node name="Path2D4" type="Path2D" parent="."]
+position = Vector2(600, 600)
+rotation = 3.14159
+curve = SubResource("Curve2D_i3m5l")
+metadata/_edit_group_ = true
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
+position = Vector2(0, 300)
+rotation = -0.785398
+script = ExtResource("1_86y2u")
+
+[node name="remoteRight" type="RemoteTransform2D" parent="Path2D4/PathFollow2D"]
+remote_path = NodePath("../../../PlatRight")
+update_rotation = false
+
 [node name="PlatLeft" type="AnimatableBody2D" parent="."]
 position = Vector2(0, 300)
 scale = Vector2(1, 1)
@@ -56,7 +101,7 @@ shape = SubResource("RectangleShape2D_7t5ug")
 mesh = SubResource("QuadMesh_4wvo1")
 
 [node name="PlatRight" type="AnimatableBody2D" parent="."]
-scale = Vector2(1, 1)
+position = Vector2(600, 300)
 
 [node name="platRight" type="CollisionShape2D" parent="PlatRight"]
 scale = Vector2(0.996725, 0.996725)
@@ -68,7 +113,7 @@ scale = Vector2(342.873, 19.9345)
 mesh = SubResource("QuadMesh_aiq30")
 
 [node name="PlatTop" type="AnimatableBody2D" parent="."]
-scale = Vector2(1, 1)
+position = Vector2(300, -1.31134e-05)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="PlatTop"]
 modulate = Color(0.25098, 0.721569, 0.498039, 1)
@@ -78,7 +123,7 @@ mesh = SubResource("QuadMesh_esawo")
 shape = SubResource("RectangleShape2D_y4237")
 
 [node name="PlatBottom" type="AnimatableBody2D" parent="."]
-scale = Vector2(1, 1)
+position = Vector2(300, 600)
 
 [node name="platBotttom" type="CollisionShape2D" parent="PlatBottom"]
 position = Vector2(1.10129, 0.22341)
