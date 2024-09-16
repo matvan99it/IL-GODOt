@@ -9,3 +9,5 @@ res://enemy_spawn.tscn
 res://enemy.tscn
 res://enemy.gd
 res://player.tscn
+res://main.gd
+res://CharacterBody2D.gd

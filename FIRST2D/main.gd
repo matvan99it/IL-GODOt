@@ -35,7 +35,7 @@ func _on_mob_timer_timeout():
 	var mob = mob_scene.instantiate()
 	
 	# Creo la generazione di nemici casuale
-	var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
+	var mob_spawn_location = $MobPath/MobSpawnLocation #get_node("MobPath/MobSpawnLocation")
 	mob_spawn_location.progress_ratio = randf()
 	
 	# Movimento mod perpendicolare

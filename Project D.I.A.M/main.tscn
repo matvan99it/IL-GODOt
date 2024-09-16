@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://44k0wfm0bore"]
+[gd_scene load_steps=34 format=3 uid="uid://44k0wfm0bore"]
 
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="1_5ds2c"]
 [ext_resource type="Script" path="res://main.gd" id="1_6j21x"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_c4hes"]
 [ext_resource type="PackedScene" uid="uid://mjp2e5c74612" path="res://rotatoria_pazza.tscn" id="4_efxse"]
+[ext_resource type="PackedScene" uid="uid://b27cg6sforp66" path="res://enemy.tscn" id="5_ynkom"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0fw2y"]
 
@@ -131,8 +132,15 @@ size = Vector2(788, 39.5)
 
 [sub_resource type="QuadMesh" id="QuadMesh_2qq2g"]
 
-[node name="Node" type="Node2D"]
+[sub_resource type="Curve2D" id="Curve2D_4x0dv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 43, 895, 0, 0, 0, 0, -354, 397, 0, 0, 0, 0, 689, 656, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 43, 895)
+}
+point_count = 5
+
+[node name="Main" type="Node2D"]
 script = ExtResource("1_6j21x")
+mob_scene = ExtResource("5_ynkom")
 
 [node name="platform" type="StaticBody2D" parent="."]
 position = Vector2(6, -1)
@@ -234,7 +242,7 @@ scale = Vector2(0.103167, 1)
 mesh = SubResource("QuadMesh_ppv4k")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(4544, 1919)
+position = Vector2(3142, 1664)
 script = ExtResource("1_c4hes")
 metadata/_edit_group_ = true
 
@@ -415,17 +423,25 @@ position = Vector2(0, -1.90735e-05)
 scale = Vector2(788, 40)
 mesh = SubResource("QuadMesh_2qq2g")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(4544, 1919)
-
 [node name="Rotatoria Pazza" parent="." instance=ExtResource("4_efxse")]
 position = Vector2(5058, 1742)
 
 [node name="Rotatoria Pazza2" parent="." instance=ExtResource("4_efxse")]
 position = Vector2(1492, 1270)
 
-[node name="EnemySpawn" type="Marker2D" parent="."]
+[node name="EnemySpawn" type="Path2D" parent="."]
 position = Vector2(3011, 1285)
+curve = SubResource("Curve2D_4x0dv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpawn"]
+position = Vector2(43, 895)
+rotation = -2.24382
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3142, 1664)
+zoom = Vector2(0.5, 0.5)
+
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
