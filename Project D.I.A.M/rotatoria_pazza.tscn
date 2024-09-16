@@ -1,136 +1,41 @@
-[gd_scene load_steps=11 format=3 uid="uid://mjp2e5c74612"]
+[gd_scene load_steps=3 format=3 uid="uid://mjp2e5c74612"]
 
-[ext_resource type="Script" path="res://PathFollow2D.gd" id="1_86y2u"]
-
-[sub_resource type="Curve2D" id="Curve2D_i3m5l"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 300, -300, 0, 300, 0, 300, 0, 0, 0, 0, 0, 600, 300, 300, 0, -300, 0, 300, 600, 0, 0, 0, 0, 0, 300)
-}
-point_count = 5
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t5ug"]
-size = Vector2(300, 20)
-
-[sub_resource type="QuadMesh" id="QuadMesh_4wvo1"]
-size = Vector2(300, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yaloy"]
-size = Vector2(344, 20)
-
-[sub_resource type="QuadMesh" id="QuadMesh_aiq30"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_esawo"]
-size = Vector2(300, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4237"]
-size = Vector2(300, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6flae"]
-size = Vector2(300, 20)
-
-[sub_resource type="QuadMesh" id="QuadMesh_s5w61"]
+[ext_resource type="PackedScene" uid="uid://56fea0fe00w2" path="res://moving_platform.tscn" id="1_6huq3"]
+[ext_resource type="Script" path="res://Node.gd" id="2_rrub5"]
 
 [node name="Rotatoria Pazza" type="Node2D"]
 
-[node name="Path2D1" type="Path2D" parent="."]
-curve = SubResource("Curve2D_i3m5l")
-metadata/_edit_group_ = true
+[node name="Node" type="Node2D" parent="."]
+script = ExtResource("2_rrub5")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D1"]
+[node name="remoteBottom" type="RemoteTransform2D" parent="Node"]
 position = Vector2(0, 300)
-rotation = -0.785398
-script = ExtResource("1_86y2u")
-
-[node name="remoteLeft" type="RemoteTransform2D" parent="Path2D1/PathFollow2D"]
-remote_path = NodePath("../../../PlatLeft")
+remote_path = NodePath("../../Moving_platform")
 update_rotation = false
 
-[node name="Path2D2" type="Path2D" parent="."]
-position = Vector2(0, 600)
-rotation = -1.5708
-curve = SubResource("Curve2D_i3m5l")
-metadata/_edit_group_ = true
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
-position = Vector2(0, 300)
-rotation = -0.785398
-script = ExtResource("1_86y2u")
-
-[node name="remoteBottom" type="RemoteTransform2D" parent="Path2D2/PathFollow2D"]
-remote_path = NodePath("../../../PlatBottom")
+[node name="remoteTop" type="RemoteTransform2D" parent="Node"]
+position = Vector2(0, -300)
+remote_path = NodePath("../../Moving_platform2")
 update_rotation = false
 
-[node name="Path2D3" type="Path2D" parent="."]
-position = Vector2(600, 0)
-rotation = 1.5708
-curve = SubResource("Curve2D_i3m5l")
-metadata/_edit_group_ = true
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
-position = Vector2(0, 300)
-rotation = -0.785398
-script = ExtResource("1_86y2u")
-
-[node name="remoteTop" type="RemoteTransform2D" parent="Path2D3/PathFollow2D"]
-remote_path = NodePath("../../../PlatTop")
+[node name="remoteRight" type="RemoteTransform2D" parent="Node"]
+position = Vector2(-300, 0)
+remote_path = NodePath("../../Moving_platform3")
 update_rotation = false
 
-[node name="Path2D4" type="Path2D" parent="."]
-position = Vector2(600, 600)
-rotation = 3.14159
-curve = SubResource("Curve2D_i3m5l")
-metadata/_edit_group_ = true
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
-position = Vector2(0, 300)
-rotation = -0.785398
-script = ExtResource("1_86y2u")
-
-[node name="remoteRight" type="RemoteTransform2D" parent="Path2D4/PathFollow2D"]
-remote_path = NodePath("../../../PlatRight")
+[node name="remoteLeft" type="RemoteTransform2D" parent="Node"]
+position = Vector2(300, 0)
+remote_path = NodePath("../../Moving_platform4")
 update_rotation = false
 
-[node name="PlatLeft" type="AnimatableBody2D" parent="."]
+[node name="Moving_platform" parent="." instance=ExtResource("1_6huq3")]
 position = Vector2(0, 300)
-scale = Vector2(1, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatLeft"]
-shape = SubResource("RectangleShape2D_7t5ug")
+[node name="Moving_platform2" parent="." instance=ExtResource("1_6huq3")]
+position = Vector2(0, -300)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="PlatLeft"]
-mesh = SubResource("QuadMesh_4wvo1")
+[node name="Moving_platform3" parent="." instance=ExtResource("1_6huq3")]
+position = Vector2(-300, 0)
 
-[node name="PlatRight" type="AnimatableBody2D" parent="."]
-position = Vector2(600, 300)
-
-[node name="platRight" type="CollisionShape2D" parent="PlatRight"]
-scale = Vector2(0.996725, 0.996725)
-shape = SubResource("RectangleShape2D_yaloy")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="PlatRight"]
-modulate = Color(0.313726, 0.635294, 0.992157, 1)
-scale = Vector2(342.873, 19.9345)
-mesh = SubResource("QuadMesh_aiq30")
-
-[node name="PlatTop" type="AnimatableBody2D" parent="."]
-position = Vector2(300, -1.31134e-05)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="PlatTop"]
-modulate = Color(0.25098, 0.721569, 0.498039, 1)
-mesh = SubResource("QuadMesh_esawo")
-
-[node name="platTop" type="CollisionShape2D" parent="PlatTop"]
-shape = SubResource("RectangleShape2D_y4237")
-
-[node name="PlatBottom" type="AnimatableBody2D" parent="."]
-position = Vector2(300, 600)
-
-[node name="platBotttom" type="CollisionShape2D" parent="PlatBottom"]
-position = Vector2(1.10129, 0.22341)
-scale = Vector2(0.996725, 0.996725)
-shape = SubResource("RectangleShape2D_6flae")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="PlatBottom"]
-modulate = Color(0.772549, 0.592157, 0.196078, 1)
-scale = Vector2(300, 20)
-mesh = SubResource("QuadMesh_s5w61")
+[node name="Moving_platform4" parent="." instance=ExtResource("1_6huq3")]
+position = Vector2(300, 0)

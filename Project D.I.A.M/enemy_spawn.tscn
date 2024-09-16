@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b27cg6sforp66"]
+
+[node name="EnemySpawn" type="Marker2D"]

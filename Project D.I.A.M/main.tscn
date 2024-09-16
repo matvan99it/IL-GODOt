@@ -107,7 +107,7 @@ size = Vector2(20, 2344)
 [sub_resource type="QuadMesh" id="QuadMesh_hytxx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7jcj"]
-size = Vector2(2170, 20)
+size = Vector2(2341, 20)
 
 [sub_resource type="QuadMesh" id="QuadMesh_mxy71"]
 
@@ -234,7 +234,7 @@ scale = Vector2(0.103167, 1)
 mesh = SubResource("QuadMesh_ppv4k")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(4262, 1868)
+position = Vector2(4544, 1919)
 script = ExtResource("1_c4hes")
 metadata/_edit_group_ = true
 
@@ -245,6 +245,9 @@ texture = ExtResource("1_5ds2c")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Player"]
 position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_o2lve")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
 
 [node name="slider" type="AnimatableBody2D" parent="."]
 position = Vector2(472, 269)
@@ -367,12 +370,12 @@ mesh = SubResource("QuadMesh_hytxx")
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="plat1" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(3341, 2032)
+position = Vector2(3426.5, 2032)
 shape = SubResource("RectangleShape2D_w7jcj")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2/plat1"]
-position = Vector2(-0.000137329, 4.19617e-05)
-scale = Vector2(2170, 20.0001)
+position = Vector2(51.0001, 4.19617e-05)
+scale = Vector2(2272, 20.0001)
 mesh = SubResource("QuadMesh_mxy71")
 
 [node name="plat2" type="CollisionShape2D" parent="StaticBody2D2"]
@@ -413,7 +416,10 @@ scale = Vector2(788, 40)
 mesh = SubResource("QuadMesh_2qq2g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(5032, 1630)
+position = Vector2(4544, 1919)
 
 [node name="Rotatoria Pazza" parent="." instance=ExtResource("4_efxse")]
-position = Vector2(4773, 1391)
+position = Vector2(5058, 1742)
+
+[node name="Rotatoria Pazza2" parent="." instance=ExtResource("4_efxse")]
+position = Vector2(1492, 1270)

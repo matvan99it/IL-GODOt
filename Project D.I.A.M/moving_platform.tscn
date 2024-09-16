@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://56fea0fe00w2"]
+
+[ext_resource type="Shader" path="res://moving_platform.gdshader" id="1_033pq"]
+[ext_resource type="Script" path="res://moving_platform.gd" id="1_vklnu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t5ug"]
+size = Vector2(300, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g5i0j"]
+shader = ExtResource("1_033pq")
+shader_parameter/seed = null
+
+[sub_resource type="QuadMesh" id="QuadMesh_4wvo1"]
+size = Vector2(300, 20)
+
+[node name="Moving_platform" type="AnimatableBody2D" groups=["moving_platform"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+top_level = true
+shape = SubResource("RectangleShape2D_7t5ug")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_g5i0j")
+mesh = SubResource("QuadMesh_4wvo1")
+script = ExtResource("1_vklnu")

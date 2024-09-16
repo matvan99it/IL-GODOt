@@ -1,17 +1,20 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1726477435
+::res://::1726489523
 CharacterBody2D.gd::GDScript::-1::1726477377::0::1::::<>CharacterBody2D<>::
 character_body_3d.gd::GDScript::-1::1726132789::0::1::::<>CharacterBody3D<>::
 character_body_3d.tscn::PackedScene::8583129391795346255::1726132748::0::1::::<><>::res://character_body_3d.gd
 CONTRIBUTING.md::TextFile::-1::1726477377::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1726477385::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1726488937::0::1::::<><>::
 icon.svg::CompressedTexture2D::3419071902565505899::1725784019::1725784019::1::::<><>::
-main.gd::GDScript::-1::1726477385::0::1::::<>Node2D<>::
-main.tscn::PackedScene::2095996398962374486::1726477385::0::1::::<><>::uid://boyhu5ujhe1rr::::res://icon.svg<>res://main.gd<>res://CharacterBody2D.gd<>uid://mjp2e5c74612::::res://rotatoria_pazza.tscn
+main.gd::GDScript::-1::1726486830::0::1::::<>Node2D<>::
+main.tscn::PackedScene::2095996398962374486::1726489044::0::1::::<><>::uid://boyhu5ujhe1rr::::res://icon.svg<>res://main.gd<>res://CharacterBody2D.gd<>uid://mjp2e5c74612::::res://rotatoria_pazza.tscn
+moving_platform.tscn::PackedScene::2169971786509921619::1726489044::0::1::::<><>::
+Node.gd::GDScript::-1::1726488990::0::1::::<>Node2D<>::
 PathFollow2D.gd::GDScript::-1::1726477377::0::1::::<>PathFollow2D<>::
 README.md::TextFile::-1::1726477377::0::1::::<><>::
 READMECN.md::TextFile::-1::1726477377::0::1::::<><>::
-rotatoria_pazza.tscn::PackedScene::861804751342198963::1726477385::0::1::::<><>::res://PathFollow2D.gd
+rotatoria_pazza.gd::GDScript::-1::1726482871::0::1::::<>Node2D<>::
+rotatoria_pazza.tscn::PackedScene::861804751342198963::1726489044::0::1::::<><>::uid://56fea0fe00w2::::res://moving_platform.tscn<>res://Node.gd
 ::res://addons/::1726477382
 ::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/::1726477378
 README.md::TextFile::-1::1726477378::0::1::::<><>::
@@ -39,12 +42,12 @@ Welcome.md::TextFile::-1::1726477379::0::1::::<><>::
 ::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Content/Events/CustomEvents/::1726477378
 CreateCustomEvents.md::TextFile::-1::1726477378::0::1::::<><>::
 ImportCustomEvents.md::TextFile::-1::1726477378::0::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Content/Events/CustomEvents/Images/::1726477378
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Content/Events/CustomEvents/Images/::1726477457
 CreationProcess.PNG::CompressedTexture2D::8241932979712753225::1726477378::1726477457::1::::<><>::
 CustomEventsShowOff.PNG::CompressedTexture2D::3078437011401252824::1726477378::1726477457::1::::<><>::
 EventBlock.png::CompressedTexture2D::3187335599685569413::1726477378::1726477457::1::::<><>::
 EventBlock_EventData.PNG::CompressedTexture2D::722329118672391554::1726477378::1726477457::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Content/Events/Images/::1726477379
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Content/Events/Images/::1726477458
 audio_event.png::CompressedTexture2D::4542271710041979062::1726477379::1726477457::1::::<><>::
 Call_Node.PNG::CompressedTexture2D::8921522945021208351::1726477378::1726477457::1::::<><>::
 Event_Change_Timeline.PNG::CompressedTexture2D::3722063931357396410::1726477378::1726477457::1::::<><>::
@@ -79,7 +82,7 @@ resolution-small-dialog-big.md::TextFile::-1::1726477379::0::1::::<><>::
 Signals.md::TextFile::-1::1726477379::0::1::::<><>::
 touch-support-tutorial.md::TextFile::-1::1726477379::0::1::::<><>::
 why-not-graph-nodes.md::TextFile::-1::1726477379::0::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Content/Images/::1726477379
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Content/Images/::1726477456
 dialogic-hero-1.3.png::CompressedTexture2D::1922293935282916407::1726477379::1726477456::1::::<><>::
 ::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Content/Reference/::1726477379
 000.md::TextFile::-1::1726477379::0::1::::<><>::
@@ -88,7 +91,7 @@ Character.md::TextFile::-1::1726477379::0::1::::<><>::
 History.md::TextFile::-1::1726477379::0::1::::<><>::
 Theme.md::TextFile::-1::1726477379::0::1::::<><>::
 Timeline.md::TextFile::-1::1726477379::0::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Content/Reference/Images/::1726477379
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Content/Reference/Images/::1726477457
 history_button_positions.png::CompressedTexture2D::6205595109320720472::1726477379::1726477456::1::::<><>::
 history_character_color_example.png::CompressedTexture2D::5027081961108623450::1726477379::1726477456::1::::<><>::
 history_log_margin.png::CompressedTexture2D::4583466537886696042::1726477379::1726477456::1::::<><>::
@@ -106,7 +109,7 @@ Saving.md::TextFile::-1::1726477379::0::1::::<><>::
 Updating.md::TextFile::-1::1726477379::0::1::::<><>::
 Values.md::TextFile::-1::1726477379::0::1::::<><>::
 VoiceLines.md::TextFile::-1::1726477379::0::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Content/Tutorials/Images/::1726477379
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Content/Tutorials/Images/::1726477457
 Character_Editor_With_Portrait.PNG::CompressedTexture2D::4163340305841624054::1726477379::1726477457::1::::<><>::
 Dialogic_Tab.PNG::CompressedTexture2D::1195741661356582603::1726477379::1726477457::1::::<><>::
 Empty_Character_Editor.PNG::CompressedTexture2D::7715997729143288241::1726477379::1726477457::1::::<><>::
@@ -135,7 +138,7 @@ DocumentationH2.tres::FontFile::-1::1726477379::0::1::::<><>::res://addons/dialo
 DocumentationH3.tres::FontFile::-1::1726477379::0::1::::<><>::res://addons/dialogic/Documentation/Theme/Font/NotoSans-Bold.ttf
 DocumentationH4.tres::FontFile::-1::1726477379::0::1::::<><>::res://addons/dialogic/Documentation/Theme/Font/NotoSans-BoldItalic.ttf
 DocumentationH5.tres::FontFile::-1::1726477379::0::1::::<><>::res://addons/dialogic/Documentation/Theme/Font/NotoSans-Italic.ttf
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Theme/Font/::1726477379
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Documentation/Theme/Font/::1726477452
 LICENSE.txt::TextFile::-1::1726477379::0::1::::<><>::
 NotoSans-Bold.ttf::FontFile::4065388857162339593::1726477379::1726477452::1::::<><>::
 NotoSans-BoldItalic.ttf::FontFile::8345131841571093575::1726477379::1726477452::1::::<><>::
@@ -340,7 +343,7 @@ TimelineTestingScene.tscn::PackedScene::-1::1726477381::0::1::::<><>::res://addo
 ValueEditor.gd::GDScript::-1::1726477381::0::1::::<>RefCounted<>::
 ValueEditor.tscn::PackedScene::-1::1726477381::0::1::::<><>::res://addons/dialogic/Editor/ValueEditor/ValueEditor.gd<>res://addons/dialogic/Editor/Common/TLabel.tscn
 ::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/::1726477381
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/backgrounds/::1726477381
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/backgrounds/::1726477459
 background-1.png::CompressedTexture2D::2685261590049451340::1726477381::1726477457::1::::<><>::
 background-2.png::CompressedTexture2D::4722547630845570482::1726477381::1726477459::1::::<><>::
 GlossaryBackground.tres::StyleBoxFlat::-1::1726477381::0::1::::<><>::
@@ -355,7 +358,7 @@ DefaultFont.tres::FontFile::-1::1726477381::0::1::::<><>::res://addons/dialogic/
 DefaultItalicFont.tres::FontFile::-1::1726477381::0::1::::<><>::res://addons/dialogic/Example Assets/Fonts/Overlock/Overlock-Italic.ttf
 GlossaryFont.tres::FontFile::-1::1726477381::0::1::::<><>::res://addons/dialogic/Example Assets/Fonts/Overlock/Overlock-Black.ttf
 NameFont.tres::FontFile::-1::1726477381::0::1::::<><>::res://addons/dialogic/Example Assets/Fonts/Overlock/Overlock-Black.ttf
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/Fonts/Overlock/::1726477381
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/Fonts/Overlock/::1726477452
 OFL.txt::TextFile::-1::1726477381::0::1::::<><>::
 Overlock-Black.ttf::FontFile::3023462750574925688::1726477381::1726477452::1::::<><>::
 Overlock-BlackItalic.ttf::FontFile::8612631854018294476::1726477381::1726477452::1::::<><>::
@@ -371,15 +374,15 @@ HistoryButton.tscn::PackedScene::-1::1726477381::0::1::::<><>::res://addons/dial
 HistoryReturnButton.tscn::PackedScene::-1::1726477381::0::1::::<><>::res://addons/dialogic/Example Assets/History/HistoryButton-theme.tres
 HistoryRow.gd::GDScript::-1::1726477381::0::1::::<>RefCounted<>::
 HistoryRow.tscn::PackedScene::-1::1726477381::0::1::::<><>::res://addons/dialogic/Example Assets/History/HistoryRow.gd<>res://addons/dialogic/Example Assets/backgrounds/background-2.png
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/next-indicator/::1726477381
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/next-indicator/::1726477459
 next-indicator.png::CompressedTexture2D::4739170820839993052::1726477381::1726477459::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/portraits/::1726477381
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/portraits/::1726477459
 df-1.png::CompressedTexture2D::6476508502055136208::1726477381::1726477459::1::::<><>::
 df-2.png::CompressedTexture2D::6293807705087422481::1726477381::1726477459::1::::<><>::
 df-3.png::CompressedTexture2D::3516392712280320681::1726477381::1726477459::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/Sound Effects/::1726477381
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/Sound Effects/::1726477460
 Beep.wav::AudioStreamWAV::8815180728219657200::1726477381::1726477460::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/Sound Effects/Keyboard Noises/::1726477381
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/Sound Effects/Keyboard Noises/::1726477459
 LICENSE.txt::TextFile::-1::1726477381::0::1::::<><>::
 typing1.wav::AudioStreamWAV::6476160160993599567::1726477381::1726477459::1::::<><>::
 typing2.wav::AudioStreamWAV::5570619280334846997::1726477381::1726477459::1::::<><>::
@@ -387,9 +390,9 @@ typing3.wav::AudioStreamWAV::7472191591372631223::1726477381::1726477459::1::::<
 typing4.wav::AudioStreamWAV::1531620917838539256::1726477381::1726477459::1::::<><>::
 typing5.wav::AudioStreamWAV::1494924116515565437::1726477381::1726477459::1::::<><>::
 ::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/::1726477382
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Context Menus/::1726477381
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Context Menus/::1726477459
 Remove.svg::CompressedTexture2D::2068924690239348218::1726477382::1726477459::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Event Icons/::1726477382
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Event Icons/::1726477459
 character-join.svg::CompressedTexture2D::5508637880026456943::1726477382::1726477458::1::::<><>::
 character-leave.svg::CompressedTexture2D::6375581801263257649::1726477382::1726477458::1::::<><>::
 character.svg::CompressedTexture2D::4781683483197068249::1726477382::1726477458::1::::<><>::
@@ -398,7 +401,7 @@ event-solid.svg::CompressedTexture2D::2677733659175916529::1726477382::172647745
 label.svg::CompressedTexture2D::1792421763591044791::1726477382::1726477458::1::::<><>::
 Portrait.svg::CompressedTexture2D::4165191163706608006::1726477382::1726477458::1::::<><>::
 warning.svg::CompressedTexture2D::70294518351010960::1726477382::1726477459::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Event Icons/Main Icons/::1726477382
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Event Icons/Main Icons/::1726477459
 audio-event.svg::CompressedTexture2D::8453206389002899644::1726477382::1726477459::1::::<><>::
 background-music.svg::CompressedTexture2D::1290461121965999096::1726477382::1726477459::1::::<><>::
 call-node.svg::CompressedTexture2D::8965528513453764894::1726477382::1726477459::1::::<><>::
@@ -421,11 +424,11 @@ set-theme.svg::CompressedTexture2D::5492161698961324948::1726477382::1726477458:
 set-value.svg::CompressedTexture2D::3240196411267671529::1726477382::1726477458::1::::<><>::
 text-event.svg::CompressedTexture2D::1563229190456407454::1726477382::1726477458::1::::<><>::
 wait-seconds.svg::CompressedTexture2D::2563662693544699158::1726477382::1726477458::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Pieces/::1726477382
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Pieces/::1726477458
 closed-icon.svg::CompressedTexture2D::7470785818813224869::1726477382::1726477458::1::::<><>::
 expand-icon.svg::CompressedTexture2D::1832099418492552939::1726477382::1726477458::1::::<><>::
 open-icon.svg::CompressedTexture2D::5890524797453746412::1726477382::1726477458::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Plugin/::1726477382
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Plugin/::1726477459
 placeholder.png::CompressedTexture2D::2749594051240300532::1726477382::1726477458::1::::<><>::
 plugin-editor-icon-dark-theme-0.75.svg::CompressedTexture2D::9193923755979841494::1726477382::1726477458::1::::<><>::
 plugin-editor-icon-dark-theme-1.5.svg::CompressedTexture2D::3185725222453764267::1726477382::1726477458::1::::<><>::
@@ -442,7 +445,7 @@ plugin-editor-icon-light-theme-1.svg::CompressedTexture2D::8017624314387482459::
 plugin-editor-icon-light-theme-2.svg::CompressedTexture2D::6116907295966811807::1726477382::1726477454::1::::<><>::
 plugin-editor-icon-light-theme.svg::CompressedTexture2D::6989668374092817943::1726477382::1726477454::1::::<><>::
 white-texture.png::CompressedTexture2D::709687414454620629::1726477382::1726477454::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Resources/::1726477382
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Resources/::1726477454
 character-1.25.svg::CompressedTexture2D::4983864036084373957::1726477382::1726477454::1::::<><>::
 character-2.svg::CompressedTexture2D::2976969706381186505::1726477382::1726477454::1::::<><>::
 character.svg::CompressedTexture2D::2170593765870250672::1726477382::1726477454::1::::<><>::
@@ -455,7 +458,7 @@ theme.svg::CompressedTexture2D::2377838099080178299::1726477382::1726477454::1::
 timeline-1.25.svg::CompressedTexture2D::5566283214012303638::1726477382::1726477454::1::::<><>::
 timeline-2.svg::CompressedTexture2D::5870308244612784762::1726477382::1726477454::1::::<><>::
 timeline.svg::CompressedTexture2D::1478385653755876878::1726477382::1726477454::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Toolbar/::1726477382
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Toolbar/::1726477454
 add-character-1.25.svg::CompressedTexture2D::3357295470208173588::1726477382::1726477454::1::::<><>::
 add-character-2.svg::CompressedTexture2D::7785949356697570871::1726477382::1726477454::1::::<><>::
 add-character.svg::CompressedTexture2D::6329654888202533254::1726477382::1726477454::1::::<><>::
@@ -471,9 +474,9 @@ add-theme.svg::CompressedTexture2D::2876550598119953894::1726477382::1726477453:
 add-timeline-1.25.svg::CompressedTexture2D::5982460118434976100::1726477382::1726477453::1::::<><>::
 add-timeline-2.svg::CompressedTexture2D::453676561770725676::1726477382::1726477453::1::::<><>::
 add-timeline.svg::CompressedTexture2D::1064970630537912459::1726477382::1726477453::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Tutorials/::1726477382
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Images/Tutorials/::1726477453
 arrow-down.svg::CompressedTexture2D::8483176563309641314::1726477382::1726477453::1::::<><>::
-::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/::1726477382
+::res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/::1726477451
 dialogic.csv::Translation::7247676021659749384::1726477382::1726477451::1::::<><>::
 dialogic.de.translation::OptimizedTranslation::7111570608347015803::1726477451::0::1::::<><>::
 dialogic.en.translation::OptimizedTranslation::6214725654375940532::1726477451::0::1::::<><>::
@@ -560,7 +563,7 @@ DialogicParser.gd::GDScript::-1::1726477382::0::1::::DialogicParser<>Node<>::
 grid.gd::GDScript::-1::1726477378::0::1::::GaeaGrid<>Resource<>::
 plugin.cfg::TextFile::-1::1726477378::0::1::::<><>::
 plugin.gd::GDScript::-1::1726477378::0::1::::<>EditorPlugin<>::
-::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/editor/::1726477377
+::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/editor/::1726477453
 clear.svg::CompressedTexture2D::929589438693249537::1726477377::1726477453::1::::<><>::
 download_update_panel.gd::GDScript::-1::1726477377::0::1::::<>Control<>::
 download_update_panel.tscn::PackedScene::2207553941160856703::1726477377::0::1::::<><>::uid://b4nwpbrra72fj::::res://addons/gaea/editor/logo.png<>res://addons/gaea/editor/download_update_panel.gd
@@ -571,7 +574,7 @@ reload.svg::CompressedTexture2D::6927396231625136354::1726477377::1726477453::1:
 threshold_visualizer.gd::GDScript::-1::1726477377::0::1::::<>TextureRect<>::
 update_button.gd::GDScript::-1::1726477377::0::1::::<>Button<>::
 update_button.tscn::PackedScene::1924680899962474071::1726477377::0::1::::<><>::res://addons/gaea/editor/update_button.gd<>uid://6pmddcctde0v::::res://addons/gaea/editor/download_update_panel.tscn
-::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/::1726477378
+::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/::1726477455
 chunk_aware_generator.svg::CompressedTexture2D::7420380909349943296::1726477378::1726477455::1::::<><>::
 generator.gd::GDScript::-1::1726477378::0::1::::GaeaGenerator<>Node<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/generator.svg::
 generator.svg::CompressedTexture2D::1006041081659847905::1726477378::1726477455::1::::<><>::
@@ -581,24 +584,24 @@ chunk_aware_generator_2d.gd::GDScript::-1::1726477377::0::1::::ChunkAwareGenerat
 generator_2d.gd::GDScript::-1::1726477377::0::1::::GaeaGenerator2D<>GaeaGenerator<>::
 generator_settings_2d.gd::GDScript::-1::1726477378::0::1::::GeneratorSettings2D<>Resource<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/generator_settings.svg::
 grid_2d.gd::GDScript::-1::1726477378::0::1::::GaeaGrid2D<>GaeaGrid<>::
-::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/cellular_generator/::1726477377
+::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/cellular_generator/::1726477453
 cellular_generator.gd::GDScript::-1::1726477377::0::1::::CellularGenerator<>GaeaGenerator2D<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/cellular_generator/cellular_generator.svg::
 cellular_generator.svg::CompressedTexture2D::6459868105399393949::1726477377::1726477453::1::::<><>::
 cellular_generator_settings.gd::GDScript::-1::1726477377::0::1::::CellularGeneratorSettings<>GeneratorSettings2D<>::
-::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/heightmap_generator/::1726477378
+::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/heightmap_generator/::1726477453
 heightmap_generator_2d.gd::GDScript::-1::1726477378::0::1::::HeightmapGenerator2D<>ChunkAwareGenerator2D<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/heightmap_generator/heightmap_generator_2d.svg::
 heightmap_generator_2d.svg::CompressedTexture2D::8616625348799570060::1726477378::1726477453::1::::<><>::
 heightmap_generator_2d_settings.gd::GDScript::-1::1726477378::0::1::::HeightmapGenerator2DSettings<>GeneratorSettings2D<>::
-::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/noise_generator/::1726477378
+::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/noise_generator/::1726477453
 noise_generator.gd::GDScript::-1::1726477378::0::1::::NoiseGenerator<>ChunkAwareGenerator2D<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/noise_generator/noise_generator.svg::
 noise_generator.svg::CompressedTexture2D::1407409971879716631::1726477378::1726477453::1::::<><>::
 noise_generator_data.gd::GDScript::-1::1726477378::0::1::::NoiseGeneratorData<>Resource<>::
 noise_generator_settings.gd::GDScript::-1::1726477378::0::1::::NoiseGeneratorSettings<>GeneratorSettings2D<>::
-::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/walker_generator/::1726477378
+::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/walker_generator/::1726477455
 walker_generator.gd::GDScript::-1::1726477378::0::1::::WalkerGenerator<>GaeaGenerator2D<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/walker_generator/walker_generator.svg::
 walker_generator.svg::CompressedTexture2D::8327316785072680897::1726477378::1726477455::1::::<><>::
 walker_generator_settings.gd::GDScript::-1::1726477378::0::1::::WalkerGeneratorSettings<>GeneratorSettings2D<>::
-::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/wave_function_generator/::1726477378
+::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/wave_function_generator/::1726477455
 wave_function_2d_entry.gd::GDScript::-1::1726477378::0::1::::WaveFunction2DEntry<>Resource<>::
 wave_function_generator.svg::CompressedTexture2D::8739705764326112478::1726477378::1726477455::1::::<><>::
 wave_function_generator_2d.gd::GDScript::-1::1726477378::0::1::::WaveFunctionGenerator2D<>GaeaGenerator2D<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/generators/2D/wave_function_generator/wave_function_generator.svg::
@@ -613,7 +616,7 @@ heightmap_generator_3d.gd::GDScript::-1::1726477378::0::1::::HeightmapGenerator3
 heightmap_generator_3d_settings.gd::GDScript::-1::1726477378::0::1::::HeightmapGenerator3DSettings<>GeneratorSettings3D<>::
 ::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/modifiers/::1726477378
 modifier.gd::GDScript::-1::1726477378::0::1::::Modifier<>Resource<>::
-::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/modifiers/2D/::1726477378
+::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/modifiers/2D/::1726477456
 advanced_modifier.gd::GDScript::-1::1726477378::0::1::::AdvancedModifier2D<>ChunkAwareModifier2D<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/modifiers/2D/advanced_modifier.svg::
 advanced_modifier.svg::CompressedTexture2D::1418606028755280537::1726477378::1726477455::1::::<><>::
 carver.gd::GDScript::-1::1726477378::0::1::::Carver<>ChunkAwareModifier2D<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/modifiers/2D/carver.svg::
@@ -647,19 +650,19 @@ noise_painter_3d.gd::GDScript::-1::1726477378::0::1::::NoisePainter3D<>ChunkAwar
 ::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/modifiers/3D/conditions/::1726477378
 condition_3d.gd::GDScript::-1::1726477378::0::1::::AdvancedModifierCondition3D<>AdvancedModifierCondition<>::
 offset_condition_3d.gd::GDScript::-1::1726477378::0::1::::OffsetCondition3D<>AdvancedModifierCondition3D<>::
-::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/modifiers/conditions/::1726477378
+::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/modifiers/conditions/::1726477456
 chance_condition.gd::GDScript::-1::1726477378::0::1::::ChanceCondition<>AdvancedModifierCondition<>::
 condition.gd::GDScript::-1::1726477378::0::1::::AdvancedModifierCondition<>Resource<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/modifiers/conditions/condition.svg::
 condition.svg::CompressedTexture2D::3638414899059262393::1726477378::1726477456::1::::<><>::
 noise_condition.gd::GDScript::-1::1726477378::0::1::::NoiseCondition<>AdvancedModifierCondition<>::
-::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/others/::1726477378
+::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/others/::1726477456
 chunk_loader.svg::CompressedTexture2D::6613462891516991688::1726477378::1726477456::1::::<><>::
 chunk_loader_2d.gd::GDScript::-1::1726477378::0::1::::ChunkLoader2D<>Node2D<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/others/chunk_loader.svg::
 chunk_loader_3d.gd::GDScript::-1::1726477378::0::1::::ChunkLoader3D<>Node3D<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/others/chunk_loader.svg::
 falloff_map.gd::GDScript::-1::1726477378::0::1::::FalloffMap<>Resource<>::
 threaded_chunk_loader_2d.gd::GDScript::-1::1726477378::0::1::::ThreadedChunkLoader2D<>ChunkLoader2D<>::
 threaded_chunk_loader_3d.gd::GDScript::-1::1726477378::0::1::::ThreadedChunkLoader3D<>ChunkLoader3D<>::
-::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/renderers/::1726477378
+::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/renderers/::1726477456
 gaea_renderer.gd::GDScript::-1::1726477378::0::1::::GaeaRenderer<>Node<>res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/renderers/gaea_renderer.svg::
 gaea_renderer.svg::CompressedTexture2D::5716967759388204781::1726477378::1726477456::1::::<><>::
 ::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/renderers/2D/::1726477378
@@ -670,7 +673,7 @@ tilemap_gaea_renderer.gd::GDScript::-1::1726477378::0::1::::TilemapGaeaRenderer<
 gaea_renderer_3d.gd::GDScript::-1::1726477378::0::1::::GaeaRenderer3D<>GaeaRenderer<>::
 gridmap_gaea_renderer.gd::GDScript::-1::1726477378::0::1::::GridmapGaeaRenderer<>GaeaRenderer3D<>::
 threaded_gridmap_gaea_renderer.gd::GDScript::-1::1726477378::0::1::::ThreadedGridmapGaeaRenderer<>GridmapGaeaRenderer<>::
-::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/tile_info/::1726477378
+::res://addons/Gaea-e6ec383cf758027a077c5df4d67b8271c022a329/addons/gaea/tile_info/::1726477456
 gridmap_tile_info.gd::GDScript::-1::1726477378::0::1::::GridmapTileInfo<>TileInfo<>::
 random_tile_info.gd::GDScript::-1::1726477378::0::1::::RandomTileInfo<>TileInfo<>::
 tilemap_tile_info.gd::GDScript::-1::1726477378::0::1::::TilemapTileInfo<>TileInfo<>::
@@ -679,7 +682,7 @@ tile_info.svg::CompressedTexture2D::8674208619682663470::1726477378::1726477456:
 ::res://addons/phantom_camera/::1726477383
 plugin.cfg::TextFile::-1::1726477383::0::1::::<><>::
 plugin.gd::GDScript::-1::1726477383::0::1::::<>EditorPlugin<>::
-::res://addons/phantom_camera/assets/::1726477382
+::res://addons/phantom_camera/assets/::1726477456
 PhantomCameraBtnPrimaryDefault.png::CompressedTexture2D::4685047900626947832::1726477382::1726477456::1::::<><>::
 PhantomCameraBtnPrimaryHover.png::CompressedTexture2D::6888049131666199217::1726477382::1726477456::1::::<><>::
 ::res://addons/phantom_camera/examples/::1726477383
@@ -719,11 +722,11 @@ playable_character_third_person_3d.tscn::PackedScene::880036841523467845::172647
 3d_cube_dark.tscn::PackedScene::5382540856779240661::1726477382::0::1::::<><>::uid://c7ja4woxol8yc::::res://addons/phantom_camera/examples/textures/3D/checker_pattern_dark.png
 ::res://addons/phantom_camera/examples/resources/::1726477382
 ::res://addons/phantom_camera/examples/resources/tween/::1726477382
-fixed_camera_tween.tres::Resource/PhantomCameraTween::6643106748633668090::1726477382::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
-inventory_phantom_camera_2d_tween.tres::Resource/PhantomCameraTweenResource::5568910264892302066::1726477382::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
-item_focus_phantom_camera_2d_tween.tres::Resource/PhantomCameraTweenResource::5058781781655307589::1726477382::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
-player_phantom_camera_2d_tween.tres::Resource/PhantomCameraTween::9514768340188899::1726477382::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
-player_phantom_camera_3d_tween.tres::Resource/PhantomCameraTween::5865226110262250054::1726477382::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
+fixed_camera_tween.tres::Resource/Resource::6643106748633668090::1726477382::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
+inventory_phantom_camera_2d_tween.tres::Resource/Resource::5568910264892302066::1726477382::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
+item_focus_phantom_camera_2d_tween.tres::Resource/Resource::5058781781655307589::1726477382::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
+player_phantom_camera_2d_tween.tres::Resource/Resource::9514768340188899::1726477382::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
+player_phantom_camera_3d_tween.tres::Resource/Resource::5865226110262250054::1726477382::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
 ::res://addons/phantom_camera/examples/scripts/::1726477382
 ::res://addons/phantom_camera/examples/scripts/2D/::1726477382
 2d_room_limit_tween.gd::GDScript::-1::1726477382::0::1::::<>Node2D<>::
@@ -738,37 +741,37 @@ path_follow.gd::GDScript::-1::1726477382::0::1::::<>Node<>::
 player_controller.gd::GDScript::-1::1726477382::0::1::::<>CharacterBody3D<>::
 player_controller_third_person.gd::GDScript::-1::1726477382::0::1::::<><>::
 ::res://addons/phantom_camera/examples/textures/::1726477383
-::res://addons/phantom_camera/examples/textures/2D/::1726477383
+::res://addons/phantom_camera/examples/textures/2D/::1726477456
 inventory_container.png::CompressedTexture2D::3381542043009764267::1726477382::1726477456::1::::<><>::
 level_spritesheet.png::CompressedTexture2D::1540037686999425395::1726477382::1726477456::1::::<><>::
 phantom_camera_2d_sprite.png::CompressedTexture2D::5528642102483020999::1726477383::1726477456::1::::<><>::
 player_sprite.svg::CompressedTexture2D::8028668484307274850::1726477383::1726477456::1::::<><>::
 sign_prompt.png::CompressedTexture2D::6938279164594692344::1726477383::1726477455::1::::<><>::
-::res://addons/phantom_camera/examples/textures/3D/::1726477383
-checker_pattern_dark.png::CompressedTexture2D::6933212860794862990::1726477383::1726477454::1::::<><>::
-target.png::CompressedTexture2D::7181899870028104050::1726477383::1726477456::1::::<><>::
+::res://addons/phantom_camera/examples/textures/3D/::1726477456
+checker_pattern_dark.png::CompressedTexture2D::6933212860794862990::1726477383::1726489535::1::::<><>::
+target.png::CompressedTexture2D::7181899870028104050::1726477383::1726489537::1::::<><>::
 ::res://addons/phantom_camera/examples/ui/::1726477383
 ui_inventory.tscn::PackedScene::7647500821014000442::1726477383::0::1::::<><>::uid://b7cs6me43ufh3::::res://addons/phantom_camera/examples/textures/2D/inventory_container.png<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf
 ui_sign.tscn::PackedScene::596403574585461246::1726477383::0::1::::<><>::uid://bloouh2jtndx1::::res://addons/phantom_camera/examples/textures/2D/sign_prompt.png<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf
-::res://addons/phantom_camera/fonts/::1726477383
+::res://addons/phantom_camera/fonts/::1726477452
 Nunito-Black.ttf::FontFile::8930770153025881014::1726477383::1726477452::1::::<><>::
 Nunito-Regular.ttf::FontFile::5475733456590308508::1726477383::1726477452::1::::<><>::
 ::res://addons/phantom_camera/gizmos/::1726477383
 custom_gizmo.gd::GDScript::-1::1726477383::0::1::::CustomPluginGizmo<>EditorNode3DGizmoPlugin<>::
 phantom_camera_gizmo_plugin_3d.gd::GDScript::-1::1726477383::0::1::::<>CustomPluginGizmo<>::
-::res://addons/phantom_camera/icons/::1726477383
+::res://addons/phantom_camera/icons/::1726481503
 phantom_camera_2d.svg::CompressedTexture2D::7748815196873368610::1726477383::1726477455::1::::<><>::
 phantom_camera_3d.svg::CompressedTexture2D::3472647966901520141::1726477383::1726477455::1::::<><>::
 phantom_camera_camera_3d_resource.svg::CompressedTexture2D::9071903146278565044::1726477383::1726477455::1::::<><>::
-phantom_camera_gizmo.svg::CompressedTexture2D::6443335141797090770::1726477383::1726477455::1::::<><>::
+phantom_camera_gizmo.svg::CompressedTexture2D::6443335141797090770::1726477383::1726481503::1::::<><>::
 phantom_camera_glow_logo.png::CompressedTexture2D::7432659907047456630::1726477383::1726477455::1::::<><>::
 phantom_camera_host.svg::CompressedTexture2D::4252210776831557394::1726477383::1726477455::1::::<><>::
 phantom_camera_logo.png::CompressedTexture2D::7876610058881318954::1726477383::1726477455::1::::<><>::
 phantom_camera_tween.svg::CompressedTexture2D::5829195211071016617::1726477383::1726477455::1::::<><>::
 phantom_camera_updater_panel_icon.svg::CompressedTexture2D::6194586455981359891::1726477383::1726477455::1::::<><>::
-::res://addons/phantom_camera/icons/misc/::1726477383
+::res://addons/phantom_camera/icons/misc/::1726477454
 PriorityOverride.svg::CompressedTexture2D::1780888597705653630::1726477383::1726477454::1::::<><>::
-::res://addons/phantom_camera/icons/viewfinder/::1726477383
+::res://addons/phantom_camera/icons/viewfinder/::1726477455
 Camera2DIcon.svg::CompressedTexture2D::4875973315025162653::1726477383::1726477454::1::::<><>::
 Camera3DIcon.svg::CompressedTexture2D::4894055253326615092::1726477383::1726477454::1::::<><>::
 SceneTypesIcon.svg::CompressedTexture2D::3044809186330940721::1726477383::1726477455::1::::<><>::
@@ -802,7 +805,7 @@ phantom_camera_host.gd::GDScript::-1::1726477383::0::1::::PhantomCameraHost<>Nod
 ::res://addons/phantom_camera/scripts/resources/::1726477383
 camera_3d_resource.gd::GDScript::-1::1726477383::0::1::::Camera3DResource<>Resource<>res://addons/phantom_camera/icons/phantom_camera_camera_3d_resource.svg::
 tween_resource.gd::GDScript::-1::1726477383::0::1::::PhantomCameraTween<>Resource<>res://addons/phantom_camera/icons/phantom_camera_tween.svg::
-::res://addons/Todo_Manager/::1726477434
+::res://addons/Todo_Manager/::1726489324
 ColourPicker.gd::GDScript::-1::1726477378::0::1::::<>HBoxContainer<>::
 Current.gd::GDScript::-1::1726477378::0::1::::<>Panel<>::
 Dock.gd::GDScript::-1::1726477378::0::1::::<>Control<>::
@@ -810,12 +813,12 @@ Pattern.gd::GDScript::-1::1726477378::0::1::::<>HBoxContainer<>::
 plugin.cfg::TextFile::-1::1726477378::0::1::::<><>::
 plugin.gd::GDScript::-1::1726477378::0::1::::<>EditorPlugin<>::
 Project.gd::GDScript::-1::1726477378::0::1::::<>Panel<>::
-todo.cfg::TextFile::-1::1726477434::0::1::::<><>::
+todo.cfg::TextFile::-1::1726489321::0::1::::<><>::
 todoItem_class.gd::GDScript::-1::1726477378::0::1::::<>RefCounted<>::
 todo_class.gd::GDScript::-1::1726477378::0::1::::<>RefCounted<>::
 ::res://addons/Todo_Manager/doc/::1726477378
 example.gd::GDScript::-1::1726477378::0::1::::<>Node<>::
-::res://addons/Todo_Manager/doc/images/::1726477378
+::res://addons/Todo_Manager/doc/images/::1726477456
 example1.png::CompressedTexture2D::2423382408389687069::1726477378::1726477455::1::::<><>::
 example2.png::CompressedTexture2D::2246072417398501653::1726477378::1726477455::1::::<><>::
 Instruct1.png::CompressedTexture2D::7291749741817569433::1726477378::1726477455::1::::<><>::
@@ -828,4 +831,4 @@ TODO_Manager_Logo.png::CompressedTexture2D::7442009898404323008::1726477378::172
 ColourPicker.tscn::PackedScene::2957809393656723737::1726477378::0::1::::<><>::res://addons/Todo_Manager/ColourPicker.gd
 Dock.tscn::PackedScene::4584442902745049483::1726477378::0::1::::<><>::res://addons/Todo_Manager/Dock.gd<>res://addons/Todo_Manager/Project.gd<>res://addons/Todo_Manager/Current.gd
 Pattern.tscn::PackedScene::4056048923411208166::1726477378::0::1::::<><>::res://addons/Todo_Manager/Pattern.gd
-::res://eseguibile/::1726477383
+::res://eseguibile/::1726489522
