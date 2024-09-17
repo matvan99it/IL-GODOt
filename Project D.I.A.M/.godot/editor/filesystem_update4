@@ -1,3 +1,10 @@
+res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.zh_CN.translation
+res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.en.translation
+res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.es.translation
+res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.fr.translation
+res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.de.translation
 res://main.tscn
 res://main.gd
-res://rotatoria_pazza.tscn
+res://todos_perme.txt
+res://todos_perme.gd
+res://sesso_pazzo.gd
