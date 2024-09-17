@@ -1,8 +1,9 @@
+MeshInstance2D
+Marker2D
+Node
+Label
 PathFollow2D
 Path2D
-Marker2D
-MeshInstance2D
-Node
 Camera2D
 Timer
 VisibleOnScreenNotifier2D
@@ -11,4 +12,3 @@ RigidBody2D
 RemoteTransform2D
 Node2D
 AnimatableBody2D
-StaticBody2D

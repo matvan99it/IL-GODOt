@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_6j21x"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_c4hes"]
 [ext_resource type="PackedScene" uid="uid://mjp2e5c74612" path="res://rotatoria_pazza.tscn" id="4_efxse"]
-[ext_resource type="PackedScene" uid="uid://b27cg6sforp66" path="res://enemy.tscn" id="5_ynkom"]
+[ext_resource type="PackedScene" path="res://enemy.tscn" id="5_ynkom"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0fw2y"]
 
@@ -34,7 +34,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("slider:position")
+tracks/0/path = NodePath("Main/slider:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -46,7 +46,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("elevetah:position")
+tracks/1/path = NodePath("Main/elevetah:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -68,7 +68,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("slider:position")
+tracks/0/path = NodePath("Main/slider:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -80,7 +80,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("elevetah:position")
+tracks/1/path = NodePath("Main/elevetah:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -132,13 +132,10 @@ size = Vector2(788, 39.5)
 
 [sub_resource type="QuadMesh" id="QuadMesh_2qq2g"]
 
-[sub_resource type="Curve2D" id="Curve2D_4x0dv"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 43, 895, 0, 0, 0, 0, -354, 397, 0, 0, 0, 0, 689, 656, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 43, 895)
-}
-point_count = 5
+[sub_resource type="QuadMesh" id="QuadMesh_26l06"]
+size = Vector2(30, 30)
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node"]
 script = ExtResource("1_6j21x")
 mob_scene = ExtResource("5_ynkom")
 
@@ -307,6 +304,7 @@ offset_bottom = 256.0
 text = "<- : move left
 -> : move right"
 label_settings = SubResource("LabelSettings_cgjej")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
 offset_left = 504.0
@@ -314,6 +312,7 @@ offset_top = 231.0
 offset_right = 623.0
 offset_bottom = 285.0
 text = "space: jump"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="CanvasLayer"]
 offset_left = 836.0
@@ -322,6 +321,7 @@ offset_right = 972.0
 offset_bottom = 374.0
 text = "in air press down 
 to go down faster"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="CanvasLayer"]
 offset_left = 1070.0
@@ -330,8 +330,18 @@ offset_right = 1189.0
 offset_bottom = 311.0
 text = "shift while moving: dash
 shift stading: rotate"
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelTimer" type="Label" parent="CanvasLayer"]
+offset_left = 3304.0
+offset_top = 1579.0
+offset_right = 3565.0
+offset_bottom = 1692.0
+text = "sesso: "
+metadata/_edit_use_anchors_ = true
 
 [node name="sliderAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_bvqpr")
 }
@@ -427,18 +437,19 @@ mesh = SubResource("QuadMesh_2qq2g")
 position = Vector2(5058, 1742)
 
 [node name="Rotatoria Pazza2" parent="." instance=ExtResource("4_efxse")]
-position = Vector2(1492, 1270)
+position = Vector2(1595, 1344)
 
-[node name="EnemySpawn" type="Path2D" parent="."]
-position = Vector2(3011, 1285)
-curve = SubResource("Curve2D_4x0dv")
+[node name="EnemySpawn" type="Marker2D" parent="."]
+position = Vector2(3035, 1273)
+metadata/_edit_group_ = true
 
-[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpawn"]
-position = Vector2(43, 895)
-rotation = -2.24382
+[node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpawn"]
+mesh = SubResource("QuadMesh_26l06")
+texture = ExtResource("1_5ds2c")
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 0.5
+autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(3142, 1664)

@@ -1,13 +1,3 @@
-res://moving_platform.tscn
-res://moving_platform.gdshader
 res://main.tscn
-res://rotatoria_pazza.tscn
-res://Node.gd
-res://rotatoria_pazza.gd
-res://moving_platform.gd
-res://enemy_spawn.tscn
-res://enemy.tscn
-res://enemy.gd
-res://player.tscn
 res://main.gd
-res://CharacterBody2D.gd
+res://rotatoria_pazza.tscn
