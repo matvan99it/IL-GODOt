@@ -1,7 +1,10 @@
-MeshInstance2D
+Node2D
+CharacterBody2D
 CollisionShape2D
-CollisionPolygon2D
 Area2D
+RemoteTransform2D
+MeshInstance2D
+CollisionPolygon2D
 Marker2D
 Node
 Label
@@ -10,5 +13,3 @@ Path2D
 Camera2D
 Timer
 VisibleOnScreenNotifier2D
-RigidBody2D
-RemoteTransform2D

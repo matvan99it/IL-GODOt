@@ -1,5 +1,5 @@
-extends RigidBody2D
+extends CharacterBody2D
 
-func _on_visible_on_screen_notifier_2d_2_screen_exited():
-	queue_free()
+#func _on_visible_on_screen_notifier_2d_2_screen_exited():
+#	queue_free()
 

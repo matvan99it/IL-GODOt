@@ -1,8 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://44k0wfm0bore"]
+[gd_scene load_steps=33 format=3 uid="uid://44k0wfm0bore"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ibgdh"]
 [ext_resource type="PackedScene" uid="uid://b27cg6sforp66" path="res://scenes/enemy.tscn" id="2_ywjwa"]
-[ext_resource type="Script" path="res://scripts/CharacterBody2D.gd" id="3_i7o7u"]
+[ext_resource type="PackedScene" uid="uid://dlpjneylmq7g1" path="res://scenes/player.tscn" id="3_lxfbs"]
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="4_b4dak"]
 [ext_resource type="PackedScene" uid="uid://mjp2e5c74612" path="res://scenes/rotatoria_pazza.tscn" id="5_yml8t"]
 
@@ -13,9 +13,6 @@ size = Vector2(582, 39)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ppv4k"]
 size = Vector2(1500, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2lve"]
-size = Vector2(128, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5gyc"]
 size = Vector2(287, 20)
@@ -238,18 +235,8 @@ position = Vector2(1541, 305)
 scale = Vector2(0.103167, 1)
 mesh = SubResource("QuadMesh_ppv4k")
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(3142, 1664)
-script = ExtResource("3_i7o7u")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(2, 1)
-texture = ExtResource("4_b4dak")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Player"]
-position = Vector2(3, 0)
-shape = SubResource("RectangleShape2D_o2lve")
+[node name="Player" parent="." instance=ExtResource("3_lxfbs")]
+position = Vector2(3248, 1673)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -452,7 +439,7 @@ wait_time = 0.5
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(3142, 1664)
+position = Vector2(3248, 1673)
 zoom = Vector2(0.5, 0.5)
 
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]

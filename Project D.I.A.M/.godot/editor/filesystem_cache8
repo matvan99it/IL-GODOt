@@ -1,9 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1726742291
+::res://::1726742297
 CONTRIBUTING.md::TextFile::-1::1726388812::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1726246006::0::1::::<><>::
 icon.svg::CompressedTexture2D::3419071902565505899::1725623920::1725623930::1::::<><>::
-moving_platform.gdshader::Shader::-1::1726578191::0::1::::<><>::
 README.md::TextFile::-1::1726388812::0::1::::<><>::
 READMECN.md::TextFile::-1::1726388812::0::1::::<><>::
 ::res://addons/::1726388920
@@ -796,7 +795,7 @@ phantom_camera_host.gd::GDScript::-1::1726388840::0::1::::PhantomCameraHost<>Nod
 ::res://addons/phantom_camera/scripts/resources/::1726388840
 camera_3d_resource.gd::GDScript::-1::1726388840::0::1::::Camera3DResource<>Resource<>res://addons/phantom_camera/icons/phantom_camera_camera_3d_resource.svg::
 tween_resource.gd::GDScript::-1::1726388840::0::1::::PhantomCameraTween<>Resource<>res://addons/phantom_camera/icons/phantom_camera_tween.svg::
-::res://addons/Todo_Manager/::1726742254
+::res://addons/Todo_Manager/::1726742312
 ColourPicker.gd::GDScript::-1::1726388812::0::1::::<>HBoxContainer<>::
 Current.gd::GDScript::-1::1726388812::0::1::::<>Panel<>::
 Dock.gd::GDScript::-1::1726388812::0::1::::<>Control<>::
@@ -804,7 +803,7 @@ Pattern.gd::GDScript::-1::1726388812::0::1::::<>HBoxContainer<>::
 plugin.cfg::TextFile::-1::1726388813::0::1::::<><>::
 plugin.gd::GDScript::-1::1726388813::0::1::::<>EditorPlugin<>::
 Project.gd::GDScript::-1::1726388812::0::1::::<>Panel<>::
-todo.cfg::TextFile::-1::1726742254::0::1::::<><>::
+todo.cfg::TextFile::-1::1726742292::0::1::::<><>::
 todoItem_class.gd::GDScript::-1::1726388813::0::1::::<>RefCounted<>::
 todo_class.gd::GDScript::-1::1726388813::0::1::::<>RefCounted<>::
 ::res://addons/Todo_Manager/doc/::1726388812
@@ -823,11 +822,11 @@ ColourPicker.tscn::PackedScene::2957809393656723737::1726388812::0::1::::<><>::r
 Dock.tscn::PackedScene::4584442902745049483::1726388812::0::1::::<><>::res://addons/Todo_Manager/Dock.gd<>res://addons/Todo_Manager/Project.gd<>res://addons/Todo_Manager/Current.gd
 Pattern.tscn::PackedScene::4056048923411208166::1726388812::0::1::::<><>::res://addons/Todo_Manager/Pattern.gd
 ::res://eseguibile/::1726578191
-::res://scenes/::1726742254
+::res://scenes/::1726742311
 character_body_3d.tscn::PackedScene::8583129391795346255::1726742223::0::1::::<><>::res://scripts/character_body_3d.gd
 enemy.tscn::PackedScene::4347713355075756929::1726742254::0::1::::<><>::res://scripts/enemy.gd
-main.tscn::PackedScene::2095996398962374486::1726742253::0::1::::<><>::res://scripts/main.gd<>uid://b27cg6sforp66::::res://scenes/enemy.tscn<>res://scripts/CharacterBody2D.gd<>uid://boyhu5ujhe1rr::::res://icon.svg<>uid://mjp2e5c74612::::res://scenes/rotatoria_pazza.tscn
-moving_platform.tscn::PackedScene::2169971786509921619::1726742223::0::1::::<><>::res://moving_platform.gdshader<>res://scripts/moving_platform.gd
+main.tscn::PackedScene::2095996398962374486::1726742311::0::1::::<><>::res://scripts/main.gd<>uid://b27cg6sforp66::::res://scenes/enemy.tscn<>res://scripts/CharacterBody2D.gd<>uid://boyhu5ujhe1rr::::res://icon.svg<>uid://mjp2e5c74612::::res://scenes/rotatoria_pazza.tscn
+moving_platform.tscn::PackedScene::2169971786509921619::1726742297::0::1::::<><>::res://shader/moving_platform.gdshader<>res://scripts/moving_platform.gd
 rotatoria_pazza.tscn::PackedScene::861804751342198963::1726742244::0::1::::<><>::uid://56fea0fe00w2::::res://scenes/moving_platform.tscn<>res://scripts/Node.gd
 ::res://scripts/::1726742223
 CharacterBody2D.gd::GDScript::-1::1726389771::0::1::::<>CharacterBody2D<>::
@@ -838,4 +837,5 @@ moving_platform.gd::GDScript::-1::1726578191::0::1::::<>MeshInstance2D<>::
 Node.gd::GDScript::-1::1726578191::0::1::::<>Node2D<>::
 rotatoria_pazza.gd::GDScript::-1::1726578192::0::1::::<>Node2D<>::
 sesso_pazzo.gd::GDScript::-1::1726666854::0::1::::<>Node<>::
-::res://shader/::1726742291
+::res://shader/::1726742311
+moving_platform.gdshader::Shader::-1::1726742311::0::1::::<><>::
