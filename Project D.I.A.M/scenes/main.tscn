@@ -1,10 +1,10 @@
 [gd_scene load_steps=34 format=3 uid="uid://44k0wfm0bore"]
 
-[ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="1_5ds2c"]
-[ext_resource type="Script" path="res://main.gd" id="1_6j21x"]
-[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_c4hes"]
-[ext_resource type="PackedScene" uid="uid://mjp2e5c74612" path="res://rotatoria_pazza.tscn" id="4_efxse"]
-[ext_resource type="PackedScene" uid="uid://b27cg6sforp66" path="res://enemy.tscn" id="5_ynkom"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ibgdh"]
+[ext_resource type="PackedScene" uid="uid://b27cg6sforp66" path="res://scenes/enemy.tscn" id="2_ywjwa"]
+[ext_resource type="Script" path="res://scripts/CharacterBody2D.gd" id="3_i7o7u"]
+[ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="4_b4dak"]
+[ext_resource type="PackedScene" uid="uid://mjp2e5c74612" path="res://scenes/rotatoria_pazza.tscn" id="5_yml8t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0fw2y"]
 
@@ -136,8 +136,8 @@ size = Vector2(788, 39.5)
 size = Vector2(30, 30)
 
 [node name="Main" type="Node"]
-script = ExtResource("1_6j21x")
-mob_scene = ExtResource("5_ynkom")
+script = ExtResource("1_ibgdh")
+mob_scene = ExtResource("2_ywjwa")
 
 [node name="platform" type="StaticBody2D" parent="."]
 position = Vector2(6, -1)
@@ -240,12 +240,12 @@ mesh = SubResource("QuadMesh_ppv4k")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(3142, 1664)
-script = ExtResource("1_c4hes")
+script = ExtResource("3_i7o7u")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(2, 1)
-texture = ExtResource("1_5ds2c")
+texture = ExtResource("4_b4dak")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Player"]
 position = Vector2(3, 0)
@@ -433,10 +433,10 @@ position = Vector2(0, -1.90735e-05)
 scale = Vector2(788, 40)
 mesh = SubResource("QuadMesh_2qq2g")
 
-[node name="Rotatoria Pazza" parent="." instance=ExtResource("4_efxse")]
+[node name="Rotatoria Pazza" parent="." instance=ExtResource("5_yml8t")]
 position = Vector2(5058, 1742)
 
-[node name="Rotatoria Pazza2" parent="." instance=ExtResource("4_efxse")]
+[node name="Rotatoria Pazza2" parent="." instance=ExtResource("5_yml8t")]
 position = Vector2(1595, 1344)
 
 [node name="EnemySpawn" type="Marker2D" parent="."]
@@ -445,7 +445,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpawn"]
 mesh = SubResource("QuadMesh_26l06")
-texture = ExtResource("1_5ds2c")
+texture = ExtResource("4_b4dak")
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 0.5

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://mjp2e5c74612"]
 
-[ext_resource type="PackedScene" path="res://moving_platform.tscn" id="1_6huq3"]
-[ext_resource type="Script" path="res://Node.gd" id="2_rrub5"]
+[ext_resource type="PackedScene" uid="uid://56fea0fe00w2" path="res://scenes/moving_platform.tscn" id="1_6huq3"]
+[ext_resource type="Script" path="res://scripts/Node.gd" id="2_rrub5"]
 
 [node name="Rotatoria Pazza" type="Node2D"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://56fea0fe00w2"]
 
-[ext_resource type="Shader" path="res://moving_platform.gdshader" id="1_033pq"]
-[ext_resource type="Script" path="res://moving_platform.gd" id="1_vklnu"]
+[ext_resource type="Shader" path="res://shader/moving_platform.gdshader" id="1_033pq"]
+[ext_resource type="Script" path="res://scripts/moving_platform.gd" id="1_vklnu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7t5ug"]
 size = Vector2(300, 20)

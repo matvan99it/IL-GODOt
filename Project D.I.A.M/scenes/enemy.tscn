@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://b27cg6sforp66"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_620gs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxdu1"]
+radius = 15.5
+height = 64.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_d3bcm"]
+radius = 15.0
+height = 64.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xjuus"]
+radius = 155.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_auw1a"]
+
+[node name="Enemy" type="RigidBody2D"]
+script = ExtResource("1_620gs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
+visibility_layer = 0
+shape = SubResource("CapsuleShape2D_dxdu1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." groups=["enemy"]]
+shape = SubResource("CapsuleShape2D_dxdu1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("CapsuleMesh_d3bcm")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xjuus")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D"]
+modulate = Color(1, 0.0941176, 1, 0.211765)
+position = Vector2(0.500008, -0.499951)
+scale = Vector2(309.35, 309)
+mesh = SubResource("SphereMesh_auw1a")
