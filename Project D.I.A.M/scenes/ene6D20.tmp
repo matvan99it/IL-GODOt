@@ -17,9 +17,6 @@ radius = 39.29
 radius = 155.0
 
 [node name="Enemy" type="CharacterBody2D"]
-position = Vector2(-1, 0)
-collision_layer = 3
-collision_mask = 3
 script = ExtResource("1_620gs")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
@@ -28,15 +25,15 @@ mesh = SubResource("CapsuleMesh_d3bcm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color(1, 0.0431373, 1, 1)
 self_modulate = Color(1, 0.0117647, 1, 1)
-position = Vector2(1, 0)
+visibility_layer = 0
 shape = SubResource("CapsuleShape2D_dxdu1")
-debug_color = Color(1, 0.278431, 0.866667, 0.419608)
+debug_color = Color(0.643137, 0.521569, 0, 0.419608)
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
 shape = SubResource("CircleShape2D_xjuus")
-debug_color = Color(1, 0.458824, 0, 0.419608)
+debug_color = Color(0.94902, 0, 0.572549, 0.419608)
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 2

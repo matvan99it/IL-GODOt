@@ -319,14 +319,6 @@ text = "shift while moving: dash
 shift stading: rotate"
 metadata/_edit_use_anchors_ = true
 
-[node name="LabelTimer" type="Label" parent="CanvasLayer"]
-offset_left = 3304.0
-offset_top = 1579.0
-offset_right = 3565.0
-offset_bottom = 1692.0
-text = "sesso: "
-metadata/_edit_use_anchors_ = true
-
 [node name="sliderAnimation" type="AnimationPlayer" parent="."]
 root_node = NodePath("../..")
 libraries = {
@@ -442,4 +434,5 @@ autostart = true
 position = Vector2(3248, 1673)
 zoom = Vector2(0.5, 0.5)
 
-[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
+[node name="Enemy" parent="." instance=ExtResource("2_ywjwa")]
+position = Vector2(2941, 1468)
