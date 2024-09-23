@@ -1,10 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://44k0wfm0bore"]
+[gd_scene load_steps=30 format=3 uid="uid://44k0wfm0bore"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ibgdh"]
 [ext_resource type="PackedScene" uid="uid://b27cg6sforp66" path="res://scenes/enemy.tscn" id="2_ywjwa"]
 [ext_resource type="PackedScene" uid="uid://dlpjneylmq7g1" path="res://scenes/player.tscn" id="3_lxfbs"]
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="4_b4dak"]
 [ext_resource type="PackedScene" uid="uid://mjp2e5c74612" path="res://scenes/rotatoria_pazza.tscn" id="5_yml8t"]
+[ext_resource type="Texture2D" uid="uid://ke3o1gqlauwe" path="res://src/piattaforma_lezza.png" id="6_v0qk3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0fw2y"]
 
@@ -104,21 +105,6 @@ size = Vector2(20, 2344)
 
 [sub_resource type="QuadMesh" id="QuadMesh_hytxx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7jcj"]
-size = Vector2(2341, 20)
-
-[sub_resource type="QuadMesh" id="QuadMesh_mxy71"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2udil"]
-size = Vector2(1787.5, 20)
-
-[sub_resource type="QuadMesh" id="QuadMesh_iakum"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u1l0"]
-size = Vector2(1517, 20)
-
-[sub_resource type="QuadMesh" id="QuadMesh_uruxj"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0p52"]
 size = Vector2(1076, 20)
 
@@ -131,6 +117,136 @@ size = Vector2(788, 39.5)
 
 [sub_resource type="QuadMesh" id="QuadMesh_26l06"]
 size = Vector2(30, 30)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w475f"]
+resource_name = "piattaforna_lezza"
+texture = ExtResource("6_v0qk3")
+texture_region_size = Vector2i(170, 65)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-85, -33, 85, -32, 85, 32.5, -84.5, 32.5)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+7:0/0 = 0
+7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:0/0/physics_layer_0/angular_velocity = 0.0
+8:0/0 = 0
+8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0 = 0
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+6:1/0 = 0
+6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:1/0/physics_layer_0/angular_velocity = 0.0
+7:1/0 = 0
+7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:1/0/physics_layer_0/angular_velocity = 0.0
+8:1/0 = 0
+8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:1/0/physics_layer_0/angular_velocity = 0.0
+9:1/0 = 0
+9:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+5:2/0 = 0
+5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:2/0/physics_layer_0/angular_velocity = 0.0
+6:2/0 = 0
+6:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:2/0/physics_layer_0/angular_velocity = 0.0
+7:2/0 = 0
+7:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:2/0/physics_layer_0/angular_velocity = 0.0
+8:2/0 = 0
+8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:2/0/physics_layer_0/angular_velocity = 0.0
+9:2/0 = 0
+9:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+4:3/0 = 0
+4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_0/angular_velocity = 0.0
+5:3/0 = 0
+5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:3/0/physics_layer_0/angular_velocity = 0.0
+6:3/0 = 0
+6:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:3/0/physics_layer_0/angular_velocity = 0.0
+7:3/0 = 0
+7:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:3/0/physics_layer_0/angular_velocity = 0.0
+8:3/0 = 0
+8:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:3/0/physics_layer_0/angular_velocity = 0.0
+9:3/0 = 0
+9:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:3/0/physics_layer_0/angular_velocity = 0.0
+9:0/0 = 0
+9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_8qnou"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_w475f")
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ibgdh")
@@ -236,7 +352,7 @@ scale = Vector2(0.103167, 1)
 mesh = SubResource("QuadMesh_ppv4k")
 
 [node name="Player" parent="." instance=ExtResource("3_lxfbs")]
-position = Vector2(3248, 1673)
+position = Vector2(1798, 912)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -366,33 +482,6 @@ mesh = SubResource("QuadMesh_hytxx")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
-[node name="plat1" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(3426.5, 2032)
-shape = SubResource("RectangleShape2D_w7jcj")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2/plat1"]
-position = Vector2(51.0001, 4.19617e-05)
-scale = Vector2(2272, 20.0001)
-mesh = SubResource("QuadMesh_mxy71")
-
-[node name="plat2" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(3152.25, 1783)
-shape = SubResource("RectangleShape2D_2udil")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2/plat2"]
-position = Vector2(-0.249939, 0.5)
-scale = Vector2(1788, 21)
-mesh = SubResource("QuadMesh_iakum")
-
-[node name="plat3" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(2993, 1526)
-shape = SubResource("RectangleShape2D_0u1l0")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2/plat3"]
-position = Vector2(3.05176e-05, -3.73125e-05)
-scale = Vector2(1518, 20)
-mesh = SubResource("QuadMesh_uruxj")
-
 [node name="plat4" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(749, 2099)
 shape = SubResource("RectangleShape2D_k0p52")
@@ -431,8 +520,13 @@ wait_time = 0.5
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(3248, 1673)
+position = Vector2(1798, 912)
 zoom = Vector2(0.5, 0.5)
 
 [node name="Enemy" parent="." instance=ExtResource("2_ywjwa")]
 position = Vector2(2941, 1468)
+
+[node name="Piattaforma lezza" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_8qnou")
+format = 2
+layer_0/tile_data = PackedInt32Array(6357136, 0, 0, 6357147, 0, 0, 6357158, 0, 0, 6357169, 0, 0, 6357180, 0, 0, 6357191, 0, 0, 6357202, 0, 0, 6357213, 0, 0, 6357224, 0, 0)
