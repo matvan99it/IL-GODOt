@@ -1,7 +1,5 @@
-res://shader/moving_platform.gdshader
-res://piattaforma_lezza.tscn
-res://scenes/piattaforma_lezza.tscn
 res://scenes/main.tscn
+res://shader/moving_platform.gdshader
 res://scenes/player.tscn
 res://scenes/enemy.tscn
-res://scripts/sesso_pazzo.gd
+res://scripts/CharacterBody2D.gd
