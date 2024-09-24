@@ -8,7 +8,7 @@ const DASH_DURATION = 0.5
 
 """
 Il player una volta che sconfigge il 90% dei nemici cioè almeno il 50% dei minion e il miniboss conquista la zona 
-che diventa una nuova zona da conquistare per i nemici
+che diventa una nuova zona da conquistare per i nemici o fa spawnare un BOSS
 
 """
 
