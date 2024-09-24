@@ -1,11 +1,16 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -800.0
 const SLIDE_SPEED = 800.0
 const GO_DOWN = 1000.0
 const DASH_DURATION = 0.5
+
+"""
+Il player una volta che sconfigge il 90% dei nemici cioè almeno il 50% dei minion e il miniboss conquista la zona 
+che diventa una nuova zona da conquistare per i nemici
+
+"""
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
