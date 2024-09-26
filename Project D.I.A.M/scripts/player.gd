@@ -6,10 +6,18 @@ const SLIDE_SPEED = 800.0
 const GO_DOWN = 1000.0
 const DASH_DURATION = 0.5
 
-"""
-Il player una volta che sconfigge il 90% dei nemici cioè almeno il 50% dei minion e il miniboss conquista la zona 
-che diventa una nuova zona da conquistare per i nemici o fa spawnare un BOSS
+signal hit 
+var enemy_in_range = false
+var enemy_attack_cooldown = true
+var enemy_stun = false
 
+#Per ora non servono
+var health = 100
+var player_alive = true
+
+"""
+I nemici piccoli non stunnano se non dopo 3/4 attacchi consecutivi e sono SEMPRE stunnati da ogni attacco fatto dal player
+I miniboss e boss non sono/non fanno stun sempre tranne con attacchi pesanti o combo
 """
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -53,3 +61,25 @@ func _physics_process(delta):
 	
 
 	move_and_slide()
+
+
+func _on_player_hitbozz_body_entered(body):
+	if(body.is_in_group("enemy")):
+		enemy_in_range = true
+
+
+func _on_player_hitbozz_body_exited(body):
+	if(body.is_in_group("enemy")):
+		enemy_in_range = false
+	
+	
+func reduce_health(eltz: int) -> int:
+	hit.emit()
+	eltz -= 1
+	if(health <= 0):
+		kill_player()
+	return eltz
+	
+
+func kill_player():
+	queue_free()

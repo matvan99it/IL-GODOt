@@ -14,6 +14,8 @@ BOSS: spawna ogni tot tempo o ogni tot zone conquistate a meno di regole special
 
 """
 
+signal attacked
+signal killed
 
 const SPEED = 35.0
 var chasing: bool = false
@@ -41,4 +43,9 @@ func _on_detection_area_body_exited(body):
 		player = null
 		chasing = false
 
+func getDamage():
+	pass
+	
+func doDamage():
+	pass
 

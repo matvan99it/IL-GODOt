@@ -6,6 +6,7 @@ extends Node
 
 
 #N.B.:
+#TODO: fare bene il combat system
 #TODO: creare le classi per tipologia di nemico
 #TODO: implementare combat system
 #TODO: aggiungere shader lampeggiante per il danno inferto e subito in base al tipo di nemico
@@ -13,7 +14,37 @@ extends Node
 #TODO: aggiungere una specie di knockbck per i nemici più piccoli
 #TODO: sistemare le piattaforme in modo che possa gestirle anche da codice e migliorare le grafiche e gli allineamenti
 
+"""
+Tutorial segnali fatti bene
 
+Node2D -> s2.gd
+|	Area2D -> s1.gd
+	|	CollissionShape
+
+#### s1.gd ####
+extends Area2D
+
+signal DestroyTheWorld
+
+func _ready():
+	connect("mouse_entered", oogabooga)
+
+func oogabooga():
+	emit_signals("DestroyTheWorld") || DestroyTheWorld.emit()
+
+
+
+#### s2.gd ####
+extends Node2D
+
+func _ready():
+	$Area2D.connect("DestroyTheWorld", destroy)
+
+func destroy():
+	get_tree().quit()
+
+
+"""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

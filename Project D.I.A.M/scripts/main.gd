@@ -1,5 +1,11 @@
 extends Node
 
+"""
+Il player una volta che sconfigge il 90% dei nemici cioè almeno il 50% dei minion e il miniboss conquista la zona 
+che diventa una nuova zona da conquistare per i nemici o fa spawnare un BOSS
+
+
+"""
 
 @export var mob_scene: PackedScene
 # Called when the node enters the scene tree for the first time.
