@@ -21,6 +21,9 @@ Node2D -> s2.gd
 |	Area2D -> s1.gd
 	|	CollissionShape
 
+L'idea è quando il mouse entra nell'Area2D si chiude tutto 
+perchè viene emesso il segnale e quel segnale e poi legato ad una funzione nel Node2D
+
 #### s1.gd ####
 extends Area2D
 
