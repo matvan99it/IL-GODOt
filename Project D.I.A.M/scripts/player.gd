@@ -82,14 +82,16 @@ func enemy_attack():
 		#health -= 1
 		hit.emit()
 		print("Vita rimanente: ", health)
+		if(health <= 0):
+			print("MORTP")
+			kill_player()
 	
 	
 func reduce_health(eltz: int) -> int:
 	hit.emit()
-	if(health <= 0):
-		kill_player()
+	print("ouch")
 	return eltz
 	
 
 func kill_player():
-	queue_free()
+	$".".queue_free()
