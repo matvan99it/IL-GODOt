@@ -27,6 +27,9 @@ var dash_velocity := 0.0
 
 func _physics_process(delta):
 	# Add the gravity.
+	
+	enemy_attack()
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -73,9 +76,16 @@ func _on_player_hitbozz_body_exited(body):
 		enemy_in_range = false
 	
 	
+	
+func enemy_attack():
+	if(enemy_in_range):
+		health -= 1
+		hit.emit()
+		print("Vita rimanente: ", health)
+	
+	
 func reduce_health(eltz: int) -> int:
 	hit.emit()
-	eltz -= 1
 	if(health <= 0):
 		kill_player()
 	return eltz

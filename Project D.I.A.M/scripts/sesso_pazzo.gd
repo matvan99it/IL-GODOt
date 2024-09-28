@@ -7,6 +7,7 @@ extends Node
 
 #N.B.:
 #TODO: fare bene il combat system
+#TODO: imparare bene i tileset e le tilemap per fare le mappe
 #TODO: creare le classi per tipologia di nemico
 #TODO: implementare combat system
 #TODO: aggiungere shader lampeggiante per il danno inferto e subito in base al tipo di nemico

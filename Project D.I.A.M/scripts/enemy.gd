@@ -19,6 +19,7 @@ signal killed
 
 const SPEED = 35.0
 var chasing: bool = false
+var in_range: bool = false
 var player = null
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -42,10 +43,23 @@ func _on_detection_area_body_exited(body):
 	if body.is_in_group("player"):
 		player = null
 		chasing = false
+		
 
+func _on_enemy_hitbox_body_entered(body):
+	if body.is_in_group("player"):
+		
+		player.hit.connect(doDamage)
+		in_range = true
+
+
+func _on_enemy_hitbox_body_exited(body):
+	if body.is_in_group("player"):
+		in_range = false
+
+
+func doDamage():
+	print("burba kurva")
+	
 func getDamage():
 	pass
 	
-func doDamage():
-	pass
-

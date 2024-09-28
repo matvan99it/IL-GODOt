@@ -28,5 +28,7 @@ shape = SubResource("RectangleShape2D_o2lve")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbozz"]
 shape = SubResource("CircleShape2D_j2mp3")
 
+[node name="PAttackCooldown" type="Timer" parent="."]
+
 [connection signal="body_entered" from="player_hitbozz" to="." method="_on_player_hitbozz_body_entered"]
 [connection signal="body_exited" from="player_hitbozz" to="." method="_on_player_hitbozz_body_exited"]
