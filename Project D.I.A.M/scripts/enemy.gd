@@ -47,7 +47,6 @@ func _on_detection_area_body_exited(body):
 
 func _on_enemy_hitbox_body_entered(body):
 	if body.is_in_group("player"):
-		
 		player.hit.connect(doDamage)
 		in_range = true
 
@@ -58,7 +57,8 @@ func _on_enemy_hitbox_body_exited(body):
 
 
 func doDamage():
-	print("burba kurva")
+	player.health -= 1
+	print("burba kurva ", player.health)
 	
 func getDamage():
 	pass

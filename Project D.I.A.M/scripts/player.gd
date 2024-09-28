@@ -12,7 +12,7 @@ var enemy_attack_cooldown = true
 var enemy_stun = false
 
 #Per ora non servono
-var health = 100
+@export var health = 100
 var player_alive = true
 
 """
@@ -79,7 +79,7 @@ func _on_player_hitbozz_body_exited(body):
 	
 func enemy_attack():
 	if(enemy_in_range):
-		health -= 1
+		#health -= 1
 		hit.emit()
 		print("Vita rimanente: ", health)
 	
