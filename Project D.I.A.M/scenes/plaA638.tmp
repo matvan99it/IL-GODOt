@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlpjneylmq7g1"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_x6j52"]
+[ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="2_2xcmy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2lve"]
+size = Vector2(128, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j2mp3"]
+radius = 130.062
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_x6j52")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+texture = ExtResource("2_2xcmy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_o2lve")
+
+[node name="player_hitbozz" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbozz"]
+shape = SubResource("CircleShape2D_j2mp3")
+
+[node name="PAttackCooldown" type="Timer" parent="."]
+
+[node name="AfterDamageInvincibility" type="Timer" parent="."]
+
+[connection signal="attack" from="." to="." method="_on_attack"]
+[connection signal="body_entered" from="player_hitbozz" to="." method="_on_player_hitbozz_body_entered"]
+[connection signal="body_exited" from="player_hitbozz" to="." method="_on_player_hitbozz_body_exited"]
+[connection signal="timeout" from="PAttackCooldown" to="." method="_on_p_attack_cooldown_timeout"]

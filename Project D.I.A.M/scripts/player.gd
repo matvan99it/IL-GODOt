@@ -7,11 +7,13 @@ const GO_DOWN = 1000.0
 const DASH_DURATION = 0.5
 
 signal hit 
+
 var enemy_in_range = false
 var enemy_attack_cooldown = true
 var enemy_stun = false
 var mob = null
 var attack_cooldown = false
+var is_attacking = false
 #Per ora non servono
 @export var health = 100
 var player_alive = true
@@ -44,8 +46,10 @@ func _physics_process(delta):
 	if(Input.is_action_just_pressed("ui_down") and Input.is_action_just_pressed("ui_accept") and is_on_floor()):
 		position.y += 1
 		
-	if(Input.is_action_just_pressed("attack")) and mob != null:
-		mob.attacked.connect(attack)
+	
+	if Input.is_action_just_pressed("attack") and enemy_in_range:
+		is_attacking = true
+		mob.attacked.connect(doAttack)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -92,11 +96,12 @@ func enemy_attack():
 			kill_player()
 
 
-func attack():
+func doAttack():
 	if enemy_in_range and not attack_cooldown:
 		$PAttackCooldown.start()
 		attack_cooldown = true
-		mob.health -= 1
+		mob.health -= 2
+		print("TACCIDE: ", mob.health)
 		
 		
 func doDamage():
@@ -115,3 +120,5 @@ func kill_player():
 
 func _on_p_attack_cooldown_timeout():
 	attack_cooldown = false
+	is_attacking = false
+
