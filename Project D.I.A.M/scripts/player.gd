@@ -10,7 +10,8 @@ signal hit
 var enemy_in_range = false
 var enemy_attack_cooldown = true
 var enemy_stun = false
-
+var mob = null
+var attack_cooldown = false
 #Per ora non servono
 @export var health = 100
 var player_alive = true
@@ -26,8 +27,8 @@ var tween: Tween
 var dash_velocity := 0.0
 
 func _physics_process(delta):
-	# Add the gravity.
 	
+	#$PAttackCooldown.wait_time = 2
 	enemy_attack()
 	
 	if not is_on_floor():
@@ -42,6 +43,9 @@ func _physics_process(delta):
 
 	if(Input.is_action_just_pressed("ui_down") and Input.is_action_just_pressed("ui_accept") and is_on_floor()):
 		position.y += 1
+		
+	if(Input.is_action_just_pressed("attack")) and mob != null:
+		mob.attacked.connect(attack)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -69,11 +73,13 @@ func _physics_process(delta):
 func _on_player_hitbozz_body_entered(body):
 	if(body.is_in_group("enemy")):
 		enemy_in_range = true
+		mob = body
 
 
 func _on_player_hitbozz_body_exited(body):
 	if(body.is_in_group("enemy")):
 		enemy_in_range = false
+		mob = null
 	
 	
 	
@@ -81,17 +87,31 @@ func enemy_attack():
 	if(enemy_in_range):
 		#health -= 1
 		hit.emit()
-		print("Vita rimanente: ", health)
 		if(health <= 0):
 			print("MORTP")
 			kill_player()
-	
-	
+
+
+func attack():
+	if enemy_in_range and not attack_cooldown:
+		$PAttackCooldown.start()
+		attack_cooldown = true
+		mob.health -= 1
+		
+		
+func doDamage():
+	pass
+
+"""
 func reduce_health(eltz: int) -> int:
 	hit.emit()
 	print("ouch")
 	return eltz
-	
+"""
 
 func kill_player():
 	$".".queue_free()
+
+
+func _on_p_attack_cooldown_timeout():
+	attack_cooldown = false

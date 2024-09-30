@@ -23,6 +23,12 @@ var in_range: bool = false
 var player = null
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var attack_cooldown = false
+var stun = false
+var health = 1
+enum Status{
+	Pipop,
+	bbbbbb
+}
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -63,11 +69,20 @@ func doDamage():
 		player.health -= 1
 		$EAttackCooldown.start()
 		print("burba kurva ", player.health)
-	
+
+func playerAttack():
+	if(in_range):
+		#health -= 1
+		attacked.emit()
+		if(health <= 0):
+			print("MORTP")
+			kill_mob()
+
 func getDamage():
 	pass
 	
-
+func kill_mob():
+	queue_free()
 
 func _on_e_attack_cooldown_timeout():
 	attack_cooldown = false

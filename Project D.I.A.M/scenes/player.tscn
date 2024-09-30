@@ -30,5 +30,8 @@ shape = SubResource("CircleShape2D_j2mp3")
 
 [node name="PAttackCooldown" type="Timer" parent="."]
 
+[node name="AfterDamageInvincibility" type="Timer" parent="."]
+
 [connection signal="body_entered" from="player_hitbozz" to="." method="_on_player_hitbozz_body_entered"]
 [connection signal="body_exited" from="player_hitbozz" to="." method="_on_player_hitbozz_body_exited"]
+[connection signal="timeout" from="PAttackCooldown" to="." method="_on_p_attack_cooldown_timeout"]

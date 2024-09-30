@@ -8,3 +8,6 @@ res://shader/moving_platform.gdshader
 res://scenes/enemy.tscn
 res://scripts/enemy.gd
 res://scenes/main.tscn
+res://scripts/player.gd
+res://scripts/statuus.gd
+res://scripts/global.gd
