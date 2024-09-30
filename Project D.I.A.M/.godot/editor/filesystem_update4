@@ -5,8 +5,6 @@ res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/L
 res://addons/dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.de.translation
 res://scenes/player.tscn
 res://shader/moving_platform.gdshader
-res://scripts/sesso_pazzo.gd
 res://scenes/enemy.tscn
-res://scripts/player.gd
 res://scripts/enemy.gd
 res://scenes/main.tscn

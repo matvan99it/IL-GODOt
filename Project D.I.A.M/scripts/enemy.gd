@@ -22,6 +22,7 @@ var chasing: bool = false
 var in_range: bool = false
 var player = null
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var attack_cooldown = false
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -57,9 +58,16 @@ func _on_enemy_hitbox_body_exited(body):
 
 
 func doDamage():
-	player.health -= 1
-	print("burba kurva ", player.health)
+	if not attack_cooldown:
+		attack_cooldown = true
+		player.health -= 1
+		$EAttackCooldown.start()
+		print("burba kurva ", player.health)
 	
 func getDamage():
 	pass
 	
+
+
+func _on_e_attack_cooldown_timeout():
+	attack_cooldown = false
