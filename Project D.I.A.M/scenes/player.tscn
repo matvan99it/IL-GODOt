@@ -4,16 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="2_2xcmy"]
 [ext_resource type="Shader" uid="uid://dm8gkgab7s5aj" path="res://shader/hit_flash.tres" id="2_gkcq1"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_84glh"]
-shader = ExtResource("2_gkcq1")
-shader_parameter/enabled = false
-shader_parameter/tint = Color(1, 1, 1, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2lve"]
-size = Vector2(128, 128)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2mp3"]
 radius = 130.062
+
+[sub_resource type="Animation" id="Animation_lu3is"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_lxqoi"]
 resource_name = "flash"
@@ -31,41 +38,25 @@ tracks/0/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_lu3is"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_su0w2"]
 _data = {
 "RESET": SubResource("Animation_lu3is"),
 "flash": SubResource("Animation_lxqoi")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_84glh"]
+shader = ExtResource("2_gkcq1")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(1, 1, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2lve"]
+size = Vector2(128, 128)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_x6j52")
 metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_84glh")
-position = Vector2(2, 1)
-texture = ExtResource("2_2xcmy")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2(3, 0)
-shape = SubResource("RectangleShape2D_o2lve")
 
 [node name="player_hitbozz" type="Area2D" parent="."]
 
@@ -80,6 +71,15 @@ shape = SubResource("CircleShape2D_j2mp3")
 libraries = {
 "": SubResource("AnimationLibrary_su0w2")
 }
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_84glh")
+position = Vector2(2, 1)
+texture = ExtResource("2_2xcmy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_o2lve")
 
 [connection signal="body_entered" from="player_hitbozz" to="." method="_on_player_hitbozz_body_entered"]
 [connection signal="body_exited" from="player_hitbozz" to="." method="_on_player_hitbozz_body_exited"]

@@ -1,3 +1,4 @@
+Sprite2D
 AnimationPlayer
 Timer
 CollisionPolygon2D
@@ -12,4 +13,3 @@ Marker2D
 Node
 Label
 PathFollow2D
-Path2D

@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b27cg6sforp66"]
+[gd_scene load_steps=11 format=3 uid="uid://b27cg6sforp66"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_620gs"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_d3bcm"]
-radius = 15.0
-height = 64.0
+[ext_resource type="Texture2D" uid="uid://d3kqy1ahxx6rs" path="res://src/sword 16_16.png" id="2_5vbgj"]
+[ext_resource type="Shader" uid="uid://dm8gkgab7s5aj" path="res://shader/hit_flash.tres" id="2_nsx6n"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxdu1"]
 radius = 15.5
@@ -16,14 +14,54 @@ radius = 39.29
 [sub_resource type="CircleShape2D" id="CircleShape2D_gx26g"]
 radius = 155.0
 
+[sub_resource type="Animation" id="Animation_wu27u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xw8bm"]
+resource_name = "flash_mob"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kpt30"]
+_data = {
+"RESET": SubResource("Animation_wu27u"),
+"flash_mob": SubResource("Animation_xw8bm")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_regoi"]
+resource_local_to_scene = true
+shader = ExtResource("2_nsx6n")
+shader_parameter/enabled = true
+shader_parameter/tint = Color(1, 1, 1, 1)
+
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 position = Vector2(-1, 0)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_620gs")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-mesh = SubResource("CapsuleMesh_d3bcm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color(1, 0.0431373, 1, 1)
@@ -48,6 +86,17 @@ shape = SubResource("CircleShape2D_gx26g")
 [node name="EAttackCooldown" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="FlashAnimationMob" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kpt30")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_regoi")
+position = Vector2(1, 0.499999)
+scale = Vector2(1.875, 3.9375)
+texture = ExtResource("2_5vbgj")
 
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]

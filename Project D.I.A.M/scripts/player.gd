@@ -36,7 +36,7 @@ func _physics_process(delta):
 	
 	#$PAttackCooldown.wait_time = 2
 	enemy_attack()
-	flash_animation()
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -106,30 +106,17 @@ func doAttack():
 		$PAttackCooldown.start()
 		attack_cooldown = true
 		mob.health -= 2
+		mob.flashan.play("flash_mob")
 		print("TACCIDE: ", mob.health)
 		
-		
-func doDamage():
-	pass
-
-"""
-func reduce_health(eltz: int) -> int:
-	hit.emit()
-	print("ouch")
-	return eltz
-"""
 
 func kill_player():
-	$".".queue_free()
+	self.queue_free()
 
-func flash_animation():
-	if is_invincible:
-		pass
 
 func _on_p_attack_cooldown_timeout():
 	attack_cooldown = false
 	is_attacking = false
-
 
 
 func _on_after_damage_invincibility_timeout():

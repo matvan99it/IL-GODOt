@@ -1,7 +1,7 @@
-res://scenes/player.tscn
-res://shader/moving_platform.gdshader
-res://shader/hit_flash.tres
-res://scripts/player.gd
 res://scenes/enemy.tscn
+res://shader/hit_flash.tres
+res://shader/moving_platform.gdshader
+res://scenes/player.tscn
 res://scenes/main.tscn
+res://scripts/player.gd
 res://scripts/enemy.gd
