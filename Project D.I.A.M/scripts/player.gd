@@ -14,9 +14,13 @@ var enemy_stun = false
 var mob = null
 var attack_cooldown = false
 var is_attacking = false
+var is_invincible = false
 #Per ora non servono
 @export var health = 100
 var player_alive = true
+
+@onready var hit_animation = $FlashAnimation
+
 
 """
 I nemici piccoli non stunnano se non dopo 3/4 attacchi consecutivi e sono SEMPRE stunnati da ogni attacco fatto dal player
@@ -32,7 +36,7 @@ func _physics_process(delta):
 	
 	#$PAttackCooldown.wait_time = 2
 	enemy_attack()
-	
+	flash_animation()
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -91,6 +95,7 @@ func enemy_attack():
 	if(enemy_in_range):
 		#health -= 1
 		hit.emit()
+		is_invincible = true
 		if(health <= 0):
 			print("MORTP")
 			kill_player()
@@ -117,8 +122,15 @@ func reduce_health(eltz: int) -> int:
 func kill_player():
 	$".".queue_free()
 
+func flash_animation():
+	if is_invincible:
+		pass
 
 func _on_p_attack_cooldown_timeout():
 	attack_cooldown = false
 	is_attacking = false
 
+
+
+func _on_after_damage_invincibility_timeout():
+	is_invincible = false

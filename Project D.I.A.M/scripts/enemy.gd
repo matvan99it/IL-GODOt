@@ -69,6 +69,7 @@ func doDamage():
 	if not attack_cooldown:
 		attack_cooldown = true
 		player.health -= 1
+		player.hit_animation.play("flash")
 		$EAttackCooldown.start()
 		print("burba kurva ", player.health)
 
