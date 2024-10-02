@@ -17,7 +17,7 @@ BOSS: spawna ogni tot tempo o ogni tot zone conquistate a meno di regole special
 signal attacked
 signal killed
 
-@onready var flashan = $FlashAnimationMob
+@onready var flashan = $AnimationPlayer
 
 const SPEED = 35.0
 var chasing: bool = false

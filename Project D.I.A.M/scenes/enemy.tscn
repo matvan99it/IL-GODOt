@@ -14,7 +14,13 @@ radius = 39.29
 [sub_resource type="CircleShape2D" id="CircleShape2D_gx26g"]
 radius = 155.0
 
-[sub_resource type="Animation" id="Animation_wu27u"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_regoi"]
+resource_local_to_scene = true
+shader = ExtResource("2_nsx6n")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_7ldul"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -26,10 +32,10 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_xw8bm"]
+[sub_resource type="Animation" id="Animation_qbuc5"]
 resource_name = "flash_mob"
 length = 0.2
 tracks/0/type = "value"
@@ -45,17 +51,11 @@ tracks/0/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kpt30"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3feu4"]
 _data = {
-"RESET": SubResource("Animation_wu27u"),
-"flash_mob": SubResource("Animation_xw8bm")
+"RESET": SubResource("Animation_7ldul"),
+"flash_mob": SubResource("Animation_qbuc5")
 }
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_regoi"]
-resource_local_to_scene = true
-shader = ExtResource("2_nsx6n")
-shader_parameter/enabled = true
-shader_parameter/tint = Color(1, 1, 1, 1)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 position = Vector2(-1, 0)
@@ -87,16 +87,16 @@ shape = SubResource("CircleShape2D_gx26g")
 wait_time = 2.0
 one_shot = true
 
-[node name="FlashAnimationMob" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_kpt30")
-}
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_regoi")
 position = Vector2(1, 0.499999)
 scale = Vector2(1.875, 3.9375)
 texture = ExtResource("2_5vbgj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3feu4")
+}
 
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
