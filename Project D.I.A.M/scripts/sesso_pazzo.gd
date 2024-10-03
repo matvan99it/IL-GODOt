@@ -6,14 +6,15 @@ extends Node
 
 
 #N.B.:
-#TODO: fare bene il combat system
+#TODO: migliorare il combat system
+#TODO: implementare un sistema di combo minimo
 #TODO: imparare bene i tileset e le tilemap per fare le mappe
 #TODO: creare le classi per tipologia di nemico
-#TODO: implementare combat system
-#TODO: aggiungere shader lampeggiante per il danno inferto e subito in base al tipo di nemico
 #TODO: aggiungere una mini pausa per i danni presi e subiti e incrementale in base al tipo di danno
 #TODO: aggiungere una specie di knockbck per i nemici più piccoli
-#TODO: sistemare le piattaforme in modo che possa gestirle anche da codice e migliorare le grafiche e gli allineamenti
+#TODO: creare dei bozzetti per le mappe
+#TODO: imparare ad usare aeprite per fare animazioni e grafiche
+#TODO: aggiungere suoni(opzionale per ora)
 
 """
 Tutorial segnali fatti bene
