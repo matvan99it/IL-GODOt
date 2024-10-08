@@ -21,3 +21,22 @@ func _on_enemy_spawn_timer_timeout():
 	var mob_spawn_location = $EnemySpawn
 	mob.position = mob_spawn_location.position
 	add_child(mob)
+
+func randoPoint(selectedArea: Area2D) -> Vector2:
+	for child in selectedArea.get_children():
+		if(child is CollisionShape2D):
+			var cr = child.shape
+			var rect = cr.get_rect()
+			var x = randi_range(rect.position.x, rect.position.x+rect.size.x)
+			var y = randi_range(rect.position.y, rect.position.y+rect.size.y)
+			return Vector2(x,y)
+		elif(child is CollisionPolygon2D):
+			var cp = child.polygon
+			var random_vertex_index = randi() % cp.size()
+			return cp[random_vertex_index]
+	return Vector2.ZERO
+	
+	
+func spawnMassivo(selectedArea: Area2D):
+	pass
+

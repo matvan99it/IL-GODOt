@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://44k0wfm0bore"]
+[gd_scene load_steps=38 format=3 uid="uid://44k0wfm0bore"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ibgdh"]
 [ext_resource type="PackedScene" uid="uid://b27cg6sforp66" path="res://scenes/enemy.tscn" id="2_ywjwa"]
@@ -406,17 +406,14 @@ size = Vector2(19.882, 22.1674)
 [sub_resource type="LabelSettings" id="LabelSettings_ujgrr"]
 font_size = 70
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6nsj"]
-size = Vector2(22.4181, 25.6957)
-
 [sub_resource type="LabelSettings" id="LabelSettings_rndt1"]
-font_size = 70
-
-[sub_resource type="LabelSettings" id="LabelSettings_jrca0"]
 font_size = 70
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3q0ct"]
 size = Vector2(19.8134, 19.4959)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jrca0"]
+font_size = 70
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ibgdh")
@@ -739,10 +736,9 @@ label_settings = SubResource("LabelSettings_ujgrr")
 position = Vector2(5562, 4495)
 scale = Vector2(1.78448, 1.294)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stanza3"]
-position = Vector2(45.9514, 143.74)
-scale = Vector2(77.6912, 69.5933)
-shape = SubResource("RectangleShape2D_s6nsj")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stanza3"]
+scale = Vector2(1, 1.00399)
+polygon = PackedVector2Array(-845.625, -752.793, 924.64, -735.09, 928.563, -477.231, 1004.21, -294.806, 1213.24, -292.497, 1196.43, 969.087, -803.596, 1040.67, -846.186, 634.255)
 
 [node name="Label" type="Label" parent="Stanza3"]
 offset_left = 5.04349
@@ -755,6 +751,11 @@ label_settings = SubResource("LabelSettings_rndt1")
 [node name="Stanza4" type="Area2D" parent="."]
 position = Vector2(13041, 3980)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stanza4"]
+position = Vector2(-5, -98)
+scale = Vector2(169.128, -117.735)
+shape = SubResource("RectangleShape2D_3q0ct")
+
 [node name="Label" type="Label" parent="Stanza4"]
 offset_left = -2142.0
 offset_top = -402.0
@@ -763,8 +764,3 @@ offset_bottom = -306.0
 text = "Spawn del boss
 "
 label_settings = SubResource("LabelSettings_jrca0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stanza4"]
-position = Vector2(68.501, -29.6748)
-scale = Vector2(169.128, -117.735)
-shape = SubResource("RectangleShape2D_3q0ct")
