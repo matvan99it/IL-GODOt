@@ -7,8 +7,3 @@ func _ready():
 		var position = Transform3D()
 		position = position.translated(Vector3(randf() * 100 - 50, randf() * 50 - 25, randf() * 50 - 25))
 		$School.multimesh.set_instance_transform(i, position)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
