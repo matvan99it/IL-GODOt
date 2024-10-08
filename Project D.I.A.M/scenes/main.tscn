@@ -401,7 +401,7 @@ sources/1 = SubResource("TileSetAtlasSource_q08i8")
 sources/2 = SubResource("TileSetAtlasSource_m0s7w")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5oe7"]
-size = Vector2(19.882, 22.1674)
+size = Vector2(20.3985, 22.3833)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ujgrr"]
 font_size = 70
@@ -519,7 +519,7 @@ scale = Vector2(0.103167, 1)
 mesh = SubResource("QuadMesh_ppv4k")
 
 [node name="Player" parent="." instance=ExtResource("3_lxfbs")]
-position = Vector2(2858, 1332)
+position = Vector2(6366, 2225)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -696,8 +696,8 @@ wait_time = 0.5
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(2858, 1332)
-zoom = Vector2(0.5, 0.5)
+position = Vector2(6366, 2225)
+zoom = Vector2(0.08, 0.09)
 
 [node name="Piattaforma lezza" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8qnou")
@@ -720,7 +720,7 @@ position = Vector2(3917, 2012)
 position = Vector2(8774, 743)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stanza2"]
-position = Vector2(313, 63.861)
+position = Vector2(272.499, 57.4995)
 scale = Vector2(156.825, 58.9278)
 shape = SubResource("RectangleShape2D_s5oe7")
 
