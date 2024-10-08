@@ -1,12 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm3ubpfm50tln"]
+[gd_scene load_steps=3 format=3 uid="uid://cm3ubpfm50tln"]
 
-[ext_resource type="Script" path="res://mob.gd" id="1_t42ps"]
 [ext_resource type="Texture2D" uid="uid://db5dond437sr" path="res://icon.svg" id="1_wtnyj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i73ot"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_t42ps")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_i73ot")

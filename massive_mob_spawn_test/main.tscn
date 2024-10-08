@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://hek2na8rb6bb" path="res://becco.jpg" id="2_psddl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prnsb"]
+size = Vector2(1102.13, 578)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s72fr"]
 
@@ -16,7 +17,7 @@ mob_scene = ExtResource("2_d6hrn")
 position = Vector2(603, 290)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(55.155, 28.779)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_prnsb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
