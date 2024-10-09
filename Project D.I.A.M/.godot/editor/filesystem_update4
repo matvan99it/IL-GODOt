@@ -7,3 +7,4 @@ res://scenes/enemy.tscn
 res://scenes/moving_platform.tscn
 res://scenes/rotatoria_pazza.tscn
 res://scripts/enemy.gd
+res://scripts/player.gd

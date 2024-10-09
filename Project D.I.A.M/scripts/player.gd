@@ -106,7 +106,7 @@ func doAttack():
 		$PAttackCooldown.start()
 		attack_cooldown = true
 		mob.health -= 2
-		mob.flashan.play("flash_mob") #TODO: capire perchè non va
+		mob.flashan.play("flash_mob")
 		print("TACCIDE: ", mob.health)
 		
 

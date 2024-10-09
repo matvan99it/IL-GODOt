@@ -696,7 +696,7 @@ autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(5804, 4649)
-zoom = Vector2(0.35, 0.35)
+zoom = Vector2(0.064, 0.064)
 
 [node name="Piattaforma lezza" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8qnou")
@@ -732,11 +732,9 @@ label_settings = SubResource("LabelSettings_ujgrr")
 
 [node name="Stanza3" type="Area2D" parent="."]
 position = Vector2(5562, 4495)
-scale = Vector2(1.78448, 1.294)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stanza3"]
-scale = Vector2(1, 1.00399)
-polygon = PackedVector2Array(-845.625, -752.793, 924.64, -735.09, 928.563, -477.231, 1004.21, -294.806, 1213.24, -292.497, 1196.43, 969.087, -803.596, 1040.67, -846.186, 634.255)
+polygon = PackedVector2Array(-1470, -952, 1619, -952, 1649, -630, 1802, -376, 2157, -382, 2086, 1205, -508, 1272, -940, 1315, -1406, 1319, -1483, 772)
 
 [node name="Label" type="Label" parent="Stanza3"]
 offset_left = 5.04349

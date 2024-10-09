@@ -9,7 +9,7 @@ var mob_count = 10000
 
 func _ready():
 	# Spawna i mob all'interno dell'Area2D
-	spawn_mobs()
+	spawn_mobs2()
 
 
 func spawn_mobs():
@@ -42,37 +42,66 @@ func spawn_mobs():
 
 		collision_shape.add_child(mob)
 
-
+# Funzione per spawnare i mob all'interno del CollisionPolygon2D
 func spawn_mobs2():
-	# Ottieni il CollisionShape2D
-	var collision_shape = $CollisionShape2D
-	if collision_shape:
-		# Ottieni la forma del rettangolo
-		var rectangle_shape = collision_shape.shape
+	# Ottieni il nodo CollisionPolygon2D
+	var collision_polygon = $Area2D/pippo
+	if collision_polygon:
+		# Ottieni i vertici del poligono
+		var polygon_points = collision_polygon.get_polygon()
 		
-		# Calcola le extents
-		var extents = rectangle_shape.extents  # Queste sono le half-width e half-height
-		
-		# Calcola la posizione dell'angolo in alto a sinistra del rettangolo
-		var rect_position = position - extents
-		
-		# Calcola le dimensioni effettive del rettangolo
-		var rect_size = extents * 2  # Le dimensioni effettive del rettangolo
-
-		# Stampa le dimensioni e la posizione per il debug
-		print("Rect Position: ", rect_position)
-		print("Rect Size: ", rect_size)
-
 		for i in range(mob_count):
-			# Genera una posizione casuale all'interno del rettangolo
-			var random_position = Vector2(
-				randf_range(rect_position.x, rect_position.x + rect_size.x),
-				randf_range(rect_position.y, rect_position.y + rect_size.y)
-			)
+			# Genera una posizione casuale all'interno del poligono
+			var random_position = get_random_point_in_polygon(polygon_points)
 
-			# Istanziamo un nuovo mob
-			var mob_instance = mob_scene.instantiate()
-			mob_instance.position = random_position
+			if random_position != null:
+				# Istanziamo un nuovo mob
+				var mob_instance = mob_scene.instantiate()
+				mob_instance.position = random_position
 
-			# Aggiungi l'istanza del mob alla scena
-			$Area2D/CollisionShape2D.add_child(mob_instance)
+				# Aggiungi l'istanza del mob alla scena
+				collision_polygon.add_child(mob_instance)
+
+# Funzione per generare una posizione casuale all'interno di un poligono
+func get_random_point_in_polygon(polygon_points: PackedVector2Array) -> Vector2:
+	# Trova la bounding box del poligono
+	var min_x = polygon_points[0].x
+	var max_x = polygon_points[0].x
+	var min_y = polygon_points[0].y
+	var max_y = polygon_points[0].y
+	
+	for point in polygon_points:
+		if point.x < min_x:
+			min_x = point.x
+		if point.x > max_x:
+			max_x = point.x
+		if point.y < min_y:
+			min_y = point.y
+		if point.y > max_y:
+			max_y = point.y
+
+	# Genera punti casuali fino a quando ne troviamo uno dentro il poligono
+	while true:
+		var random_point = Vector2(
+			randf_range(min_x, max_x),
+			randf_range(min_y, max_y)
+		)
+
+		# Controlla se il punto casuale è dentro il poligono
+		if is_point_in_polygon(random_point, polygon_points):
+			return random_point
+
+	return Vector2.ZERO
+
+# Funzione per verificare se un punto è all'interno di un poligono
+func is_point_in_polygon(point: Vector2, polygon_points: PackedVector2Array) -> bool:
+	var inside = false
+	var j = polygon_points.size() - 1
+	for i in range(polygon_points.size()):
+		var vi = polygon_points[i]
+		var vj = polygon_points[j]
+		
+		if ((vi.y > point.y) != (vj.y > point.y)) and (point.x < (vj.x - vi.x) * (point.y - vi.y) / (vj.y - vi.y) + vi.x):
+			inside = not inside
+		j = i
+	return inside

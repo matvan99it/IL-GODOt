@@ -1,11 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://booigrb114evj"]
+[gd_scene load_steps=5 format=3 uid="uid://booigrb114evj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_n2y0v"]
 [ext_resource type="PackedScene" uid="uid://cm3ubpfm50tln" path="res://mob.tscn" id="2_d6hrn"]
 [ext_resource type="Texture2D" uid="uid://hek2na8rb6bb" path="res://becco.jpg" id="2_psddl"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_prnsb"]
-size = Vector2(1102.13, 578)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s72fr"]
 
@@ -16,9 +13,9 @@ mob_scene = ExtResource("2_d6hrn")
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(603, 290)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="pippo" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_prnsb")
+polygon = PackedVector2Array(-491, -227, -348, -279, -249, -73, -174, -267, 71, -277, 50, -118, 209, -279, 358, -42, 522, 16, 206, 242, 142, 70, -45, 246, -206, 70, -335, 258, -566, 156)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(600, 295)
