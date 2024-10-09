@@ -56,6 +56,7 @@ func _on_detection_area_body_exited(body):
 		chasing = false
 		
 
+#TODO: problemi con il pathfollowing
 func _on_enemy_hitbox_body_entered(body):
 	if body.is_in_group("player"):
 		player.hit.connect(doDamage)

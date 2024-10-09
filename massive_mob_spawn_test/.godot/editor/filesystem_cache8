@@ -1,8 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728395209
+::res://::1728463553
+Area2D.gd::GDScript::-1::1728396289::0::1::::<>Area2D<>::
 becco.jpg::CompressedTexture2D::500235487171276375::1590609177::1728391924::1::::<><>::
 icon.svg::CompressedTexture2D::214458531418423109::1728391253::1728391267::1::::<><>::
-main.gd::GDScript::-1::1728394419::0::1::::<>Node2D<>::
-main.tscn::PackedScene::3398463129546920171::1728394419::0::1::::<><>::res://main.gd<>uid://cm3ubpfm50tln::::res://mob.tscn<>uid://hek2na8rb6bb::::res://becco.jpg
+main.gd::GDScript::-1::1728397921::0::1::::<>Node2D<>::
+main.tscn::PackedScene::3398463129546920171::1728397922::0::1::::<><>::res://main.gd<>uid://cm3ubpfm50tln::::res://mob.tscn<>uid://hek2na8rb6bb::::res://becco.jpg
 mob.gd::GDScript::-1::1728394024::0::1::::<>CharacterBody2D<>::
-mob.tscn::PackedScene::5674126989966092983::1728394315::0::1::::<><>::uid://db5dond437sr::::res://icon.svg
+mob.tscn::PackedScene::5674126989966092983::1728397922::0::1::::<><>::uid://db5dond437sr::::res://icon.svg

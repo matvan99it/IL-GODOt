@@ -33,7 +33,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Main/slider:position")
+tracks/0/path = NodePath("slider:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -45,7 +45,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Main/elevetah:position")
+tracks/1/path = NodePath("elevetah:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -67,7 +67,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Main/slider:position")
+tracks/0/path = NodePath("slider:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -79,7 +79,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Main/elevetah:position")
+tracks/1/path = NodePath("elevetah:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -401,7 +401,7 @@ sources/1 = SubResource("TileSetAtlasSource_q08i8")
 sources/2 = SubResource("TileSetAtlasSource_m0s7w")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5oe7"]
-size = Vector2(20.3985, 22.3833)
+size = Vector2(2860, 1216)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ujgrr"]
 font_size = 70
@@ -410,12 +410,12 @@ font_size = 70
 font_size = 70
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3q0ct"]
-size = Vector2(19.8134, 19.4959)
+size = Vector2(3165, 1985)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jrca0"]
 font_size = 70
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node2D"]
 script = ExtResource("1_ibgdh")
 mob_scene = ExtResource("2_ywjwa")
 
@@ -519,7 +519,7 @@ scale = Vector2(0.103167, 1)
 mesh = SubResource("QuadMesh_ppv4k")
 
 [node name="Player" parent="." instance=ExtResource("3_lxfbs")]
-position = Vector2(6366, 2225)
+position = Vector2(5804, 4649)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -612,7 +612,6 @@ shift stading: rotate"
 metadata/_edit_use_anchors_ = true
 
 [node name="sliderAnimation" type="AnimationPlayer" parent="."]
-root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_bvqpr")
 }
@@ -696,8 +695,8 @@ wait_time = 0.5
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(6366, 2225)
-zoom = Vector2(0.08, 0.09)
+position = Vector2(5804, 4649)
+zoom = Vector2(0.35, 0.35)
 
 [node name="Piattaforma lezza" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8qnou")
@@ -720,8 +719,7 @@ position = Vector2(3917, 2012)
 position = Vector2(8774, 743)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stanza2"]
-position = Vector2(272.499, 57.4995)
-scale = Vector2(156.825, 58.9278)
+position = Vector2(404, 76)
 shape = SubResource("RectangleShape2D_s5oe7")
 
 [node name="Label" type="Label" parent="Stanza2"]
@@ -752,8 +750,7 @@ label_settings = SubResource("LabelSettings_rndt1")
 position = Vector2(13041, 3980)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stanza4"]
-position = Vector2(-5, -98)
-scale = Vector2(169.128, -117.735)
+position = Vector2(58.5, -32.5)
 shape = SubResource("RectangleShape2D_3q0ct")
 
 [node name="Label" type="Label" parent="Stanza4"]
