@@ -38,8 +38,8 @@ func _physics_process(delta):
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
-	if chasing and player:
+	
+	if chasing and player:#TODO: capire cosa non sta funzionando
 		position += (player.position - position) / SPEED
 		velocity.y += gravity * delta
 
@@ -68,7 +68,7 @@ func _on_enemy_hitbox_body_exited(body):
 		in_range = false
 
 
-func doDamage():
+func doDamage():#TODO: capire cosa non sta funzionando
 	if not attack_cooldown:
 		attack_cooldown = true
 		player.health -= 1

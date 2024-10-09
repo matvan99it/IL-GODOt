@@ -519,7 +519,7 @@ scale = Vector2(0.103167, 1)
 mesh = SubResource("QuadMesh_ppv4k")
 
 [node name="Player" parent="." instance=ExtResource("3_lxfbs")]
-position = Vector2(5804, 4649)
+position = Vector2(3682, 1545)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -695,8 +695,8 @@ wait_time = 0.5
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(5804, 4649)
-zoom = Vector2(0.064, 0.064)
+position = Vector2(3682, 1545)
+zoom = Vector2(0.374, 0.374)
 
 [node name="Piattaforma lezza" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8qnou")
