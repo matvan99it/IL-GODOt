@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728483906
+::res://::1728583699
 CONTRIBUTING.md::TextFile::-1::1726477377::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1726489523::0::1::::<><>::
 icon.svg::CompressedTexture2D::3419071902565505899::1725784019::1727860707::1::::<><>::
@@ -795,7 +795,7 @@ phantom_camera_host.gd::GDScript::-1::1726477383::0::1::::PhantomCameraHost<>Nod
 ::res://addons/phantom_camera/scripts/resources/::1726477383
 camera_3d_resource.gd::GDScript::-1::1726477383::0::1::::Camera3DResource<>Resource<>res://addons/phantom_camera/icons/phantom_camera_camera_3d_resource.svg::
 tween_resource.gd::GDScript::-1::1726477383::0::1::::PhantomCameraTween<>Resource<>res://addons/phantom_camera/icons/phantom_camera_tween.svg::
-::res://addons/Todo_Manager/::1728483905
+::res://addons/Todo_Manager/::1728583698
 ColourPicker.gd::GDScript::-1::1726477378::0::1::::<>HBoxContainer<>::
 Current.gd::GDScript::-1::1726477378::0::1::::<>Panel<>::
 Dock.gd::GDScript::-1::1726477378::0::1::::<>Control<>::
@@ -803,7 +803,7 @@ Pattern.gd::GDScript::-1::1726477378::0::1::::<>HBoxContainer<>::
 plugin.cfg::TextFile::-1::1726477378::0::1::::<><>::
 plugin.gd::GDScript::-1::1726477378::0::1::::<>EditorPlugin<>::
 Project.gd::GDScript::-1::1726477378::0::1::::<>Panel<>::
-todo.cfg::TextFile::-1::1728483905::0::1::::<><>::
+todo.cfg::TextFile::-1::1728583698::0::1::::<><>::
 todoItem_class.gd::GDScript::-1::1726477378::0::1::::<>RefCounted<>::
 todo_class.gd::GDScript::-1::1726477378::0::1::::<>RefCounted<>::
 ::res://addons/Todo_Manager/doc/::1726477378
@@ -822,26 +822,26 @@ ColourPicker.tscn::PackedScene::2957809393656723737::1726477378::0::1::::<><>::r
 Dock.tscn::PackedScene::4584442902745049483::1726477378::0::1::::<><>::res://addons/Todo_Manager/Dock.gd<>res://addons/Todo_Manager/Project.gd<>res://addons/Todo_Manager/Current.gd
 Pattern.tscn::PackedScene::4056048923411208166::1726477378::0::1::::<><>::res://addons/Todo_Manager/Pattern.gd
 ::res://eseguibile/::1726489538
-::res://scenes/::1728467173
+::res://scenes/::1728552410
 character_body_3d.tscn::PackedScene::8583129391795346255::1727081006::0::1::::<><>::res://scripts/character_body_3d.gd
-enemy.tscn::PackedScene::4347713355075756929::1728467173::0::1::::<><>::res://scripts/enemy.gd<>uid://d3kqy1ahxx6rs::::res://src/sword 16_16.png<>uid://dm8gkgab7s5aj::::res://shader/hit_flash.tres
-main.tscn::PackedScene::2095996398962374486::1728467173::0::1::::<><>::res://scripts/main.gd<>uid://b27cg6sforp66::::res://scenes/enemy.tscn<>uid://dlpjneylmq7g1::::res://scenes/player.tscn<>uid://boyhu5ujhe1rr::::res://icon.svg<>uid://mjp2e5c74612::::res://scenes/rotatoria_pazza.tscn<>uid://balrvc0f6esim::::res://src/piattaforma_unta.png<>uid://b3ldx1y1qicrc::::res://src/tilemap_test.png
-moving_platform.tscn::PackedScene::2169971786509921619::1728467173::0::1::::<><>::res://shader/moving_platform.gdshader<>res://scripts/moving_platform.gd
-player.tscn::PackedScene::7962874913349416198::1728467173::0::1::::<><>::res://scripts/player.gd<>uid://boyhu5ujhe1rr::::res://icon.svg<>uid://dm8gkgab7s5aj::::res://shader/hit_flash.tres
-rotatoria_pazza.tscn::PackedScene::861804751342198963::1728467173::0::1::::<><>::uid://56fea0fe00w2::::res://scenes/moving_platform.tscn<>res://scripts/Node.gd
-::res://scripts/::1728467077
+enemy.tscn::PackedScene::4347713355075756929::1728552410::0::1::::<><>::res://scripts/enemy.gd<>uid://d3kqy1ahxx6rs::::res://src/sword 16_16.png<>uid://dm8gkgab7s5aj::::res://shader/hit_flash.tres
+main.tscn::PackedScene::2095996398962374486::1728552409::0::1::::<><>::res://scripts/main.gd<>uid://b27cg6sforp66::::res://scenes/enemy.tscn<>uid://dlpjneylmq7g1::::res://scenes/player.tscn<>uid://boyhu5ujhe1rr::::res://icon.svg<>uid://mjp2e5c74612::::res://scenes/rotatoria_pazza.tscn<>uid://balrvc0f6esim::::res://src/piattaforma_unta.png<>uid://b3ldx1y1qicrc::::res://src/tilemap_test.png
+moving_platform.tscn::PackedScene::2169971786509921619::1728552410::0::1::::<><>::res://shader/moving_platform.gdshader<>res://scripts/moving_platform.gd
+player.tscn::PackedScene::7962874913349416198::1728552409::0::1::::<><>::res://scripts/player.gd<>uid://boyhu5ujhe1rr::::res://icon.svg<>uid://dm8gkgab7s5aj::::res://shader/hit_flash.tres
+rotatoria_pazza.tscn::PackedScene::861804751342198963::1728552410::0::1::::<><>::uid://56fea0fe00w2::::res://scenes/moving_platform.tscn<>res://scripts/Node.gd
+::res://scripts/::1728552409
 character_body_3d.gd::GDScript::-1::1727081006::0::1::::<>CharacterBody3D<>::
-enemy.gd::GDScript::-1::1728467035::0::1::::<>CharacterBody2D<>::
+enemy.gd::GDScript::-1::1728552409::0::1::::<>CharacterBody2D<>::
 global.gd::GDScript::-1::1727700554::0::1::::<>Node<>::
-main.gd::GDScript::-1::1728467077::0::1::::<>Node2D<>::
+main.gd::GDScript::-1::1728484551::0::1::::<>Node2D<>::
 moving_platform.gd::GDScript::-1::1727081006::0::1::::<>MeshInstance2D<>::
 Node.gd::GDScript::-1::1727081006::0::1::::<>Node2D<>::
-player.gd::GDScript::-1::1727859991::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1728484705::0::1::::<>CharacterBody2D<>::
 rotatoria_pazza.gd::GDScript::-1::1727081006::0::1::::<>Node2D<>::
 sesso_pazzo.gd::GDScript::-1::1727879407::0::1::::<>Node<>::
-::res://shader/::1728468719
-hit_flash.tres::VisualShader::8070035115744353329::1728463618::0::1::::<><>::
-moving_platform.gdshader::Shader::-1::1728468719::0::1::::<><>::
+::res://shader/::1728552658
+hit_flash.tres::VisualShader::8070035115744353329::1728551054::0::1::::<><>::
+moving_platform.gdshader::Shader::-1::1728552658::0::1::::<><>::
 player_damaged.tres::VisualShader::8032827943566412073::1727706639::0::1::::<><>::
 ::res://src/::1727860713
 03.png::CompressedTexture2D::5943177937870237326::1688817521::1727860713::1::::<><>::

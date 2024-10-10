@@ -39,8 +39,9 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	if chasing and player:#TODO: capire cosa non sta funzionando
-		position += (player.position - position) / SPEED
+	if chasing and player:
+		global_position += (player.position - global_position) / SPEED
+		
 		velocity.y += gravity * delta
 
 	move_and_slide()
@@ -59,17 +60,20 @@ func _on_detection_area_body_exited(body):
 #TODO: problemi con il pathfollowing per i nemici generati da codice
 func _on_enemy_hitbox_body_entered(body):
 	if body.is_in_group("player"):
+		player = body
 		player.hit.connect(doDamage)
 		in_range = true
 
 
 func _on_enemy_hitbox_body_exited(body):
 	if body.is_in_group("player"):
+		player = null
 		in_range = false
 
 
 func doDamage():#TODO: capire cosa non sta funzionando
-	if not attack_cooldown:
+	if not attack_cooldown and player:
+		print("E' scemo? ", player)
 		attack_cooldown = true
 		player.health -= 1
 		player.hit_animation.play("flash")
