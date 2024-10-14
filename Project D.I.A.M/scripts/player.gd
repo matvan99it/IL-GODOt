@@ -99,8 +99,8 @@ func enemy_attack():
 			kill_player()
 
 
-func doAttack(): #TODO: capire perchè crasha se attacco nemici su entrambi i lati
-	if enemy_in_range and not attack_cooldown:
+func doAttack(): #TODO: capire perchè non attacca i nemici su ambo i lati
+	if enemy_in_range and not attack_cooldown and mob != null:
 		$PAttackCooldown.start()
 		attack_cooldown = true
 		mob.health -= 2
