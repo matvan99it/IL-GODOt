@@ -6,7 +6,7 @@ extends Node
 
 
 #N.B.:
-#TODO: migliorare il combat system
+#TODO: migliorare il combat system per gestire più mob
 #TODO: implementare un sistema di combo minimo
 #TODO: imparare bene i tileset e le tilemap per fare le mappe
 #TODO: creare le classi per tipologia di nemico

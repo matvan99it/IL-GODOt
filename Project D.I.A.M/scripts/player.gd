@@ -79,21 +79,19 @@ func _physics_process(delta):
 
 
 func _on_player_hitbozz_body_entered(body):
-	if(body.is_in_group("enemy")):
+	if body.is_in_group("enemy"):
 		enemy_in_range = true
-		mob = body
+		self.mob = body
 
 
 func _on_player_hitbozz_body_exited(body):
-	if(body.is_in_group("enemy")):
-		enemy_in_range = false
-		mob = null
+	enemy_in_range = false
+	self.mob = null
 	
 	
 	
 func enemy_attack():
-	if(enemy_in_range):
-		#health -= 1
+	if enemy_in_range:
 		hit.emit()
 		is_invincible = true
 		if(health <= 0):
@@ -101,7 +99,7 @@ func enemy_attack():
 			kill_player()
 
 
-func doAttack():
+func doAttack(): #TODO: capire perchè crasha se attacco nemici su entrambi i lati
 	if enemy_in_range and not attack_cooldown:
 		$PAttackCooldown.start()
 		attack_cooldown = true

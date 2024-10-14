@@ -1,9 +1,9 @@
+Area2D
+Label
 Node2D
 CollisionPolygon2D
 Marker2D
-Label
 CollisionShape2D
-Area2D
 AnimationPlayer
 Sprite2D
 Timer

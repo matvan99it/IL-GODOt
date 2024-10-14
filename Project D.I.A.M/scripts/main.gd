@@ -31,9 +31,6 @@ func spawn_mobs(mob_count: int, area2d: Area2D):
 	# Ottieni il CollisionShape2D
 	var collision_shape = null
 	var local_point = Vector2.ZERO
-		# Ottieni la forma del rettangolo
-	#var rect = area.get_child(0).shape.get_rect()
-	#var shape = area.get_child(0).shape
 	
 	
 	for child in area2d.get_children():

@@ -27,6 +27,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var attack_cooldown = false
 var stun = false
 var health = 10
+var damage = 0
+
 enum Status{
 	Pipop,
 	bbbbbb
@@ -47,23 +49,22 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_detection_area_body_entered(body):
+	print(body)
 	if body.is_in_group("player"): # Assicurati che il rilevamento funzioni solo per il player
 		player = body
 		chasing = true
 
 func _on_detection_area_body_exited(body):
-	if body.is_in_group("player"):
 		player = null
 		chasing = false
 		
 
-#TODO: problemi con il pathfollowing per i nemici generati da codice
+#TODO: ogni tanto prende e crasha quando non ho capito
 func _on_enemy_hitbox_body_entered(body):
 	if body.is_in_group("player"):
 		player = body
-		player.hit.connect(doDamage)
 		in_range = true
-
+		player.hit.connect(doDamage)
 
 func _on_enemy_hitbox_body_exited(body):
 	if body.is_in_group("player"):
@@ -71,11 +72,10 @@ func _on_enemy_hitbox_body_exited(body):
 		in_range = false
 
 
-func doDamage():#TODO: capire cosa non sta funzionando
-	if not attack_cooldown and player:
-		print("E' scemo? ", player)
+func doDamage():
+	if not attack_cooldown and player != null:
 		attack_cooldown = true
-		player.health -= 1
+		player.health -= damage
 		player.hit_animation.play("flash")
 		$EAttackCooldown.start()
 		print("burba kurva ", player.health)

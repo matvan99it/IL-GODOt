@@ -63,7 +63,7 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_620gs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="enemy_size" type="CollisionShape2D" parent="."]
 modulate = Color(1, 0.0431373, 1, 1)
 self_modulate = Color(1, 0.0117647, 1, 1)
 position = Vector2(1, 0)
@@ -72,7 +72,7 @@ debug_color = Color(1, 0.278431, 0.866667, 0.419608)
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+[node name="hitbox" type="CollisionShape2D" parent="enemy_hitbox"]
 shape = SubResource("CircleShape2D_xjuus")
 debug_color = Color(1, 0.458824, 0, 0.419608)
 
@@ -80,7 +80,8 @@ debug_color = Color(1, 0.458824, 0, 0.419608)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+[node name="radar" type="CollisionShape2D" parent="detection_area"]
+position = Vector2(-2, 0)
 shape = SubResource("CircleShape2D_gx26g")
 
 [node name="EAttackCooldown" type="Timer" parent="."]
