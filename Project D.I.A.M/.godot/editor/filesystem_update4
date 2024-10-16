@@ -1,9 +1,5 @@
-res://scenes/main.tscn
+res://scenes/player.tscn
 res://shader/hit_flash.tres
 res://shader/moving_platform.gdshader
 res://scenes/enemy.tscn
-res://scripts/enemy.gd
-res://scenes/player.tscn
-res://scripts/player.gd
-res://scripts/sesso_pazzo.gd
-res://scripts/main.gd
+res://scenes/main.tscn
