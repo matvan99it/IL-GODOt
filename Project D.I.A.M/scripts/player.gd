@@ -8,10 +8,14 @@ const DASH_DURATION = 0.5
 
 signal hit 
 
+
 var enemy_in_range = false
 var enemy_attack_cooldown = true
 var enemy_stun = false
+
 var mob = null
+var remaining_mob = []
+
 var attack_cooldown = false
 var is_attacking = false
 var is_invincible = false
@@ -53,6 +57,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("attack") and enemy_in_range:
 		is_attacking = true
+		print("Rimnagono ", remaining_mob.size(), " e sono ", remaining_mob)
 		mob.attacked.connect(doAttack)
 
 	# Get the input direction and handle the movement/deceleration.
@@ -81,12 +86,28 @@ func _physics_process(delta):
 func _on_player_hitbozz_body_entered(body):
 	if body.is_in_group("enemy"):
 		enemy_in_range = true
-		self.mob = body
+		mob = body
+		
+		remaining_mob.append_array(
+			$player_hitbozz
+			.get_overlapping_bodies()
+			.filter(
+				func(e): 
+					return e.is_in_group("enemy")  ))
+
+		print("Rimnagono ", remaining_mob.size(), " e sono ", remaining_mob)
 
 
 func _on_player_hitbozz_body_exited(body):
-	enemy_in_range = false
-	self.mob = null
+	
+	if(remaining_mob.is_empty()):
+		enemy_in_range = false
+		remaining_mob = []
+		self.mob = null
+	else:
+		remaining_mob.erase(mob)
+		mob = remaining_mob[0]
+	
 	
 	
 	
@@ -99,12 +120,17 @@ func enemy_attack():
 			kill_player()
 
 
-func doAttack(): #TODO: capire perchè non attacca i nemici su ambo i lati
+func doAttack():
 	if enemy_in_range and not attack_cooldown and mob != null:
 		$PAttackCooldown.start()
 		attack_cooldown = true
-		mob.health -= 2
+		mob.health -= 200
 		mob.flashan.play("flash_mob")
+		if(mob.health <= 0):
+			remaining_mob.erase(mob)
+			print(remaining_mob)
+			if(not remaining_mob.is_empty()):
+				mob = remaining_mob[0]
 		print("TACCIDE: ", mob.health)
 		
 

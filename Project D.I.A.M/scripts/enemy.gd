@@ -49,8 +49,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_detection_area_body_entered(body):
-	print(body)
 	if body.is_in_group("player"): # Assicurati che il rilevamento funzioni solo per il player
+		print("Io sono ", self)
 		player = body
 		chasing = true
 
@@ -81,7 +81,7 @@ func doDamage():
 		print("burba kurva ", player.health)
 
 func playerAttack():
-	if in_range and player != null:
+	if in_range and player != null:	
 		if player.is_attacking:
 			attacked.emit()
 			if(health <= 0):
