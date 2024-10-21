@@ -47,6 +47,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	move_and_slide()
+	#ffhfhfhfhfhfh
 
 func _on_detection_area_body_entered(body):
 	if body.is_in_group("player"): # Assicurati che il rilevamento funzioni solo per il player
