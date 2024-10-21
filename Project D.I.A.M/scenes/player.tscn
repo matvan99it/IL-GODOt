@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://dlpjneylmq7g1"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_x6j52"]
-[ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="2_2xcmy"]
 [ext_resource type="Shader" uid="uid://dm8gkgab7s5aj" path="res://shader/hit_flash.tres" id="2_gkcq1"]
+[ext_resource type="Texture2D" uid="uid://di4skgufumap" path="res://src/permobte.png" id="3_g42m6"]
 [ext_resource type="Texture2D" uid="uid://d3kqy1ahxx6rs" path="res://src/sword 16_16.png" id="4_bjf27"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2mp3"]
@@ -150,6 +150,7 @@ _data = {
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_x6j52")
+atk_speed = 1.46
 metadata/_edit_group_ = true
 
 [node name="player_hitbozz" type="Area2D" parent="."]
@@ -158,6 +159,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_j2mp3")
 
 [node name="PAttackCooldown" type="Timer" parent="."]
+process_callback = 0
 
 [node name="AfterDamageInvincibility" type="Timer" parent="."]
 
@@ -168,18 +170,23 @@ libraries = {
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_84glh")
-position = Vector2(2, 1)
-texture = ExtResource("2_2xcmy")
+position = Vector2(3.5, -3.8147e-06)
+scale = Vector2(0.458484, 0.475836)
+texture = ExtResource("3_g42m6")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
 position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_o2lve")
 
 [node name="AttackBody" type="CharacterBody2D" parent="."]
+light_mask = 0
+visibility_layer = 0
 position = Vector2(89, -81)
 scale = Vector2(1.0084, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBody"]
+light_mask = 0
+visibility_layer = 0
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_6yn4e")
 

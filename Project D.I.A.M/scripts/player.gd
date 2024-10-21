@@ -44,7 +44,6 @@ var dash_velocity := 0.0
 
 func _physics_process(delta):
 	
-	$PAttackCooldown.wait_time = atk_speed
 	enemy_attack()
 	
 	if not is_on_floor():
@@ -60,23 +59,14 @@ func _physics_process(delta):
 	if(Input.is_action_just_pressed("ui_down") and Input.is_action_just_pressed("ui_accept") and is_on_floor()):
 		position.y += 1
 		
-	#ATTACCATI AL TAKATA TACATA
+	#ATTACCATI AL TACATA
 	if Input.is_action_just_pressed("attack") and not attack_cooldown:
-		if(up):
-			attack_animation.play("attack_down")
-			up = false
-		else:
-			attack_animation.play("attack_up")
-			up = true
-		
-		 
-		if enemy_in_range:
-			is_attacking = true
-			print("Rimnagono ", remaining_mob.size(), " e sono ", remaining_mob)
+		print("CACATI ADDOSSO")
+		is_attacking = true
+		if not mob.is_connected("attacked", Callable(self, "doAttack")):
 			mob.attacked.connect(doAttack)
 		else:
-			$PAttackCooldown.start()
-			attack_cooldown = true
+			doAttack()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -84,12 +74,11 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("dash"):
 		dash_velocity = SLIDE_SPEED
-		rotate(deg_to_rad(90))
 		if tween:
 			tween.stop()
 			rotate(deg_to_rad(0))
 		tween = create_tween()
-		tween.tween_property(self, "dash_velocity", 0, 0.3).set_ease(Tween.EASE_OUT)
+		tween.tween_property(self, "dash_velocity", 0, .3).set_ease(Tween.EASE_OUT)
 	
 	if direction:
 		velocity.x = direction * (SPEED + dash_velocity)
@@ -116,19 +105,22 @@ func _on_player_hitbozz_body_entered(body):
 		print("Rimnagono ", remaining_mob.size(), " e sono ", remaining_mob)
 
 
+#TODO: capire perchè quando uccidi un mostro dalla lista, questa viene svuotata
 func _on_player_hitbozz_body_exited(body):
 	
-	if(remaining_mob.is_empty()):
+	if remaining_mob.is_empty():
+		print("finiti")
 		enemy_in_range = false
 		remaining_mob = []
 		self.mob = null
 	else:
 		remaining_mob.erase(mob)
-		mob = remaining_mob[0]
-	
-	
-	
-	
+		mob = null
+		print(remaining_mob.size(), " ", remaining_mob)
+		enemy_in_range = true
+		if remaining_mob.size() > 0:
+			mob = remaining_mob[0]
+
 func enemy_attack():
 	if enemy_in_range:
 		hit.emit()
@@ -137,19 +129,29 @@ func enemy_attack():
 			print("MORTP")
 			kill_player()
 
-
+#TODO: capire perchè svuota l'array
 func doAttack():
-	if enemy_in_range and not attack_cooldown and mob != null:
+	if not attack_cooldown:
+		if(up):
+			attack_animation.play("attack_down")
+			up = false
+		else:
+			attack_animation.play("attack_up")
+			up = true
+		
 		$PAttackCooldown.start()
 		attack_cooldown = true
-		mob.health -= 200
-		mob.flashan.play("flash_mob")
-		if(mob.health <= 0):
-			remaining_mob.erase(mob)
-			print(remaining_mob)
-			if(not remaining_mob.is_empty()):
-				mob = remaining_mob[0]
-		print("TACCIDE: ", mob.health)
+		
+		if enemy_in_range and mob != null:
+			mob.health -= 200
+			mob.flashan.play("flash_mob")
+			if(mob.health <= 0):
+				remaining_mob.erase(mob)
+				print("b", remaining_mob.size(), " ", remaining_mob)
+				if(not remaining_mob.is_empty()):
+					print("Rimnagono ", remaining_mob.size(), " e sono ", remaining_mob)
+					print("Non vuoto")
+					mob = remaining_mob[0]
 		
 
 func kill_player():

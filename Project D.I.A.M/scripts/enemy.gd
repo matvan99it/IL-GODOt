@@ -58,8 +58,6 @@ func _on_detection_area_body_exited(body):
 		player = null
 		chasing = false
 		
-
-#TODO: ogni tanto prende e crasha quando non ho capito
 func _on_enemy_hitbox_body_entered(body):
 	if body.is_in_group("player"):
 		player = body
@@ -78,7 +76,7 @@ func doDamage():
 		player.health -= damage
 		player.hit_animation.play("flash")
 		$EAttackCooldown.start()
-		print("burba kurva ", player.health)
+		#print("burba kurva ", player.health)
 
 func playerAttack():
 	if in_range and player != null:	
