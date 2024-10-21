@@ -56,6 +56,7 @@ func spawn_mobs(mob_count: int, area2d: Area2D):
 				randf_range(rect_position.y, rect_position.y + rect_size.y)
 			)
 			collision_shape.add_child(mob)
+			#bananana
 	elif collision_shape is CollisionPolygon2D:
 		for i in range(mob_count):
 			var random_position = get_random_point_in_polygon(collision_shape.get_polygon())
