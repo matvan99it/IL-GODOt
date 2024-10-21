@@ -1,30 +1,36 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -800.0
-const SLIDE_SPEED = 800.0
-const GO_DOWN = 1000.0
-const DASH_DURATION = 0.5
+const SPEED: float = 300.0
+const JUMP_VELOCITY: float = -800.0
+const SLIDE_SPEED: float = 800.0
+const GO_DOWN: float = 1000.0
+const DASH_DURATION: float = 0.5
 
 signal hit 
 
 
-var enemy_in_range = false
-var enemy_attack_cooldown = true
-var enemy_stun = false
+var enemy_in_range: bool = false
+var enemy_attack_cooldown: bool = true
+var enemy_stun: bool = false
+
+var up: bool = true
+var current: String
+
 
 var mob = null
-var remaining_mob = []
+var remaining_mob: Array = []
 
-var attack_cooldown = false
-var is_attacking = false
-var is_invincible = false
+var attack_cooldown: bool = false
+var is_attacking: bool = false
+var is_invincible: bool = false
 #Per ora non servono
-@export var health = 100
-var player_alive = true
+@export var health: int = 100
+@export var atk_speed: float = .4
+
+var player_alive: bool = true
 
 @onready var hit_animation = $FlashAnimation
-
+@onready var attack_animation = $AttackBody/Attack_animation
 
 """
 I nemici piccoli non stunnano se non dopo 3/4 attacchi consecutivi e sono SEMPRE stunnati da ogni attacco fatto dal player
@@ -38,7 +44,7 @@ var dash_velocity := 0.0
 
 func _physics_process(delta):
 	
-	#$PAttackCooldown.wait_time = 2
+	$PAttackCooldown.wait_time = atk_speed
 	enemy_attack()
 	
 	if not is_on_floor():
@@ -54,11 +60,23 @@ func _physics_process(delta):
 	if(Input.is_action_just_pressed("ui_down") and Input.is_action_just_pressed("ui_accept") and is_on_floor()):
 		position.y += 1
 		
-	
-	if Input.is_action_just_pressed("attack") and enemy_in_range:
-		is_attacking = true
-		print("Rimnagono ", remaining_mob.size(), " e sono ", remaining_mob)
-		mob.attacked.connect(doAttack)
+	#ATTACCATI AL TAKATA TACATA
+	if Input.is_action_just_pressed("attack") and not attack_cooldown:
+		if(up):
+			attack_animation.play("attack_down")
+			up = false
+		else:
+			attack_animation.play("attack_up")
+			up = true
+		
+		 
+		if enemy_in_range:
+			is_attacking = true
+			print("Rimnagono ", remaining_mob.size(), " e sono ", remaining_mob)
+			mob.attacked.connect(doAttack)
+		else:
+			$PAttackCooldown.start()
+			attack_cooldown = true
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

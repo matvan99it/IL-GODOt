@@ -19,15 +19,15 @@ signal killed
 
 @onready var flashan = $AnimationPlayer
 
-const SPEED = 35.0
+const SPEED: float = 35.0
 var chasing: bool = false
 var in_range: bool = false
 var player = null
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var attack_cooldown = false
-var stun = false
-var health = 10
-var damage = 0
+var attack_cooldown: bool = false
+var stun: bool = false
+var health: int = 10
+var damage: int = 0
 
 enum Status{
 	Pipop,
