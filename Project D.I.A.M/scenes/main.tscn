@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dlpjneylmq7g1" path="res://scenes/player.tscn" id="3_lxfbs"]
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="4_b4dak"]
 [ext_resource type="PackedScene" uid="uid://mjp2e5c74612" path="res://scenes/rotatoria_pazza.tscn" id="5_yml8t"]
-[ext_resource type="Texture2D" uid="uid://bboinqkodaieu" path="res://src/piattaforma_unta.png" id="6_dx6kh"]
-[ext_resource type="Texture2D" uid="uid://d36x0hq4d2fsy" path="res://src/tilemap_test.png" id="6_qtm1q"]
+[ext_resource type="Texture2D" uid="uid://balrvc0f6esim" path="res://src/piattaforma_unta.png" id="6_dx6kh"]
+[ext_resource type="Texture2D" uid="uid://b3ldx1y1qicrc" path="res://src/tilemap_test.png" id="6_qtm1q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0fw2y"]
 

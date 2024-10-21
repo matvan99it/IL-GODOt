@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlpjneylmq7g1"]
+[gd_scene load_steps=16 format=3 uid="uid://dlpjneylmq7g1"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_x6j52"]
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="2_2xcmy"]
 [ext_resource type="Shader" uid="uid://dm8gkgab7s5aj" path="res://shader/hit_flash.tres" id="2_gkcq1"]
+[ext_resource type="Texture2D" uid="uid://d3kqy1ahxx6rs" path="res://src/sword 16_16.png" id="4_bjf27"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2mp3"]
 radius = 130.062
@@ -52,6 +53,99 @@ shader_parameter/tint = Color(1, 1, 1, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2lve"]
 size = Vector2(128, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yn4e"]
+size = Vector2(66.05, 20)
+
+[sub_resource type="Animation" id="Animation_2xjrd"]
+resource_name = "attack_down"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(89, -81), Vector2(89, 77)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -3.14159]
+}
+
+[sub_resource type="Animation" id="Animation_fxu10"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(89, -81)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_x8pus"]
+resource_name = "attack_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(89, 77), Vector2(89, -81)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-3.14159, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rl5ao"]
+_data = {
+"RESET": SubResource("Animation_fxu10"),
+"attack_down": SubResource("Animation_2xjrd"),
+"attack_up": SubResource("Animation_x8pus")
+}
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
 collision_mask = 3
@@ -80,6 +174,23 @@ texture = ExtResource("2_2xcmy")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
 position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_o2lve")
+
+[node name="AttackBody" type="CharacterBody2D" parent="."]
+position = Vector2(89, -81)
+scale = Vector2(1.0084, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBody"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_6yn4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="AttackBody"]
+scale = Vector2(1.22144, -4.09151)
+texture = ExtResource("4_bjf27")
+
+[node name="Attack_animation" type="AnimationPlayer" parent="AttackBody"]
+libraries = {
+"": SubResource("AnimationLibrary_rl5ao")
+}
 
 [connection signal="body_entered" from="player_hitbozz" to="." method="_on_player_hitbozz_body_entered"]
 [connection signal="body_exited" from="player_hitbozz" to="." method="_on_player_hitbozz_body_exited"]
