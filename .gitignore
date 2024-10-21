@@ -1,14 +1,13 @@
+# Godot-specific ignores for all sub-projects
+**/.import/            # Ignora tutte le cartelle .import in qualsiasi progetto
+**/export.cfg          # Ignora tutti i file export.cfg
+**/export_presets.cfg   # Ignora tutti i file export_presets.cfg
+**/*.import            # Ignora tutti i file con estensione .import
+**/.godot/             # Ignora tutte le cartelle .godot
 
-# Godot-specific ignores
-.import/
-export.cfg
-export_presets.cfg
-*.import
-.godot/
-
-# Mono-specific ignores
-.mono/
-data_*/
-addons/Todo_Manager/todo.cfg
-*.csproj
-*.sln
+# Mono-specific ignores for all sub-projects
+**/.mono/              # Ignora tutte le cartelle .mono in ogni progetto
+**/data_*/             # Ignora cartelle che iniziano con data_ in ogni progetto
+**/addons/Todo_Manager/todo.cfg  # Ignora il file todo.cfg in tutti i progetti
+**/*.csproj            # Ignora tutti i file .csproj
+**/*.sln               # Ignora tutti i file .sln
