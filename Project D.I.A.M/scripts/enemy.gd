@@ -76,7 +76,6 @@ func doDamage():
 		player.health -= damage
 		player.hit_animation.play("flash")
 		$EAttackCooldown.start()
-		#print("burba kurva ", player.health)
 
 func playerAttack():
 	if in_range and player != null:
