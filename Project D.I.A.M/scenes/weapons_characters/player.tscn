@@ -261,4 +261,4 @@ shape = SubResource("RectangleShape2D_6yn4e")
 [connection signal="body_exited" from="player_hitbozz" to="." method="_on_player_hitbozz_body_exited"]
 [connection signal="timeout" from="PAttackCooldown" to="." method="_on_p_attack_cooldown_timeout"]
 [connection signal="timeout" from="AfterDamageInvincibility" to="." method="_on_after_damage_invincibility_timeout"]
-[connection signal="area_entered" from="AttackBody/weapon_area_detection" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="AttackBody/weapon_area_detection" to="." method="_on_weapon_area_detection_body_entered"]

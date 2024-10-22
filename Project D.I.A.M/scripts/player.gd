@@ -169,9 +169,12 @@ func doAttack():
 		
 		$PAttackCooldown.start()
 		attack_cooldown = true
-		
-		if enemy_in_range and mob != null:
+		if mob != null:
 			mob.health -= 200
+			mob.flashan.play("flash_mob")
+		"""
+		if enemy_in_range and mob != null:
+			#mob.health -= 200
 			mob.flashan.play("flash_mob")
 			if(mob.health <= 0):
 				remaining_mob.erase(mob)
@@ -180,7 +183,7 @@ func doAttack():
 					print("Rimnagono ", remaining_mob.size(), " e sono ", remaining_mob)
 					print("Non vuoto")
 					mob = remaining_mob[0]
-		
+		"""
 
 func kill_player():
 	self.queue_free()
@@ -195,3 +198,12 @@ func _on_after_damage_invincibility_timeout():
 	is_invincible = false
 
 	
+
+
+func _on_weapon_area_detection_body_entered(body):
+	if body.is_in_group("mob"):
+		print("BOGO BINTED")
+		mob = body
+		#mob.health -= 200
+		#mob.flashan.play("flash_mob")
+		mob.attacked.connect(doAttack)
