@@ -77,12 +77,12 @@ func doDamage():
 		player.hit_animation.play("flash")
 		$EAttackCooldown.start()
 
+
 func playerAttack():
 	if in_range and player != null:
 		if player.is_attacking:
 			attacked.emit()
 			if(health <= 0):
-				print("EH EH EH AHW")
 				kill_mob()
 
 func getDamage():

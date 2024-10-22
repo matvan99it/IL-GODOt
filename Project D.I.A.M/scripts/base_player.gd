@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const SPEED: float = 300.0
 const JUMP_VELOCITY: float = -800.0
 const SLIDE_SPEED: float = 800.0
+const SPEED: float = 300.0
 const GO_DOWN: float = 1000.0
 const DASH_DURATION: float = 0.5
 
@@ -24,8 +24,8 @@ var attack_cooldown: bool = false
 var is_attacking: bool = false
 var is_invincible: bool = false
 #Per ora non servono
-@export var health: int = 100
-@export var atk_speed: float = .4
+@export var HEALTH: int = 100
+@export var ATK_SPEED: float = .4
 
 var player_alive: bool = true
 
@@ -37,11 +37,96 @@ I nemici piccoli non stunnano se non dopo 3/4 attacchi consecutivi e sono SEMPRE
 I miniboss e boss non sono/non fanno stun sempre tranne con attacchi pesanti o combo
 """
 
+#TODO: LOGISTICA PLAYER
+"""
+Se faccio più pg devo fare in modo di selezionarlo ogni volta ma devo sistemare il player per renderlo generico e poi creare le classi per come qui
+
+##this
+extends KinematicBody2D
+
+# Caratteristiche comuni
+var health: int = 100
+var speed: float = 200.0  # Velocità di movimento di default
+var attack_speed: float = 1.0  # Tempo tra un attacco e l'altro
+
+# Funzione di movimento comune
+func move(direction: Vector2, delta: float):
+	var velocity = direction.normalized() * speed
+	move_and_slide(velocity)
+
+# Funzione per subire danno
+func take_damage(damage: int):
+	health -= damage
+	if health <= 0:
+		die()
+
+# Funzione per morire (overrideabile)
+func die():
+	print(self.name, " è morto.")
+	queue_free()
+
+# Funzione per attaccare (ogni personaggio può personalizzarla)
+func attack():
+	print(self.name, " attacca con velocità di attacco: ", attack_speed)
+
+
+
+##Player 1
+extends "res://Character.gd"
+
+# Sovrascriviamo alcune caratteristiche
+func _ready():
+	health = 150  # Il guerriero ha più salute
+	speed = 150.0  # Il guerriero è più lento
+	attack_speed = 0.8  # Il guerriero attacca lentamente
+
+# Personalizza la funzione di attacco
+func attack():
+	print("Il guerriero colpisce con la spada!")
+	# Logica d'attacco personalizzata qui
+
+
+
+##Player 2
+extends "res://Character.gd"
+
+# Sovrascriviamo alcune caratteristiche
+func _ready():
+	health = 100  # L'arciere ha meno salute
+	speed = 250.0  # L'arciere è più veloce
+	attack_speed = 1.5  # L'arciere attacca rapidamente
+
+# Personalizza la funzione di attacco
+func attack():
+	print("L'arciere lancia una freccia!")
+	# Logica d'attacco personalizzata qui
+
+
+
+
+"""
+
+
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var tween: Tween
 var dash_velocity := 0.0
 var direction: float = 0.0
+
+
+#TODO: Sistemare bene alcune stitistiche
+func _init(
+	health: int = 100, 
+	atk_speed: float = 0.6, 
+	defense: float = 5
+	):
+	self.HEALTH = health
+	self.ATK_SPEED = atk_speed
+	
+func _ready():
+	$PAttackCooldown.wait_time *= ATK_SPEED
+
 func _physics_process(delta):
 	
 	# Get the input direction and handle the movement/deceleration
@@ -144,7 +229,7 @@ func enemy_attack():
 	if enemy_in_range:
 		hit.emit()
 		is_invincible = true
-		if(health <= 0):
+		if(HEALTH <= 0):
 			print("MORTP")
 			kill_player()
 
@@ -202,8 +287,5 @@ func _on_after_damage_invincibility_timeout():
 
 func _on_weapon_area_detection_body_entered(body):
 	if body.is_in_group("mob"):
-		print("BOGO BINTED")
 		mob = body
-		#mob.health -= 200
-		#mob.flashan.play("flash_mob")
 		mob.attacked.connect(doAttack)
