@@ -78,13 +78,16 @@ func _physics_process(delta):
 		
 	#ATTACCATI AL TACATA
 	if Input.is_action_just_pressed("attack") and not attack_cooldown:
-		print("CACATI ADDOSSO")
+		
+		is_attacking = true
+		
 		if mob != null:
-			is_attacking = true
 			if not mob.is_connected("attacked", Callable(self, "doAttack")):
 				mob.attacked.connect(doAttack)
 			else:
 				doAttack()
+		else:
+			doAttack()
 
 	
 	if Input.is_action_just_pressed("dash"):
