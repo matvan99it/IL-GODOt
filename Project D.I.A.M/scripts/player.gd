@@ -12,7 +12,7 @@ signal hit
 var enemy_in_range: bool = false
 var enemy_attack_cooldown: bool = true
 var enemy_stun: bool = false
-
+var right: bool = true
 var up: bool = true
 var current: String
 var combo_max_count: int = 3
@@ -44,10 +44,21 @@ var dash_velocity := 0.0
 var direction: float = 0.0
 func _physics_process(delta):
 	
+	# Get the input direction and handle the movement/deceleration
+	direction = Input.get_axis("ui_left", "ui_right")
+	
 	enemy_attack()
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
+
+	if Input.is_action_just_pressed("move_left"):
+		flip_all()
+	
+	if Input.is_action_just_pressed("move_right"):
+		flip_all()
+			
+
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -62,14 +73,13 @@ func _physics_process(delta):
 	#ATTACCATI AL TACATA
 	if Input.is_action_just_pressed("attack") and not attack_cooldown:
 		print("CACATI ADDOSSO")
-		is_attacking = true
-		if not mob.is_connected("attacked", Callable(self, "doAttack")):
-			mob.attacked.connect(doAttack)
-		else:
-			doAttack()
+		if mob != null:
+			is_attacking = true
+			if not mob.is_connected("attacked", Callable(self, "doAttack")):
+				mob.attacked.connect(doAttack)
+			else:
+				doAttack()
 
-	# Get the input direction and handle the movement/deceleration
-	direction = Input.get_axis("ui_left", "ui_right")
 	
 	if Input.is_action_just_pressed("dash"):
 		dash_velocity = SLIDE_SPEED
@@ -79,9 +89,9 @@ func _physics_process(delta):
 		tween = create_tween()
 		tween.tween_property(self, "dash_velocity", 0, .3).set_ease(Tween.EASE_OUT)
 	
-	if direction:
+	if direction:#movimento
 		velocity.x = direction * (SPEED + dash_velocity)
-	else:
+	else:#fermo
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	
@@ -130,6 +140,9 @@ func enemy_attack():
 			kill_player()
 
 func doAttack():
+	
+	#if(direction)
+	
 	if not attack_cooldown:
 		if(up):
 			attack_animation.play("attack_down")
@@ -165,4 +178,8 @@ func _on_p_attack_cooldown_timeout():
 func _on_after_damage_invincibility_timeout():
 	is_invincible = false
 
-
+func flip_all():
+	$Sprite2D.set_flip_h(right)
+	right = not right
+	$AttackBody.position.x = $AttackBody.position.x * (-1)
+	
