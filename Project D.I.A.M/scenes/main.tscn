@@ -696,7 +696,7 @@ autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1997, 339)
-zoom = Vector2(1.134, 1.134)
+zoom = Vector2(0.429, 0.429)
 
 [node name="Piattaforma lezza" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8qnou")

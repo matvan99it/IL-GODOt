@@ -53,10 +53,16 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	if Input.is_action_just_pressed("move_left"):
-		flip_all()
+		if right:
+			$Sprite2D.set_flip_h(right)
+			right = not right
+			$AttackBody.position.x = $AttackBody.position.x * (-1)
 	
 	if Input.is_action_just_pressed("move_right"):
-		flip_all()
+		if not right:
+			$Sprite2D.set_flip_h(right)
+			right = not right
+			$AttackBody.position.x = $AttackBody.position.x * (-1)
 			
 
 
@@ -141,15 +147,22 @@ func enemy_attack():
 
 func doAttack():
 	
-	#if(direction)
-	
 	if not attack_cooldown:
-		if(up):
-			attack_animation.play("attack_down")
-			up = false
+	#if(direction)
+		if right:
+			if(up):
+				attack_animation.play("attack_down")
+				up = false
+			else:
+				attack_animation.play("attack_up")
+				up = true
 		else:
-			attack_animation.play("attack_up")
-			up = true
+			if(up):
+				attack_animation.play("attack_down_left")
+				up = false
+			else:
+				attack_animation.play("attack_up_2")
+				up = true
 		
 		$PAttackCooldown.start()
 		attack_cooldown = true
@@ -178,8 +191,4 @@ func _on_p_attack_cooldown_timeout():
 func _on_after_damage_invincibility_timeout():
 	is_invincible = false
 
-func flip_all():
-	$Sprite2D.set_flip_h(right)
-	right = not right
-	$AttackBody.position.x = $AttackBody.position.x * (-1)
 	
