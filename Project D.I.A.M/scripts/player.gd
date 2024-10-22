@@ -15,7 +15,7 @@ var enemy_stun: bool = false
 
 var up: bool = true
 var current: String
-
+var combo_max_count: int = 3
 
 var mob = null
 var remaining_mob: Array = []
@@ -41,7 +41,7 @@ I miniboss e boss non sono/non fanno stun sempre tranne con attacchi pesanti o c
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var tween: Tween
 var dash_velocity := 0.0
-
+var direction: float = 0.0
 func _physics_process(delta):
 	
 	enemy_attack()
@@ -68,9 +68,8 @@ func _physics_process(delta):
 		else:
 			doAttack()
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	# Get the input direction and handle the movement/deceleration
+	direction = Input.get_axis("ui_left", "ui_right")
 	
 	if Input.is_action_just_pressed("dash"):
 		dash_velocity = SLIDE_SPEED
@@ -105,21 +104,22 @@ func _on_player_hitbozz_body_entered(body):
 		print("Rimnagono ", remaining_mob.size(), " e sono ", remaining_mob)
 
 
-#TODO: capire perchè quando uccidi un mostro dalla lista, questa viene svuotata
+#TODO: cambiare il combat system con un collision che viene mosso
+
 func _on_player_hitbozz_body_exited(body):
-	
-	if remaining_mob.is_empty():
-		print("finiti")
-		enemy_in_range = false
-		remaining_mob = []
-		self.mob = null
-	else:
-		remaining_mob.erase(mob)
-		mob = null
-		print(remaining_mob.size(), " ", remaining_mob)
-		enemy_in_range = true
-		if remaining_mob.size() > 0:
-			mob = remaining_mob[0]
+	if body.is_in_group("enemy"):
+		if remaining_mob.is_empty():
+			print("finiti")
+			enemy_in_range = false
+			remaining_mob = []
+			self.mob = null
+		else:
+			remaining_mob.erase(mob)
+			mob = null
+			print(remaining_mob.size(), " ", remaining_mob)
+			enemy_in_range = true
+			if remaining_mob.size() > 0: 
+				mob = remaining_mob[0]
 
 func enemy_attack():
 	if enemy_in_range:
@@ -129,7 +129,6 @@ func enemy_attack():
 			print("MORTP")
 			kill_player()
 
-#TODO: capire perchè svuota l'array
 func doAttack():
 	if not attack_cooldown:
 		if(up):
@@ -165,3 +164,5 @@ func _on_p_attack_cooldown_timeout():
 
 func _on_after_damage_invincibility_timeout():
 	is_invincible = false
+
+

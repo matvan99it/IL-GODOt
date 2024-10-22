@@ -79,7 +79,7 @@ func doDamage():
 		#print("burba kurva ", player.health)
 
 func playerAttack():
-	if in_range and player != null:	
+	if in_range and player != null:
 		if player.is_attacking:
 			attacked.emit()
 			if(health <= 0):

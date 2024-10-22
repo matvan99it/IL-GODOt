@@ -1,8 +1,8 @@
 [gd_scene load_steps=38 format=3 uid="uid://44k0wfm0bore"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ibgdh"]
-[ext_resource type="PackedScene" uid="uid://b27cg6sforp66" path="res://scenes/enemy.tscn" id="2_ywjwa"]
-[ext_resource type="PackedScene" uid="uid://dlpjneylmq7g1" path="res://scenes/player.tscn" id="3_lxfbs"]
+[ext_resource type="PackedScene" uid="uid://b27cg6sforp66" path="res://scenes/mobs/enemy.tscn" id="2_ywjwa"]
+[ext_resource type="PackedScene" uid="uid://dlpjneylmq7g1" path="res://scenes/weapons_characters/player.tscn" id="3_lxfbs"]
 [ext_resource type="Texture2D" uid="uid://boyhu5ujhe1rr" path="res://icon.svg" id="4_b4dak"]
 [ext_resource type="PackedScene" uid="uid://mjp2e5c74612" path="res://scenes/rotatoria_pazza.tscn" id="5_yml8t"]
 [ext_resource type="Texture2D" uid="uid://balrvc0f6esim" path="res://src/piattaforma_unta.png" id="6_dx6kh"]

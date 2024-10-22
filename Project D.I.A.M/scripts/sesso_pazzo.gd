@@ -10,8 +10,8 @@ extends Node
 #TODO: implementare un sistema di combo minimo
 #TODO: imparare bene i tileset e le tilemap per fare le mappe
 #TODO: creare le classi per tipologia di nemico
-#TODO: aggiungere una mini pausa per i danni presi e subiti e incrementale in base al tipo di danno
-#TODO: aggiungere una specie di knockbck per i nemici più piccoli
+#TODO: aggiungere un knock al player/mob dopo tot attacchi
+#TODO: creare stili diversi(pg o equip)
 #TODO: creare dei bozzetti per le mappe
 #TODO: imparare ad usare aeprite per fare animazioni e grafiche
 #TODO: aggiungere suoni(opzionale per ora)
