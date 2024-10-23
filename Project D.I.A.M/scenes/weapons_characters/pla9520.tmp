@@ -1,9 +1,66 @@
 [gd_scene load_steps=18 format=3 uid="uid://dlpjneylmq7g1"]
 
-[ext_resource type="Script" path="res://scripts/warrior.gd" id="1_54758"]
 [ext_resource type="Shader" uid="uid://dm8gkgab7s5aj" path="res://shader/hit_flash.tres" id="2_gkcq1"]
 [ext_resource type="Texture2D" uid="uid://di4skgufumap" path="res://src/permobte.png" id="3_g42m6"]
 [ext_resource type="Texture2D" uid="uid://d3kqy1ahxx6rs" path="res://src/sword 16_16.png" id="4_bjf27"]
+
+[sub_resource type="GDScript" id="GDScript_kf47a"]
+script/source = "extends \"res://scripts/base_player.gd\"
+
+var bp: CharacterBody2D
+
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed(\"attack\") and not attack_cooldown:
+	
+		is_attacking = true
+		
+		if mob != null:
+			if not mob.is_connected(\"attacked\", Callable(self, \"doAttack\")):
+				mob.attacked.connect(doAttack)
+			else:
+				doAttack()
+		else:
+			doAttack()
+
+
+func doAttack():
+	
+	if not attack_cooldown:
+	#if(direction)
+		if right:
+			if(up):
+				attack_animation.play(\"attack_down\")
+				up = false
+			else:
+				attack_animation.play(\"attack_up\")
+				up = true
+		else:
+			if(up):
+				attack_animation.play(\"attack_down_left\")
+				up = false
+			else:
+				attack_animation.play(\"attack_up_2\")
+				up = true
+		
+		$PAttackCooldown.start()
+		attack_cooldown = true
+		if mob != null:
+			mob.health -= 200
+			mob.flashan.play(\"flash_mob\")
+		\"\"\"
+		if enemy_in_range and mob != null:
+			#mob.health -= 200
+			mob.flashan.play(\"flash_mob\")
+			if(mob.health <= 0):
+				remaining_mob.erase(mob)
+				print(\"b\", remaining_mob.size(), \" \", remaining_mob)
+				if(not remaining_mob.is_empty()):
+					print(\"Rimnagono \", remaining_mob.size(), \" e sono \", remaining_mob)
+					print(\"Non vuoto\")
+					mob = remaining_mob[0]
+		\"\"\"
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2mp3"]
 radius = 130.062
@@ -207,7 +264,9 @@ size = Vector2(66.05, 20)
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_54758")
+script = SubResource("GDScript_kf47a")
+HEALTH = null
+ATK_SPEED = null
 metadata/_edit_group_ = true
 
 [node name="player_hitbozz" type="Area2D" parent="."]

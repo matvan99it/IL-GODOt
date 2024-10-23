@@ -208,6 +208,8 @@ size = Vector2(66.05, 20)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_54758")
+HEALTH = null
+ATK_SPEED = null
 metadata/_edit_group_ = true
 
 [node name="player_hitbozz" type="Area2D" parent="."]

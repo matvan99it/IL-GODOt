@@ -22,7 +22,7 @@ signal killed
 const SPEED: float = 35.0
 var chasing: bool = false
 var in_range: bool = false
-var player = null
+var player: player_base = null
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var attack_cooldown: bool = false
 var stun: bool = false
@@ -72,8 +72,9 @@ func _on_enemy_hitbox_body_exited(body):
 
 func doDamage():
 	if not attack_cooldown and player != null:
+		print(player)
 		attack_cooldown = true
-		player.health -= damage
+		player.HEALTH -= damage
 		player.hit_animation.play("flash")
 		$EAttackCooldown.start()
 

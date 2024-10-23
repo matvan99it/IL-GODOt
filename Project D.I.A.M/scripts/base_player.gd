@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name player_base 
 
 const JUMP_VELOCITY: float = -800.0
 const SLIDE_SPEED: float = 800.0
@@ -115,7 +116,6 @@ var dash_velocity := 0.0
 var direction: float = 0.0
 
 
-#TODO: Sistemare bene alcune stitistiche
 func _init(
 	health: int = 100, 
 	atk_speed: float = 0.6, 
@@ -124,10 +124,8 @@ func _init(
 	self.HEALTH = health
 	self.ATK_SPEED = atk_speed
 	
-func _ready():
-	$PAttackCooldown.wait_time *= ATK_SPEED
 
-func _physics_process(delta):
+func movimenti(delta):
 	
 	# Get the input direction and handle the movement/deceleration
 	direction = Input.get_axis("ui_left", "ui_right")
@@ -162,17 +160,7 @@ func _physics_process(delta):
 		position.y += 1
 		
 	#ATTACCATI AL TACATA
-	if Input.is_action_just_pressed("attack") and not attack_cooldown:
-		
-		is_attacking = true
-		
-		if mob != null:
-			if not mob.is_connected("attacked", Callable(self, "doAttack")):
-				mob.attacked.connect(doAttack)
-			else:
-				doAttack()
-		else:
-			doAttack()
+
 
 	
 	if Input.is_action_just_pressed("dash"):
@@ -193,37 +181,35 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func _on_player_hitbozz_body_entered(body):
-	if body.is_in_group("enemy"):
-		enemy_in_range = true
-		mob = body
-		
-		remaining_mob.append_array(
-			$player_hitbozz
-			.get_overlapping_bodies()
-			.filter(
-				func(e): 
-					return e.is_in_group("enemy")  ))
-
-		print("Rimnagono ", remaining_mob.size(), " e sono ", remaining_mob)
-
-
-#TODO: cambiare il combat system con un collision che viene mosso
-
-func _on_player_hitbozz_body_exited(body):
-	if body.is_in_group("enemy"):
-		if remaining_mob.is_empty():
-			print("finiti")
-			enemy_in_range = false
-			remaining_mob = []
-			self.mob = null
-		else:
-			remaining_mob.erase(mob)
-			mob = null
-			print(remaining_mob.size(), " ", remaining_mob)
+func player_hitbox(body, entered: bool):
+	if entered:
+		if body.is_in_group("enemy"):
 			enemy_in_range = true
-			if remaining_mob.size() > 0: 
-				mob = remaining_mob[0]
+			mob = body
+			remaining_mob.append_array(
+				$player_hitbozz
+				.get_overlapping_bodies()
+				.filter(
+					func(e): 
+						return e.is_in_group("enemy")  ))
+
+			print("Rimnagono ", remaining_mob.size(), " e sono ", remaining_mob)
+	else:
+		if body.is_in_group("enemy"):
+			if remaining_mob.is_empty():
+				print("finiti")
+				enemy_in_range = false
+				remaining_mob = []
+				self.mob = null
+			else:
+				remaining_mob.erase(mob)
+				mob = null
+				print(remaining_mob.size(), " ", remaining_mob)
+				enemy_in_range = true
+				if remaining_mob.size() > 0: 
+					mob = remaining_mob[0]
+		
+
 
 func enemy_attack():
 	if enemy_in_range:
@@ -233,59 +219,17 @@ func enemy_attack():
 			print("MORTP")
 			kill_player()
 
-func doAttack():
-	
-	if not attack_cooldown:
-	#if(direction)
-		if right:
-			if(up):
-				attack_animation.play("attack_down")
-				up = false
-			else:
-				attack_animation.play("attack_up")
-				up = true
-		else:
-			if(up):
-				attack_animation.play("attack_down_left")
-				up = false
-			else:
-				attack_animation.play("attack_up_2")
-				up = true
-		
-		$PAttackCooldown.start()
-		attack_cooldown = true
-		if mob != null:
-			mob.health -= 200
-			mob.flashan.play("flash_mob")
-		"""
-		if enemy_in_range and mob != null:
-			#mob.health -= 200
-			mob.flashan.play("flash_mob")
-			if(mob.health <= 0):
-				remaining_mob.erase(mob)
-				print("b", remaining_mob.size(), " ", remaining_mob)
-				if(not remaining_mob.is_empty()):
-					print("Rimnagono ", remaining_mob.size(), " e sono ", remaining_mob)
-					print("Non vuoto")
-					mob = remaining_mob[0]
-		"""
 
 func kill_player():
 	self.queue_free()
-
-
-func _on_p_attack_cooldown_timeout():
-	attack_cooldown = false
-	is_attacking = false
-
-
-func _on_after_damage_invincibility_timeout():
-	is_invincible = false
-
 	
+	
+func doAttack():
+	print("BANANA")
 
 
-func _on_weapon_area_detection_body_entered(body):
+func weapon_area(body):
 	if body.is_in_group("mob"):
 		mob = body
 		mob.attacked.connect(doAttack)
+
