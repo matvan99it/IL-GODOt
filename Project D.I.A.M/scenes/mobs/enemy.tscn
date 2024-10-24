@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://b27cg6sforp66"]
+[gd_scene load_steps=11 format=3 uid="uid://b27cg6sforp66"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_620gs"]
 [ext_resource type="Shader" uid="uid://dm8gkgab7s5aj" path="res://shader/hit_flash.tres" id="2_nsx6n"]
+[ext_resource type="Texture2D" uid="uid://d3kqy1ahxx6rs" path="res://src/sword 16_16.png" id="3_ytm78"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxdu1"]
 radius = 15.5
@@ -91,6 +92,7 @@ one_shot = true
 material = SubResource("ShaderMaterial_regoi")
 position = Vector2(1, 0.499999)
 scale = Vector2(1.875, 3.9375)
+texture = ExtResource("3_ytm78")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name base_enemy
+
 """
 Come per OPPW
 
@@ -26,13 +28,23 @@ var player: player_base = null
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var attack_cooldown: bool = false
 var stun: bool = false
-var health: int = 10
+var health: float = 10.0
 var damage: int = 0
+var defense: float = 0.0
+var atk_spd: float = 2.0
 
 enum Status{
 	Pipop,
 	bbbbbb
 }
+
+func _init(health: float = 50, atk_speed:float = 2.0, dfe: float = 0.0):
+	self.health = health
+	self.defense = dfe
+	self.atk_spd = atk_speed
+
+func _ready():
+	$EAttackCooldown.wait_time = atk_spd
 
 func _physics_process(delta):
 	# Add the gravity.
