@@ -125,7 +125,7 @@ func _init(
 	self.ATK_SPEED = atk_speed
 	
 
-func movimenti(delta):
+func _physics_process(delta):
 	
 	# Get the input direction and handle the movement/deceleration
 	direction = Input.get_axis("ui_left", "ui_right")
@@ -160,7 +160,20 @@ func movimenti(delta):
 		position.y += 1
 		
 	#ATTACCATI AL TACATA
-
+	#movimenti(delta)
+		
+	#ATTACCATI AL TACATA
+	if Input.is_action_just_pressed("attack") and not attack_cooldown:
+	
+		is_attacking = true
+		
+		if mob != null:
+			if not mob.is_connected("attacked", Callable(self, "doAttack")):
+				mob.attacked.connect(doAttack)
+			else:
+				doAttack()
+		else:
+			doAttack()
 
 	
 	if Input.is_action_just_pressed("dash"):
@@ -233,3 +246,23 @@ func weapon_area(body):
 		mob = body
 		mob.attacked.connect(doAttack)
 
+
+func _on_player_hitbozz_body_entered(body):
+	player_hitbox(body, true)
+
+
+func _on_player_hitbozz_body_exited(body):
+	player_hitbox(body, false)
+
+
+func _on_weapon_area_detection_body_entered(body):
+	weapon_area(body)
+	
+
+func _on_p_attack_cooldown_timeout():
+	attack_cooldown = false
+	is_attacking = false
+
+
+func _on_after_damage_invincibility_timeout():
+	is_invincible = false

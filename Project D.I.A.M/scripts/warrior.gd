@@ -6,21 +6,7 @@ func _ready():
 	_init(100, 0.3, 5)
 	$PAttackCooldown.wait_time *= ATK_SPEED
 
-func _physics_process(delta):
-	movimenti(delta)
-		
-	#ATTACCATI AL TACATA
-	if Input.is_action_just_pressed("attack") and not attack_cooldown:
-	
-		is_attacking = true
-		
-		if mob != null:
-			if not mob.is_connected("attacked", Callable(self, "doAttack")):
-				mob.attacked.connect(doAttack)
-			else:
-				doAttack()
-		else:
-			doAttack()
+
 
 
 func doAttack():
@@ -61,25 +47,4 @@ func doAttack():
 		"""
 
 
-
-func _on_player_hitbozz_body_entered(body):
-	player_hitbox(body, true)
-
-
-func _on_player_hitbozz_body_exited(body):
-	player_hitbox(body, false)
-
-
-func _on_weapon_area_detection_body_entered(body):
-	weapon_area(body)
-	
-
-#TODO: queste 2 vanno generalizzzate un attimo
-func _on_p_attack_cooldown_timeout():
-	attack_cooldown = false
-	is_attacking = false
-
-
-func _on_after_damage_invincibility_timeout():
-	is_invincible = false
 

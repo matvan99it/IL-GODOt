@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnj5nxbot5x2k"]
+
+[ext_resource type="PackedScene" uid="uid://dlpjneylmq7g1" path="res://scenes/weapons_characters/player.tscn" id="1_1iovq"]
+[ext_resource type="Script" path="res://scripts/warrior.gd" id="2_66qmj"]
+[ext_resource type="Texture2D" uid="uid://balrvc0f6esim" path="res://src/piattaforma_unta.png" id="3_f5sxa"]
+
+[node name="warrior" instance=ExtResource("1_1iovq")]
+script = ExtResource("2_66qmj")
+
+[node name="Sprite2D" parent="." index="4"]
+texture = ExtResource("3_f5sxa")

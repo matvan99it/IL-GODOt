@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://44k0wfm0bore"]
+[gd_scene load_steps=39 format=3 uid="uid://44k0wfm0bore"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ibgdh"]
 [ext_resource type="PackedScene" uid="uid://b27cg6sforp66" path="res://scenes/mobs/enemy.tscn" id="2_ywjwa"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://mjp2e5c74612" path="res://scenes/rotatoria_pazza.tscn" id="5_yml8t"]
 [ext_resource type="Texture2D" uid="uid://balrvc0f6esim" path="res://src/piattaforma_unta.png" id="6_dx6kh"]
 [ext_resource type="Texture2D" uid="uid://b3ldx1y1qicrc" path="res://src/tilemap_test.png" id="6_qtm1q"]
+[ext_resource type="PackedScene" uid="uid://cnj5nxbot5x2k" path="res://scenes/weapons_characters/warrior.tscn" id="7_4ax46"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0fw2y"]
 
@@ -518,12 +519,6 @@ position = Vector2(1541, 305)
 scale = Vector2(0.103167, 1)
 mesh = SubResource("QuadMesh_ppv4k")
 
-[node name="Player" parent="." instance=ExtResource("3_lxfbs")]
-position = Vector2(3194, 1611)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
-
 [node name="slider" type="AnimatableBody2D" parent="."]
 position = Vector2(472, 269)
 metadata/_edit_group_ = true
@@ -695,7 +690,7 @@ wait_time = 0.5
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(3194, 1611)
+position = Vector2(3303, 1507)
 zoom = Vector2(0.429, 0.429)
 
 [node name="Piattaforma lezza" type="TileMap" parent="."]
@@ -759,3 +754,12 @@ offset_bottom = -306.0
 text = "Spawn del boss
 "
 label_settings = SubResource("LabelSettings_jrca0")
+
+[node name="warrior" parent="." instance=ExtResource("7_4ax46")]
+position = Vector2(3303, 1507)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="warrior"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Player" parent="." instance=ExtResource("3_lxfbs")]
+position = Vector2(3309, 1305)
