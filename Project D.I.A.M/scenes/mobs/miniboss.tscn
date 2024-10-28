@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqt84cs417y7y"]
+
+[ext_resource type="PackedScene" uid="uid://b27cg6sforp66" path="res://scenes/mobs/enemy.tscn" id="1_w56fy"]
+[ext_resource type="Script" path="res://scripts/miniboss.gd" id="2_b5444"]
+[ext_resource type="Shader" uid="uid://dm8gkgab7s5aj" path="res://shader/hit_flash.tres" id="2_cog1n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d6jlf"]
+resource_local_to_scene = true
+shader = ExtResource("2_cog1n")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(1, 1, 1, 1)
+
+[node name="Miniboss" instance=ExtResource("1_w56fy")]
+scale = Vector2(2, 2)
+script = ExtResource("2_b5444")
+
+[node name="Sprite2D" parent="." index="4"]
+material = SubResource("ShaderMaterial_d6jlf")

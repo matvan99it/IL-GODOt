@@ -28,20 +28,22 @@ var player: player_base = null
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var attack_cooldown: bool = false
 var stun: bool = false
-var health: float = 10.0
-var damage: int = 0
-var defense: float = 0.0
-var atk_spd: float = 2.0
+@export var allied: bool = false
 
-enum Status{
-	Pipop,
-	bbbbbb
-}
+#PARAMETRI
+@export var health: float = 10.0
+@export var damage: int = 0
+@export var defense: int = 0
+@export var atk_spd: float = 2.0
 
-func _init(health: float = 50, atk_speed:float = 2.0, dfe: float = 0.0):
+
+func _init(health: float = 50, atk_speed:float = 2.0, dfe: float = 0.0, atk: float = 10, ally: bool = false):
 	self.health = health
 	self.defense = dfe
-	self.atk_spd = atk_speed
+	self.atk_spd = atk_speed if atk_speed >= 0 else self.atk_spd
+	self.damage = atk
+	self.allied = ally
+
 
 func _ready():
 	$EAttackCooldown.wait_time = atk_spd
@@ -106,3 +108,7 @@ func kill_mob():
 
 func _on_e_attack_cooldown_timeout():
 	attack_cooldown = false
+	
+	
+func banana():
+	pass

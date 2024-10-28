@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddvflbboxf57v"]
+
+[ext_resource type="PackedScene" uid="uid://b27cg6sforp66" path="res://scenes/mobs/enemy.tscn" id="1_3nyba"]
+[ext_resource type="Shader" uid="uid://dm8gkgab7s5aj" path="res://shader/hit_flash.tres" id="2_g6glk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2442"]
+resource_local_to_scene = true
+shader = ExtResource("2_g6glk")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(1, 1, 1, 1)
+
+[node name="Boss" instance=ExtResource("1_3nyba")]
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" parent="." index="4"]
+material = SubResource("ShaderMaterial_h2442")
+
+[node name="SuperAttackCooldown" type="Timer" parent="." index="6"]
+wait_time = 10.0

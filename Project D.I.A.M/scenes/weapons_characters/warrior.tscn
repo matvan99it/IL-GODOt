@@ -6,6 +6,7 @@
 
 [node name="warrior" instance=ExtResource("1_1iovq")]
 script = ExtResource("2_66qmj")
+HEALTH = 150
 
 [node name="Sprite2D" parent="." index="4"]
 texture = ExtResource("3_f5sxa")

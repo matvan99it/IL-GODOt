@@ -8,11 +8,18 @@ che diventa una nuova zona da conquistare per i nemici o fa spawnare un BOSS
 """
 
 @export var mob_scene: PackedScene
+@export var miniboss_scene: PackedScene
+@export var boss_scene: PackedScene
+@export var enemy_count: int = 20
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	spawn_mobs(20, $Stanza2)
-	spawn_mobs(20, $Stanza3)
-	spawn_mobs(20, $Stanza4)
+	spawn_mobs(enemy_count, $Stanza2)
+	spawn_mobs(enemy_count, $Stanza3)
+	spawn_mobs(enemy_count, $Stanza4)
+	spawn_miniboss()
+	
 	
 	$sliderAnimation.play("slide")
 	new_game()
@@ -26,6 +33,12 @@ func _on_enemy_spawn_timer_timeout():
 	mob.position = mob_spawn_location.position
 	add_child(mob)
 
+
+func spawn_miniboss():
+	var mb = miniboss_scene.instantiate()
+	print($Marker2D.position)
+	mb.position = $Marker2D.position
+	print(mb.position)
 
 func spawn_mobs(mob_count: int, area2d: Area2D):
 	# Ottieni il CollisionShape2D
