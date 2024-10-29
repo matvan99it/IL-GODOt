@@ -115,7 +115,6 @@ var tween: Tween
 var dash_velocity := 0.0
 var direction: float = 0.0
 
-
 func _init(
 	health: int = 100, 
 	atk_speed: float = 0.6, 
@@ -238,7 +237,7 @@ func kill_player():
 	
 	
 func doAttack():
-	print("BANANA")
+	pass
 
 
 func weapon_area(body):

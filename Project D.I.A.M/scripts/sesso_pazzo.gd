@@ -6,7 +6,8 @@ extends Node
 
 
 #N.B.:
-#TODO: capire come far spawnare il player e aggiungli il remote transorm della camera
+#TODO: creare un menù di scelta pg e far partire il gioco con quel pg
+#TODO: capire come far spawnare il player e aggiungergli il remote transorm della camera
 #TODO: migliorare il combat system per gestire più mob
 #TODO: implementare un sistema di combo minimo
 #TODO: imparare bene i tileset e le tilemap per fare le mappe

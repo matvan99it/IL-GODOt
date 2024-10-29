@@ -6,12 +6,12 @@ che diventa una nuova zona da conquistare per i nemici o fa spawnare un BOSS
 
 
 """
+const WARRIOR_SCENE = "res://scenes/weapons_characters/warrior.tscn"
 
 @export var mob_scene: PackedScene
 @export var miniboss_scene: PackedScene
 @export var boss_scene: PackedScene
 @export var enemy_count: int = 20
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
