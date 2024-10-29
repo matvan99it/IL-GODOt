@@ -1,10 +1,11 @@
-class_name MainMenu
 extends Control
+class_name MainMenu
 
 ## Defines the path to the game scene. Hides the play button if empty.
 @export_file("*.tscn") var game_scene_path : String
 @export var options_packed_scene : PackedScene
 @export var credits_packed_scene : PackedScene
+var SceneLoader: SceneLoaderClass
 
 var options_scene
 var credits_scene
