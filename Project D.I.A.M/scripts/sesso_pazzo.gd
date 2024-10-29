@@ -1,22 +1,22 @@
 extends Node
+class_name sesso_pazzo
 
-
-
-
-
+var scelta: String = "warrior"
 
 #N.B.:
 #TODO: creare un menù di scelta pg e far partire il gioco con quel pg
+#TODO: craere un pause_menu in game
 #TODO: capire come far spawnare il player e aggiungergli il remote transorm della camera
 #TODO: migliorare il combat system per gestire più mob
+#TODO: creare le classi per tipologia di nemico
 #TODO: implementare un sistema di combo minimo
 #TODO: imparare bene i tileset e le tilemap per fare le mappe
-#TODO: creare le classi per tipologia di nemico
 #TODO: aggiungere un knock al player/mob dopo tot attacchi
 #TODO: creare stili diversi(pg o equip)
 #TODO: creare dei bozzetti per le mappe
 #TODO: imparare ad usare aeprite per fare animazioni e grafiche
 #TODO: aggiungere suoni(opzionale per ora)
+
 
 """
 Tutorial segnali fatti bene
@@ -53,11 +53,3 @@ func destroy():
 
 """
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
