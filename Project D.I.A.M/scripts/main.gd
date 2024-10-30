@@ -6,21 +6,33 @@ che diventa una nuova zona da conquistare per i nemici o fa spawnare un BOSS
 
 
 """
-const WARRIOR_SCENE = "res://scenes/weapons_characters/warrior.tscn"
 
+
+var sp: sesso_pazzo
 
 @export var mob_scene: PackedScene
 @export var miniboss_scene: PackedScene
 @export var boss_scene: PackedScene
 @export var enemy_count: int = 20
-
+var player_scene: PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	sp = get_node("/root/SessoPazzo")
+	match sp.scelta:
+		"warrior":
+			player_scene = preload("res://scenes/weapons_characters/warrior.tscn")
+		"lancer":
+			player_scene = preload("res://scenes/weapons_characters/lancer.tscn")
+	
+	
 	spawn_mobs(enemy_count, $Stanza2)
 	spawn_mobs(enemy_count, $Stanza3)
 	spawn_mobs(enemy_count, $Stanza4)
 	spawn_miniboss()
+	spawnPLayer()
 	
+	print("IL player dovrebe essere a ", $SpawnPlayer.position, " il glob ", $SpawnPlayer.global_position)
 	
 	$sliderAnimation.play("slide")
 	new_game()
@@ -125,4 +137,11 @@ func is_point_in_polygon(point: Vector2, polygon_points: PackedVector2Array) -> 
 	return inside
 
 
-
+func spawnPLayer():
+	var p = player_scene.instantiate()
+	p.position = $SpawnPlayer.global_position
+	var rm: RemoteTransform2D = RemoteTransform2D.new()
+	rm.remote_path = $Camera2D.get_path()
+	p.add_child(rm)
+	$SpawnPlayer.add_child(p)
+	print("IL player dovrebe essere a ", p.position, " il glob ", p.global_position)

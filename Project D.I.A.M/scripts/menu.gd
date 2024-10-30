@@ -2,13 +2,19 @@ extends CanvasLayer
 
 @export var game_scene: PackedScene
 
+#VA ISTANZIATO SEMPRE
+var sp: sesso_pazzo
+
+
 enum pg{
 	warrior, lancer
 }
 
+func _ready():
+	sp = get_node("/root/SessoPazzo")
 
 func load_scene(pers: String):
-	sesso_pazzo.scelta = pers
+	sp.scelta = pers
 	get_tree().change_scene_to_packed(game_scene)
 
 

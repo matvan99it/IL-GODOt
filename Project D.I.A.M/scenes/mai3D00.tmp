@@ -422,6 +422,7 @@ position = Vector2(265, -20)
 script = ExtResource("1_ibgdh")
 mob_scene = ExtResource("2_ywjwa")
 miniboss_scene = ExtResource("3_sn7hf")
+enemy_count = null
 
 [node name="platform" type="StaticBody2D" parent="."]
 position = Vector2(6, -1)
@@ -792,4 +793,6 @@ position = Vector2(4091, 1809)
 position = Vector2(4291, 1797)
 
 [node name="SpawnPlayer" type="Marker2D" parent="."]
-position = Vector2(2349, 1319)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../SpawnPlayer")

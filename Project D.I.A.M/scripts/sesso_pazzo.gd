@@ -3,6 +3,7 @@ class_name sesso_pazzo
 
 var scelta: String = "warrior"
 
+
 #N.B.:
 #TODO: creare un menù di scelta pg e far partire il gioco con quel pg
 #TODO: craere un pause_menu in game
