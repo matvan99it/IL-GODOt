@@ -5,17 +5,19 @@ var scelta: String = "warrior"
 
 
 #N.B.:
-#TODO: creare un menù di scelta pg e far partire il gioco con quel pg
+#TODO: creare nuovi pg/armi e modificare le hitbozz
 #TODO: craere un pause_menu in game
-#TODO: capire come far spawnare il player e aggiungergli il remote transorm della camera
 #TODO: migliorare il combat system per gestire più mob
-#TODO: creare le classi per tipologia di nemico
+#TODO: migliorare le classi di miniboss e boss
 #TODO: implementare un sistema di combo minimo
 #TODO: imparare bene i tileset e le tilemap per fare le mappe
 #TODO: aggiungere un knock al player/mob dopo tot attacchi
 #TODO: creare stili diversi(pg o equip)
 #TODO: creare dei bozzetti per le mappe
 #TODO: imparare ad usare aeprite per fare animazioni e grafiche
+#TODO: migliorare main menu con delle animazionie grafiche
+#TODO: creare un modo per salvare i dati
+#TODO: creare una specie di trama/dialoghi vari
 #TODO: aggiungere suoni(opzionale per ora)
 
 
