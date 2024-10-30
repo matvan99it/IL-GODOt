@@ -792,4 +792,4 @@ position = Vector2(4091, 1809)
 position = Vector2(4291, 1797)
 
 [node name="SpawnPlayer" type="Marker2D" parent="."]
-position = Vector2(2349, 1319)
+position = Vector2(2517, 1348)

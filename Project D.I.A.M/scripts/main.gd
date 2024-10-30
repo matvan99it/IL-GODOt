@@ -9,7 +9,7 @@ che diventa una nuova zona da conquistare per i nemici o fa spawnare un BOSS
 
 
 var sp: sesso_pazzo
-
+var screen_size
 @export var mob_scene: PackedScene
 @export var miniboss_scene: PackedScene
 @export var boss_scene: PackedScene
@@ -18,6 +18,7 @@ var player_scene: PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	screen_size = get_viewport_rect().size
 	sp = get_node("/root/SessoPazzo")
 	match sp.scelta:
 		"warrior":
@@ -32,7 +33,8 @@ func _ready():
 	spawn_miniboss()
 	spawnPLayer()
 	
-	print("IL player dovrebe essere a ", $SpawnPlayer.position, " il glob ", $SpawnPlayer.global_position)
+	print("Spawn pos ", $SpawnPlayer.position, "; glob ", $SpawnPlayer.global_position)
+	
 	
 	$sliderAnimation.play("slide")
 	new_game()
@@ -139,9 +141,10 @@ func is_point_in_polygon(point: Vector2, polygon_points: PackedVector2Array) -> 
 
 func spawnPLayer():
 	var p = player_scene.instantiate()
-	p.position = $SpawnPlayer.global_position
+	p.position = position.clamp($SpawnPlayer.position, screen_size)
+	
 	var rm: RemoteTransform2D = RemoteTransform2D.new()
 	rm.remote_path = $Camera2D.get_path()
 	p.add_child(rm)
-	$SpawnPlayer.add_child(p)
+	$".".add_child(p)
 	print("IL player dovrebe essere a ", p.position, " il glob ", p.global_position)
