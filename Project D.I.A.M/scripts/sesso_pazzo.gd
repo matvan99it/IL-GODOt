@@ -5,6 +5,7 @@ var scelta: String = "warrior"
 
 
 #N.B.:
+#TODO: implementare il sistema di cattura area
 #TODO: creare nuovi pg/armi e modificare le hitbozz
 #TODO: craere un pause_menu in game
 #TODO: migliorare il combat system per gestire più mob
@@ -17,7 +18,7 @@ var scelta: String = "warrior"
 #TODO: imparare ad usare aeprite per fare animazioni e grafiche
 #TODO: migliorare main menu con delle animazionie grafiche
 #TODO: creare un modo per salvare i dati
-#TODO: creare una specie di trama/dialoghi vari
+#TODO: creare una specie di trama/dialoghi vari(opzionale)
 #TODO: aggiungere suoni(opzionale per ora)
 
 
@@ -56,3 +57,32 @@ func destroy():
 
 """
 
+
+#TODO: implementare meglio questo save
+func save(
+	pos_x: float,
+	pos_y: float,
+	
+	
+):
+	var save_dict = {
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x, # Vector2 is not supported by JSON
+		"pos_y" : position.y,
+		"attack" : attack,
+		"defense" : defense,
+		"current_health" : current_health,
+		"max_health" : max_health,
+		"damage" : damage,
+		"regen" : regen,
+		"experience" : experience,
+		"tnl" : tnl,
+		"level" : level,
+		"attack_growth" : attack_growth,
+		"defense_growth" : defense_growth,
+		"health_growth" : health_growth,
+		"is_alive" : is_alive,
+		"last_attack" : last_attack
+	}
+	return save_dict
