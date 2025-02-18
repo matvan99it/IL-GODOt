@@ -57,8 +57,8 @@ func destroy():
 
 """
 
-
 #TODO: implementare meglio questo save
+"""
 func save(
 	pos_x: float,
 	pos_y: float,
@@ -85,4 +85,4 @@ func save(
 		"is_alive" : is_alive,
 		"last_attack" : last_attack
 	}
-	return save_dict
+	return save_dict"""
