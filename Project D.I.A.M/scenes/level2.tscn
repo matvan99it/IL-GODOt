@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://svoaihc541ri"]
+[gd_scene load_steps=5 format=3 uid="uid://svoaihc541ri"]
 
 [ext_resource type="PackedScene" uid="uid://bmncg4ojhnx1n" path="res://scenes/tile_map.tscn" id="1_ggeeu"]
 [ext_resource type="PackedScene" uid="uid://cnj5nxbot5x2k" path="res://scenes/weapons_characters/warrior.tscn" id="1_mgb0w"]
+[ext_resource type="Script" path="res://scripts/area.gd" id="3_jxwyb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gncrp"]
+size = Vector2(22.2009, 22.2336)
 
 [node name="Level2" type="Node2D"]
 
@@ -14,3 +18,23 @@ layer_0/tile_data = PackedInt32Array(1179647, 2, 0, 1114112, 131074, 0, 1114113,
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="atk_def_area" type="Area2D" parent="."]
+position = Vector2(-1898, -174)
+script = ExtResource("3_jxwyb")
+ally = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="atk_def_area"]
+position = Vector2(17.5, 51)
+scale = Vector2(49.8854, 35.8917)
+shape = SubResource("RectangleShape2D_gncrp")
+
+[node name="atk_def_area2" type="Area2D" parent="."]
+position = Vector2(2082, -82)
+script = ExtResource("3_jxwyb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="atk_def_area2"]
+position = Vector2(-8.75024, -7.00002)
+scale = Vector2(49.8854, 35.8917)
+shape = SubResource("RectangleShape2D_gncrp")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)

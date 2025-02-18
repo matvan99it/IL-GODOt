@@ -14,6 +14,8 @@ Un area deve essere composta dai minion e un miniboss e un qualcosa per farli co
 
 """
 
+@export var ally: bool
+
 enum area_state {
 	ALLIED = 0,
 	ENEMIES = 1,
@@ -23,15 +25,21 @@ enum area_state {
 
 var initial_state = area_state.NEUTRO
 
-func on_area_entered(): #Check per area neutra o per triggerare chiunque si trovi nell'area
+func on_area_entered(): #Check per triggerare chiunque si trovi nell'area alla presenza nemica
 	pass
 
-func capture_area(state: int = 2): #Cambia lo stato dell'area
+func capture_area(): #Cambia lo stato dell'area
+	if(ally):
+		initial_state = area_state.ALLIED
+	else:
+		initial_state = area_state.ENEMIES
+		
+	"""
 	match state:
 		0: initial_state = area_state.ALLIED
 		1: initial_state = area_state.ENEMIES
 		2: initial_state = area_state.NEUTRO
-		3: initial_state = area_state.LOCKED
+		3: initial_state = area_state.LOCKED"""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
