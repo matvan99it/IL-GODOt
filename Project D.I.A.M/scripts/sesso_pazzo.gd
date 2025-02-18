@@ -58,14 +58,15 @@ func destroy():
 """
 
 #TODO: implementare meglio questo save
-"""
+
 func save(
 	pos_x: float,
 	pos_y: float,
-	
-	
 ):
-	var save_dict = {
+	
+	var save_dict = ""
+	
+	"""	var save_dict = {
 		"filename" : get_scene_file_path(),
 		"parent" : get_parent().get_path(),
 		"pos_x" : position.x, # Vector2 is not supported by JSON
