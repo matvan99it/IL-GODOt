@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://svoaihc541ri"]
+[gd_scene load_steps=7 format=3 uid="uid://svoaihc541ri"]
 
 [ext_resource type="PackedScene" uid="uid://bmncg4ojhnx1n" path="res://scenes/tile_map.tscn" id="1_ggeeu"]
 [ext_resource type="PackedScene" uid="uid://cnj5nxbot5x2k" path="res://scenes/weapons_characters/warrior.tscn" id="1_mgb0w"]
@@ -6,6 +6,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gncrp"]
 size = Vector2(22.2009, 22.2336)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yek6f"]
+font_size = 46
+
+[sub_resource type="LabelSettings" id="LabelSettings_yfpoa"]
+font_size = 46
 
 [node name="Level2" type="Node2D"]
 
@@ -29,6 +35,14 @@ position = Vector2(17.5, 51)
 scale = Vector2(49.8854, 35.8917)
 shape = SubResource("RectangleShape2D_gncrp")
 
+[node name="Label_allied" type="Label" parent="atk_def_area"]
+offset_left = -19.0
+offset_top = 161.0
+offset_right = 72.0
+offset_bottom = 225.0
+text = "n/m"
+label_settings = SubResource("LabelSettings_yek6f")
+
 [node name="atk_def_area2" type="Area2D" parent="."]
 position = Vector2(2082, -82)
 script = ExtResource("3_jxwyb")
@@ -38,3 +52,11 @@ position = Vector2(-8.75024, -7.00002)
 scale = Vector2(49.8854, 35.8917)
 shape = SubResource("RectangleShape2D_gncrp")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Label_enemy" type="Label" parent="atk_def_area2"]
+offset_left = -40.0
+offset_top = 63.0
+offset_right = 51.0
+offset_bottom = 127.0
+text = "n/m"
+label_settings = SubResource("LabelSettings_yfpoa")
