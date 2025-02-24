@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcfdyqdwwhhpf"]
+[gd_scene load_steps=10 format=3 uid="uid://dcfdyqdwwhhpf"]
 
 [ext_resource type="PackedScene" uid="uid://db4512jl3ckyy" path="res://player.tscn" id="1_gm7tg"]
 [ext_resource type="MeshLibrary" uid="uid://drg2uj6gkwnoi" path="res://res/tileset.tres" id="2_woarh"]
 [ext_resource type="PackedScene" uid="uid://bh2fvrpng1g0q" path="res://gabbibbo.tscn" id="3_igvvd"]
+[ext_resource type="Script" path="res://gabbibbo.gd" id="4_070nx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ylt8g"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -36,7 +37,7 @@ transform = Transform3D(1.00257, 0, 0, 0, 1.00257, 0, 0, 0, 1.00257, 0, 0, 0)
 environment = SubResource("Environment_g4wgu")
 
 [node name="Player" parent="." instance=ExtResource("1_gm7tg")]
-transform = Transform3D(0.999991, 0.0037353, 0.00192095, -0.00374128, 0.999988, 0.00312259, -0.00190926, -0.00312975, 0.999993, 0, 0, 5.39498)
+transform = Transform3D(0.999991, 0.0037353, 0.00192095, -0.00374128, 0.999988, 0.00312259, -0.00190926, -0.00312975, 0.999993, 0, 0, -13.5563)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -59,5 +60,6 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Sprite3D" parent="." instance=ExtResource("3_igvvd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.909234, 0)
+[node name="Gabbibbo" parent="." instance=ExtResource("3_igvvd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.806075, -19.9487)
+script = ExtResource("4_070nx")

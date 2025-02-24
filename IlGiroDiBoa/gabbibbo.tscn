@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh2fvrpng1g0q"]
+
+[ext_resource type="Texture2D" uid="uid://4kibt01bgoio" path="res://res/gabibbo-coltelli.jpeg" id="1_peuc4"]
+
+[node name="Sprite3D" type="Sprite3D"]
+billboard = 1
+texture = ExtResource("1_peuc4")
