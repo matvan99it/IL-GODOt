@@ -25,13 +25,12 @@ func _ready():
 
 func _physics_process(delta):
 	
-	var pos_from_scene = player_from_scene.global_position
-	var pos_from_path = player_from_path.global_position
+	var pos_from_scene = player_from_scene.global_position #<- Vector3.ZERO
+	var pos_from_path = player_from_path.global_position # <- questo va
 	
 	print("SCENE: ", pos_from_scene)
 	print("PATH: ", pos_from_path)
 	
-	velocity = Vector3.ZERO * SPEED
 	#var player_pos = player.global_position
 	look_at(
 		Vector3(pos_from_path.x, pos_from_path.y, pos_from_path.z),
