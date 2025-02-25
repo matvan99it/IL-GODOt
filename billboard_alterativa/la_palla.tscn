@@ -1,24 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl1gew6vohrb0"]
+[gd_scene load_steps=5 format=3 uid="uid://bl1gew6vohrb0"]
 
 [ext_resource type="Script" path="res://la_palla.gd" id="1_fefff"]
-[ext_resource type="Texture2D" uid="uid://dj86tqwgvxn87" path="res://icon.svg" id="1_xjo11"]
-[ext_resource type="PackedScene" uid="uid://4syr6qa8f0tb" path="res://character_body_3d.tscn" id="2_gdwh5"]
+[ext_resource type="Texture2D" uid="uid://bt6au41a2ixvw" path="res://icon.svg" id="1_xjo11"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bexem"]
+flip_faces = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1d7f8"]
 
 [node name="laPALLA" type="CharacterBody3D"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.083395, 3.71422, 0)
 script = ExtResource("1_fefff")
-player = ExtResource("2_gdwh5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_bexem")
 
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(0.498412, 0, 0, 0, 0.498412, 0, 0, 0, 0.498412, 0, 0, 0.50326)
+billboard = 1
+texture = ExtResource("1_xjo11")
+
+[node name="Sprite3D2" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(0.498412, 0, 0, 0, 0.498412, 0, 0, 0, 0.498412, 0.8, 0, 0.10326)
+billboard = 2
+texture = ExtResource("1_xjo11")
+
+[node name="Sprite3D3" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(0.498412, 0, 0, 0, 0.498412, 0, 0, 0, 0.498412, -0.8, 0, 0.10326)
+billboard = 2
+texture = ExtResource("1_xjo11")
+
+[node name="Sprite3D4" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(-0.498412, 4.35726e-08, 0, -4.35726e-08, -0.498412, 0, 0, 0, 0.498412, 0, 0, -0.69674)
+billboard = 1
+texture = ExtResource("1_xjo11")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_1d7f8")
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.498412, 0, 0, 0, 0.498412, 0, 0, 0, 0.498412, 0, 0, 0.50326)
-texture = ExtResource("1_xjo11")

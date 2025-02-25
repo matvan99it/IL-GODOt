@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 2.0
+const SPEED = 10.0
 const JUMP_VELOCITY = 0.0 #4.5
 const y_ANGLE = 45
 
