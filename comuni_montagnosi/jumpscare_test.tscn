@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://r424xh2cyavx"]
+
+[ext_resource type="PackedScene" uid="uid://db4512jl3ckyy" path="res://player.tscn" id="1_7doho"]
+[ext_resource type="Texture2D" uid="uid://g7m8nnkpmnij" path="res://icon.svg" id="1_ms8q4"]
+[ext_resource type="Script" path="res://area_3d.gd" id="3_lckck"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_76km0"]
+size = Vector3(60, 1, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kulw3"]
+albedo_texture = ExtResource("1_ms8q4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bacvm"]
+size = Vector2(60, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hfqrf"]
+size = Vector3(5, 5, 5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_76km0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_kulw3")
+mesh = SubResource("PlaneMesh_bacvm")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_7doho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17175, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.214394, -0.976747, 0, 0.0324694, 0.00712697, 0.999447, -0.976207, -0.214276, 0.0332424, 0, 34.8079, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05414, 1.08221, 0.0957246)
+script = ExtResource("3_lckck")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37519, 2.06966)
+shape = SubResource("BoxShape3D_hfqrf")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

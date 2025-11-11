@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://db4512jl3ckyy"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_pvboa"]
+[ext_resource type="Texture2D" uid="uid://g7m8nnkpmnij" path="res://icon.svg" id="2_bebnt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hmac5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ic1r"]
+albedo_color = Color(0.611765, 0, 0.784314, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4joub"]
+material = SubResource("StandardMaterial3D_5ic1r")
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_pvboa")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Character" type="Node3D" parent="Pivot"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hmac5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_4joub")
+
+[node name="CameraPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.422816, 0)
+
+[node name="jumpscare" type="Sprite3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.107022, -0.865847)
+visible = false
+texture = ExtResource("2_bebnt")
+
+[node name="PlayerCamera" type="Camera3D" parent="CameraPivot"]
+
+[node name="Torch" type="SpotLight3D" parent="CameraPivot"]
+transform = Transform3D(1, -1.09512e-09, 1.78943e-18, 1.09512e-09, 1, -1.63401e-09, 0, 1.63401e-09, 1, 0, 0, 0)
+light_color = Color(1, 0.772549, 0, 1)
+light_energy = 2.676
+light_indirect_energy = 4.995
+light_volumetric_fog_energy = 1.225
+spot_range = 9.0
+spot_angle = 23.7088
